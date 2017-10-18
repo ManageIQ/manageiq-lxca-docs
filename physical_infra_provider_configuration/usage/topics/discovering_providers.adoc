@@ -1,1 +1,13 @@
 === Discovering Physical Infrastructure Providers
+
+ManageIQ provides the ability to discover all the Physical Infrastructure providers in determined subnet range.
+
+1.  Navigate to *Compute → Physical Infrastructure → Providers.*
+
+2.  Click *Configuration*, then click *Discover Physical Infrastructure Providers*.
+
+3.  The default *Discover Type* is Lenovo XClarity Administrator.
+
+4.  Enter the IP address range starting with *From Address* and ending with *To Address*.
+
+5.  Enter the Port.Click *Start* to begin the discovery process.

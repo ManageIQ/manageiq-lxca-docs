@@ -1,1 +1,27 @@
 === Adding Physical Infrastructure Providers
+
+The Physical Infrastructure Provider extends CloudForms management capabilities for Physical Servers. 
+
+1.  Log in to CloudForms Management Engine as a user who has permission to add providers. The default user is admin, password smartvm.
+
+2.  Navigate to *Compute → Physical Infrastructure → Providers.*
+
+3.  Click *Configuration*, then click *Add a New Infrastructure Provider*.
+
+4.  Enter a *Name* for the provider, for example, Physical Infrastructure Manager.
+
+5.  From the *Type* list, select Lenovo XClarity.
+
+6.  Accept the default *Zone*.
+
+7.  In the credentials area provide the following:
+
+*   Enter the *Hostname* or IPV4 or IPV6 address of the machine where you installed the Physical Infra manager.
+
+*   Enter *API Port* of the Physical infrastructure manager. The default is 443.
+
+*   Enter the *Username* used to start the Physical infrastructure manager.
+
+*   Enter the *Password* used to start the Physical Infrastructure manager.
+8.  Click *Validate* to confirm that the user has the proper credentials. 
+9.  Click *Add*.
