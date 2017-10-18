@@ -1,1 +1,3 @@
 === Managing Physical Servers
+
+Once you have added your physical servers in the ManageIQ, you can list and manage them performing some operations as explain below.
