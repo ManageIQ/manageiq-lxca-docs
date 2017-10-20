@@ -1,0 +1,3 @@
+=== Creating and Configuring a new Domain
+
+Firstly, you must have a LXCA provider added in the Cloud Forms, you can use the session three for add a new LXCA provider. As example, was used the operation Physical Server Shutdown, but you can use an other operation as Physical Server Start. After performing all steps below, the Cloud Forms is able to execute the action of Power Off in the first physical server of the your provider, this will happen when the Cloud Forms receive an event with the name that you will enter. For use the automation must be followed the steps below.

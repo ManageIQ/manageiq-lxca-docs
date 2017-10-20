@@ -1,0 +1,17 @@
+==== Copy the Event Handler class to the domain created
+
+1.  Select ManageIQ domain and drill down ManageIQ → System → Event Handlers and select **(Event Handlers)**.
+
+2.  Select the instance that you wish **(ex. event_action_policy)**.
+
+3.  Click **(Configuration)**, then click **(Copy this Instance)**.
+
+4.  Check the copied path.
+
+5.  Click **Copy**.
+
+6.  Select the method that you wish **(ex. event_action_policy)**.
+
+7.  Click **(Configuration)**, then click **(Copy this method)**.
+
+8.  Click **Copy**.

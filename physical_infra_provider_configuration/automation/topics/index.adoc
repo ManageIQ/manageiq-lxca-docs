@@ -1,0 +1,3 @@
+== Automation
+
+The automation can be used for configure actions to differents situations that can occurs with the LXCA appliance, this is only possible because the Cloud Forms is able to monitor your appliance and capture the events that occurs with the physical servers. For configure an action is necessary follow some steps as creating and configuring a new Domain and creating, configuring and assigning a new Policy and among others steps.
