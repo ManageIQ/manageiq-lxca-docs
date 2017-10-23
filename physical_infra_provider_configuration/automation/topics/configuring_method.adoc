@@ -1,0 +1,25 @@
+==== Configuring the new method
+
+1.  Select the new class created **(Methods)**.
+
+2.  Select Schema option and click **(Configuration)**, then click *(Edit select Schema)*.
+
+3.  Click **+**.
+
+4.  Fill the name with *(execute)*.
+
+5.  Fill the type with **(Method)**.
+
+6.  Fill the Data type with **(String)**.
+
+7.  Press the **Tick** button.
+
+8.  Click **Save**.
+
+9.  Select Instances option and click **(Configuration)**, then click *(Add new Instance)*.
+
+10.  Fill the name with *(Physical_Server_Shutdown)*.
+
+11.  In fields fill the value with *(turn_off)*.
+
+12.  Click **Save**.

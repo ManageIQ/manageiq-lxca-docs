@@ -1,0 +1,13 @@
+==== Creating a new Policy
+
+1.  Log in to CloudForms Management Engine as a user who has permission to create a new policy. The default user is admin, password smartvm.
+
+2.  Navigate to Control→ Explorer and select **(Explorer).**
+
+3.  Select Policies option and drill down Policies → All Policies → Control Policies → Physical Infrastructure Control Policies → and select **(Physical Infrastructure Control Policies)**.
+
+4.  Click **(Configuration)**, then click **(Add a new Physical Server Control Policy)**.
+
+5.  Put a description **(ex. Lenovo_Policy)**
+
+6. Click **Add**.
