@@ -47,6 +47,8 @@ include::usage/topics/performing_power_operations.adoc[]
 
 include::usage/topics/performing_identify_operations.adoc[]
 
+include::usage/topics/provisioning_physical_servers.adoc[]
+
 include::troubleshooting/topics/index.adoc[]
 
 include::automation/topics/index.adoc[]

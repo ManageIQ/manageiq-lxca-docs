@@ -1,0 +1,20 @@
+==== Provisioning Physical Servers
+
+Physical servers can be provisioned using Lenovo XClarity Administrator (LXCA) configuration patterns. A configuration pattern can be thought of as a template that describes the configuration of servers. The Lenovo Physical Infrastructure Provider discovers configuration patterns that are defined on the LXCA instance that's associated with the provider. A pattern can then be applied to a single or multiple physical servers.
+
+===== Provisioning a Single Server
+
+. Navigate to Compute -> Physical Infrastructure -> Servers. The Physical Servers page should load.
+. Click on the server you wish to provision. The Physical Server page for the server should load.
+. Click on the Lifecycle button and then on Provision Physical Server. The Add PhysicalServer page should load with the Request tab already selected.
+. Enter an email address into the E-Mail field.
+. Click on the Catalog tab. The Catalog tab should load.
+. Select the configuration pattern you wish to apply from the Configuration Pattern pull-down menu. 
+. Click on the Submit button. You should be redirected to the Requests page.
+. In the Requests table, locate the request that was created for the provision action and click on it.
+. On the Apply Configuration Pattern page for the request, click on the check mark button. A Reason field should appear.
+. Enter a reason for performing this action into the field. The Submit button should now be clickable.
+. Click on the Submit button. The provisioning action will be initiated and the status of the action can be monitored in the Requests table.
+
+
+===== Provisioning Multiple Servers
