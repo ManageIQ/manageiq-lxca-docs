@@ -1,0 +1,9 @@
+. Click on the *Lifecycle* button and then on *Provision Physical Server*. The *Add PhysicalServer* page should load with the *Request* tab already selected.
+. Enter an email address into the *E-Mail* field.
+. Click on the *Catalog* tab. The *Catalog* tab content should load.
+. Select the configuration pattern you wish to apply from the *Configuration Pattern* pull-down menu. 
+. Click on the *Submit* button. You should be redirected to the *Requests* page.
+. In the *Requests* table, locate the request that was created for the provision action and click on it. You should be redirected to the *Apply Configuration Pattern* page.
+. Click on the check mark button. A *Reason* field should appear.
+. Enter a reason for performing this action into the field. The *Submit* button should now be clickable.
+. Click on the *Submit* button. The provisioning action will be initiated and the status of the action can be monitored in the *Requests* table.
