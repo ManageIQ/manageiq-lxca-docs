@@ -1,1 +1,3 @@
 === Architecture Overview
+
+The Lenovo XClarity Provider communicates with instances of the Lenovo XClarity appliance to retrieve information about managed resources, monitor events and carry out actions.  Resource details are aggregated in the ManageIQ database and presented to the user through the CloudForms Compute -> Physical Hardware -> Servers menu item. The CloudForms user interface generates the relationship between existing harware details and the virtual host details that form the customer's solution.  

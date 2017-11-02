@@ -7,6 +7,8 @@ v1.0, October 17, 2017
 
 include::overview/topics/index.adoc[]
 
+include::overview/topics/lxca_overview.adoc[]
+
 include::overview/topics/architecture_overview.adoc[]
 
 include::overview/topics/configuration_overview.adoc[]
@@ -16,8 +18,6 @@ include::configuration/topics/index.adoc[]
 include::configuration/topics/configuration_prerequisites.adoc[]
 
 include::configuration/topics/installing_and_configuring_lxca.adoc[]
-
-include::configuration/topics/adding_and_configuring_providers.adoc[]
 
 include::usage/topics/index.adoc[]
 
@@ -82,3 +82,4 @@ include::automation/topics/configuring_policy.adoc[]
 include::automation/topics/creating_policy_profile.adoc[]
 
 include::automation/topics/assigning_policy_profile.adoc[]
+
