@@ -1,0 +1,27 @@
+=== Get Physical Servers
+
+. Log in to CloudForms Management Engine API as a user who has permission to access the API. The default user is admin, password smartvm.
+
+. Use the following url structure for access the api **"<CLOUDFORMS ADDRESS>:<PORT>/api/" (ex. localhost:3000/api/)**.
+
+. Use the following request for get all physical servers. **(ex. localhost:3000/api/physical_servers)**.
+
+. It’s returned a JSON with the following keys**
+
+    .. name **(URI name)**.
+    .. count **(count of the physical servers)**.
+    .. subcount **(count of the physical servers returned)**.
+    .. pages **(count of pages)**. 
+    .. resource **(list of URLs of the each physical servers)**.
+    
+        ... The resource return only the list of URLs for all physical servers managed by the CloudForms.
+        
+        ... If you wish get all the data information, you need use the following parameters: **?expand=resources (ex. localhost:3000/api/physical_servers?expand=resources)**.
+        
+        ... If you wish get a custom data information, as name and id or an other attribute you need use the following query: ?attributes=id,name **(ex. localhost:3000/api/physical_servers?expand=resources&attributes=id,name)**.
+        
+        ... If you wish get a specific physical server, you can use the filter attribute on all physical servers’ resource. Can be used the attribute name and so on **(ex. localhost:3000/api/physical_servers?expand=resources&filter[]=name='Demo - 20127X5462')**.
+        
+        ... If you wish get a custom data information you can add custom attributes like as: firmwares, networks, guest_devices, assets_details and so on **(ex. localhost:3000/api/physical_servers?expand=resources&attributes=hardware.firmwares,hardware.networks,hardware.guest_devices,asset_details)**.
+    
+    .. actions **(list of actions that can be used)**
