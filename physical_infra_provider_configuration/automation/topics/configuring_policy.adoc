@@ -1,13 +1,13 @@
 ==== Configuring a new Policy
 
-1.  Select the new Policy and Click **(Configuration)**, then click **(Edit this policy’s Event assignments)**.
+. Select the new Policy and Click **(Configuration)**, then click **(Edit this policy’s Event assignments)**.
 
-2.  Find Physical Server operation and select the *Physical Server Shutdown* option.
+. Find Physical Server operation and select the *Physical Server Shutdown* option.
 
-3.  Click **Save**.
+. Click **Save**.
 
-4.  Select the new Policy Event and Click **(Configuration)**, then click **(Edit Actions for this policy Event)**.
+. Select the new Policy Event and Click **(Configuration)**, then click **(Edit Actions for this policy Event)**.
 
-5.  Find the box *Order of Actions if All Conditions are True* select **(Power_Off)**.
+. Find the box *Order of Actions if All Conditions are True* select **(Power_Off)**.
 
-6.  Click **Save**.
+. Click **Save**.

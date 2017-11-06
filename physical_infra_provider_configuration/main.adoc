@@ -2,7 +2,7 @@
 
 Configuring the Physical Infrastructure Provider
 ================================================
-Lenovo
+Lenovo Documentation <icfeedback@lenovo.com>
 v1.0, October 17, 2017
 
 include::overview/topics/index.adoc[]

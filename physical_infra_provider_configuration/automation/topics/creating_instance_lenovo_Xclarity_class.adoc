@@ -1,20 +1,20 @@
 ==== Creating a new instance to the LenovoXclarity class
 
-1.  Select your domain created and drill down Your Domain name→ System → Event → EmsEvent →LenovoXclarity and select **(LenovoXclarity)**.
+. Select your domain created and drill down Your Domain name→ System → Event → EmsEvent →LenovoXclarity and select **(LenovoXclarity)**.
 
-2.  Click **(Configuration)**, then click **(Add a new Instance)**.
+. Click **(Configuration)**, then click **(Add a new Instance)**.
 
-3.  Enter with the name
+. Enter with the name
 
-    a.  The name must be equal to event name that will be managed, because the Cloud Forms match the instance with the event by the name.
+    .. The name must be equal to event name that will be managed, because the Cloud Forms match the instance with the event by the name.
     
-    b.  Find the name of the event that you wish in this link **<TO DO>**
+    .. Find the name of the event that you wish in this link **<TO DO>**
     
-    c.  Copy the name of the event and past in the field’s name in Cloud Forms **(ex. FQXHMTS0003G)**.
+    .. Copy the name of the event and past in the field’s name in Cloud Forms **(ex. FQXHMTS0003G)**.
 
-4.  Add the path to the handlers copied in the field’s **rel3**.
+. Add the path to the handlers copied in the field’s **rel3**.
 
-    a.  There are three policy operations:
+    .. There are three policy operations:
         
         * Physical Server Reset
     
@@ -22,7 +22,7 @@
 
         * Physical Server Shutdown
     
-    b.  There are three policy events:
+    .. There are three policy events:
 
         * physical_server_reset
 
@@ -30,12 +30,12 @@
 
         * physical_server_shutdown
         
-    c.  The policy operations and the policy events matches.
+    .. The policy operations and the policy events matches.
 
-    d.  For example use the follow path to the policy action **Physical Server Shutdown**:
+    .. For example use the follow path to the policy action **Physical Server Shutdown**:
 
         * /System/event_handlers/event_action_policy?target=physical_server&policy_event=**physical_server_shutdown**&param=
     
         * The policy_event value is matched with the policy operation applied.
 
-5.  Click **Add**.
+. Click **Add**.

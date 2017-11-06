@@ -1,18 +1,18 @@
 ==== Creating a new method
 
-1.  Select the new class created **(Methods)**.
+. Select the new class created **(Methods)**.
 
-2.  Select Methods and click **(Configuration)**, then click *(Add a new method)*.
+. Select Methods and click **(Configuration)**, then click *(Add a new method)*.
 
-3.  Select the type with *(inline)*.
+. Select the type with *(inline)*.
 
-4.  Fill the name with *(turn_off)*.
+. Fill the name with *(turn_off)*.
 
-5.  Fill the data with:
+. Fill the data with:
 
     server = $evm.vmdb('PhysicalServer').first
     $evm.log(:info, "Turning Server #{server.name} OFF")
     server.power_off
     exit MIQ_OK
 
-6. Click **Add**.
+. Click **Add**.

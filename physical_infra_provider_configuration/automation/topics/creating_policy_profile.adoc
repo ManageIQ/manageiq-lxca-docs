@@ -1,11 +1,11 @@
 ==== Creating a new Policy Profile
 
-1.  Select Policy Profiles option and drill down Policy Profiles → All Policy Profiles and select **(All Policy Profiles)**.
+.  Select Policy Profiles option and drill down Policy Profiles → All Policy Profiles and select **(All Policy Profiles)**.
 
-2.  Click **(Configuration)**, then click **(Add a new Policy Profile)**.
+.  Click **(Configuration)**, then click **(Add a new Policy Profile)**.
 
-3.  Enter with a Description **(ex. Lenovo_Policy_Profile)**.
+.  Enter with a Description **(ex. Lenovo_Policy_Profile)**.
 
-4.  Select your domain and move for the right.
+.  Select your domain and move for the right.
 
-5.  Click **Add**.
+.  Click **Add**.

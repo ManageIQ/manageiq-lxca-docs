@@ -1,20 +1,20 @@
 ==== Creating a new action
 
-1.  Select Actions option and drill down Action → All Actions and select **(All Actions)**.
+. Select Actions option and drill down Action → All Actions and select **(All Actions)**.
 
-2.  Click **(Configuration)**, then click **(Add a new action)**.
+. Click **(Configuration)**, then click **(Add a new action)**.
 
-3.  Fill the description with **(Power_Off)**.
+. Fill the description with **(Power_Off)**.
 
-4.  Fill the message with **(create)**.
+. Fill the message with **(create)**.
 
-5.  Set the first attribute with
-    a.  *(Namespace)* with value **(Functions)**.
+. Set the first attribute with
+    ..  *(Namespace)* with value **(Functions)**.
 
-6.  Set the second attribute with
-    a.  *(Class)* with value **(Methods)**.
+. Set the second attribute with
+    ..  *(Class)* with value **(Methods)**.
 
-7.  Set the third attribute with
-    a. *(Instance)* with value **(Physical_Server_Shutdown)**.
+. Set the third attribute with
+    .. *(Instance)* with value **(Physical_Server_Shutdown)**.
     
-8. Click **Add**.
+. Click **Add**.
