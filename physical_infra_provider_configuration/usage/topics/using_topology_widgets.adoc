@@ -2,18 +2,18 @@
 
 The Physical Infrastructure Provider has the ability to highlight the relationship between virtual hosts and physical servers each host leverages. The topology view provides a graphical representation of these relationships, allowing the administrator to easily navigate between connected components.
 
-1.  Navigate to *Compute → Physical Infrastructure → Providers.*
+. Navigate to *Compute → Physical Infrastructure → Providers.*
 
-2.  Select the Physical Infrastructure provider to be detailed.
+. Select the Physical Infrastructure provider to be detailed.
 
-3.  From the overview section, select *Topology*.
+. From the overview section, select *Topology*.
 
-4.  In the Topology Page you can:
+. In the Topology Page you can:
 
-    a.  Select *Physical Servers*, to hide/show all Physical Servers.
+    .. Select *Physical Servers*, to hide/show all Physical Servers.
 
-    b.  Select *Hosts*, to hide/show all Hosts.
+    .. Select *Hosts*, to hide/show all Hosts.
 
-    c.  Select *VMs*, to hide/show all VMs.
+    .. Select *VMs*, to hide/show all VMs.
 
-    d.  Double click/right click the entities in the graph to navigate to the summary pages.
+    .. Double click/right click the entities in the graph to navigate to the summary pages.

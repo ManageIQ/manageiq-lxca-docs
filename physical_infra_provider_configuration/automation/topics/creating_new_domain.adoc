@@ -1,11 +1,11 @@
 ==== Creating a new Domain
 
-1. Log in to CloudForms Management Engine as a user who has permission to create a new domain. The default user is admin, password smartvm.
+. Log in to CloudForms Management Engine as a user who has permission to create a new domain. The default user is admin, password smartvm.
 
-2. Navigate to Automation → Automate → Explorer and select *(Explorer)*.
+. Navigate to Automation → Automate → Explorer and select *(Explorer)*.
 
-3. Cick **(Configuration)**, then click **(Add a New Domain)**.
+. Cick **(Configuration)**, then click **(Add a New Domain)**.
 
-4. Enter a name for the domain and check as enable.
+. Enter a name for the domain and check as enable.
 
-5. Click **Add**.
+. Click **Add**.
