@@ -1,1 +1,10 @@
 === Viewing Server Relationships
+
+You can view the Physical Servers that belongs to the provider. In order to do that, you have to:
+
+[arabic]
+. Navigate to **Compute > Physical Infrastructure > Providers**.
+. Click a Provider from the list.
+. Click **Physical Servers button** in **Relationships section**.
+
+You should see a list with the Physical Servers of the provider.
