@@ -1,4 +1,4 @@
-=== Get a Physical Server by ID
+=== Retrieving Physical Server Details by ID
 
 .  Log in to CloudForms Management Engine API as a user who has permission to access the API. The default user is admin, password smartvm.
 
@@ -6,29 +6,32 @@
 
 .  Use the following request for get a physical server by ID. **(ex. localhost:3000/api/physical_servers/<ID NUMBER>)**.
 
-.  It’s return a JSON with the following keys
+.  It returns JSON with the following keys:
+---------------------------
+href
+ems_id
+name
+type
+uid_ems
+ems_ref
+created_at
+updated_at
+health_state
+power_state
+hostname
+product_name
+manufacturer
+machine_type
+model
+serial_number
+field_replaceable_unit
+vendor
+location_led_state
+actions
+---------------------------
 
-    href;
-    ems_id;
-    name;
-    type;
-    uid_ems;
-    ems_ref;
-    created_at;
-    updated_at;
-    health_state;
-    power_state;
-    hostname;
-    product_name;
-    manufacturer;
-    machine_type;
-    model;
-    serial_number;
-    field_replaceable_unit;
-    vendor;
-    location_led_state;
-    actions.
+Notes:
 
-.  If you wish get a custom data information, as *name* and *id* or an other attribute you need use the following query: **?attributes=id,name (ex. localhost:3000/api/physical_servers/<ID NUMBER>?attributes=id,name)**.
+* If you wish get a custom data information, as *name* and *id* or an other attribute you need use the following query: **?attributes=id,name (ex. localhost:3000/api/physical_servers/<ID NUMBER>?attributes=id,name)**.
 
-.  If you wish get a custom data information you can add custom attributes like as: firmwares, networks, guest_devices, assets_details and so on **(ex. localhost:3000/api/physical_servers/<ID NUMBER>?expand=resources&attributes=hardware.firmwares,hardware.networks,hardware.guest_devices,asset_details)**.
+* If you wish get a custom data information you can add custom attributes like as: firmwares, networks, guest_devices, assets_details and so on **(ex. localhost:3000/api/physical_servers/<ID NUMBER>?expand=resources&attributes=hardware.firmwares,hardware.networks,hardware.guest_devices,asset_details)**.

@@ -1,3 +1,3 @@
 == REST API
 
-The Rest API can be used for get information about providers, physical infra providers, physical servers and so on, you should use the CloudForms Rest API if you need data information about you machines in a personal application. The Rest API is able to of return a data information very significant or just a custom data information, try it.
+The REST API can be used for retrieving information about providers, physical infrastructure providers, and physical servers. You can use the CloudForms REST API if you need information about the servers in your physical infrastructure.
