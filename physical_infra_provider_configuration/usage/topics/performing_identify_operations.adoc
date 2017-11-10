@@ -1,3 +1,5 @@
 ==== Performing Identify Operations on a Physical Server
 
 Similar to power operations, you can do some identify operations with your physical servers, to do that you just need to select the servers that you want to perform such operations, and look at the top left, at the right side of Power button, and find the Identify button, clickin it the operations  availables will be showed, select one of them to perform. See the screenshot below.
+
+image:../images/physical_server_identify_led.png[]

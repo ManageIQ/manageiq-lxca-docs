@@ -25,3 +25,7 @@ The Physical Infrastructure Provider extends CloudForms management capabilities 
 * Enter the *Password* used to start the Physical Infrastructure manager.
 . Click *Validate* to confirm that the user has the proper credentials. 
 . Click *Add*.
+
+Once added, providers can be viewed by navigating to *Compute → Physical Infrastructure → Providers* as shown below.
+
+image:../images/providers.png[]

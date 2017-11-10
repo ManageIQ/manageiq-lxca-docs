@@ -5,4 +5,6 @@ You can view Host-associated Physical Servers that belong to the provider. In or
 . Click a Provider from the list.
 . Click **Physical Servers with Host button in Relationships section**.
 
-You should see a list with the Host-associated Physical Servers.
+You should see a list with the Host-associated Physical Servers as shown in the screenshot below.
+
+image:../images/host_relationships.png[]
