@@ -1,1 +1,3 @@
 === Configuration Overview
+
+Operation of the provider requires a valid installation of CloudForms Management Engine and a connection to one or more Lenovo XClarity Administrator instances.   The XClarity appliances is linked to CloudForms by add a new Physical Infrastructure provider connection.   CloudForms will refresh provider details through this connection and the servers managed by the XClarity appliances will be registered into the CloudForms management database.
