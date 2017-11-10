@@ -1,4 +1,4 @@
-=== Actions of the a Physical Infra Provider Lenovo
+=== Physical Infrastructure Provider Actions
 
 There are some action in a physical infra provider like as: create, edit, refresh, delete and so on. 
 
