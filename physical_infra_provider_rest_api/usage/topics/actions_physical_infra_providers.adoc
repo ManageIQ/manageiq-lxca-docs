@@ -1,0 +1,58 @@
+=== Actions of the a Physical Infra Provider Lenovo
+
+There are some action in a physical infra provider like as: create, edit, refresh, delete and so on. 
+
+. If you need *create* a new physical infra provider lenovo using the REST api, you must use the steps below:
+
+    .. Create a basic authentication using some tool or library that use wish, and fill the username and password for access the CloudForms api.
+    
+    .. Send a POST to CloudForms address **(ex. localhost:3000/api/providers)** with the following JSON below in the body of the request:
+
+        {
+        "type":"ManageIQ::Providers::Lenovo::PhysicalInfraManager",
+        "name":"<NAME>",
+        "hostname":"<LENOVO XCLARITY ADMINISTRATOR ADDRESS>",
+        "port":"<THE SERVICE PORT>",
+        "credentials":{ "password":"<PASSWORD>","userid":"<USERNAME>" },
+        "action":"create"
+        }
+
+. If you need *edit* a physical infra provider lenovo using the REST api, you must use the steps below:
+
+    .. Create a basic authentication using some tool or library that use wish, and fill the username and password for access the CloudForms api.
+    
+    .. Send a POST to CloudForms address **(ex. localhost:3000/api/providers)** with the following JSON below in the body of the request:
+        
+        {
+        "name":"<NEW NAME>",
+        "hostname":"<NEW LENOVO XCLARITY ADMINISTRATOR ADDRESS>",
+        "port":"<NEW SERVICE PORT>",
+        "credentials":{ "password":"< NEW PASSWORD>","userid":"< NEW USERNAME>" },
+        "action":"edit"
+        }
+
+. If you need *refresh* a physical infra provider lenovo using the REST api, you must use the steps below:
+
+    .. Create a basic authentication using some tool or library that use wish, and fill the username and password for access the CloudForms api.
+    
+    .. Send a POST to CloudForms address **(ex. localhost:3000/api/providers)** with the following JSON below in the body of the request:
+
+        {"action":"refresh"}
+
+. If you need *delete* the physical infra provider lenovo using the REST api, you must use the steps below:
+
+    .. Create a basic authentication using some tool or library that use wish, and fill the username and password for access the CloudForms api.
+    
+    .. Send a POST or DELETE to CloudForms address **(ex. localhost:3000/api/providers)** with the following JSON below in the body of the request:
+
+        {"action":"delete"}
+        
+. If you need execute *some action* for multiples physical infra providers using the Rest API, you must use the steps below:
+
+    .. Create a basic authentication using some tool or library that use wish, and fill the username and password for access the CloudForms API. 
+    
+    .. Send a POST to CloudForms address *(ex. localhost:3000/api/physical_servers)* with the following JSON below in the body of the request:
+    
+        {"action":"<ACTION>",
+         "resources": [{"href":"<PHYSICAL INFRA PROVIDER's HREF>"},{"href":"<PHYSICAL INFRA PROVIDER's HREF>"}]
+        }

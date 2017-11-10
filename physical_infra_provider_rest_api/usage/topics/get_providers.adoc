@@ -1,0 +1,27 @@
+=== Get Providers
+
+. Log in to CloudForms Management Engine API as a user who has permission to access the API. The default user is admin, password smartvm.
+
+. Use the following url structure for access the api **"<CLOUDFORMS ADDRESS>:<PORT>/api/" (ex. localhost:3000/api/)**.
+
+. Use the following request for get all provider’s resource. **(ex. localhost:3000/api/providers)**.
+
+. It’s returned a JSON with the following keys
+    
+    .. name **(URI name)**.
+    .. count **(count of all providers)**.
+    .. subcount **(count of providers returned)**.
+    .. pages **(count of pages)**. 
+    .. resource **(list of URLs of the each provider)**.
+     
+      ... The resource return only the list of URLs for each provider managed by the CloudForms.
+      
+      ... If you wish get all the data information, you need use the following parameters: **?expand=resources (ex. localhost:3000/api/providers?expand=resources)**.
+      
+      ... If you wish get a custom data information, as name and id or an other attribute you need use the following query: **?attributes=id,name (ex. localhost:3000/api/providers?expand=resources&attributes=id,name).**
+      
+      ... If you wish get a custom data information as port, hostname and ipaddress, you must use the following query for add that new attributes: **?attributes=port,hostname,ipaddress (ex. localhost:3000/api/providers?expand=resources&attributes=port,hostname,ipaddress).**
+      
+      ... If you wish get only physical infra providers, you can use the filter attribute on all provider’s resource. Can be used the attribute type and so on **(ex. localhost:3000/api/providers?expand=resources&filter[]=type='ManageIQ::Providers::Lenovo::PhysicalInfraManager')**.
+      
+    .. actions **(List of actions that can be used)**.

@@ -4,3 +4,17 @@ Physical Infrastructure REST API
 ================================
 Lenovo
 v1.0, October 17, 2017
+
+include::usage/topics/index.adoc[]
+
+include::usage/topics/get_providers.adoc[]
+
+include::usage/topics/get_provider_by_id.adoc[]
+
+include::usage/topics/actions_physical_infra_providers.adoc[]
+
+include::usage/topics/get_physical_servers.adoc[]
+
+include::usage/topics/get_physical_server_by_id.adoc[]
+
+include::usage/topics/actions_physical_servers.adoc[]
