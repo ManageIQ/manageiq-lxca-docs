@@ -1,5 +1,9 @@
 ==== Assigning a new Policy Profile
 
+You can assign policy profiles to physical infrastructure providers as shown below.
+
+image:../images/provider_assign_profile.png[]
+
 . Navigate to Compute → Physical Infrastructure → Providers and select **(Providers).**
 
 . Select the provider that you wish assign to the policy profile.
