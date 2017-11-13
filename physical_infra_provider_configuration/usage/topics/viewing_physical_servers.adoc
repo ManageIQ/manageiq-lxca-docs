@@ -4,4 +4,4 @@ To view your physical servers you just have to navigate through the sidebar by t
 
 And the page will look like the following, note that there is some options in the right top to change the way that your servers are listed, try it and see what is the best way for you.
 
-image:../images/physical_servers.png[]
+image:usage/images/physical_servers.png[]

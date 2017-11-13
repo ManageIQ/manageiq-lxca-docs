@@ -2,7 +2,7 @@
 
 The Physical Infrastructure Provider has the ability to highlight the relationship between virtual hosts and physical servers each host leverages. The topology view provides a graphical representation of these relationships, allowing the administrator to easily navigate between connected components. A screenshot of this view is shown below.
 
-image:../images/topology_widget.png[]
+image:usage/images/topology_widget.png[]
 
 . Navigate to *Compute → Physical Infrastructure → Providers.*
 

@@ -2,4 +2,4 @@
 
 You can also perform some power operations to your servers. To do this, you need just to select the servers that you wish to perform such operations and look at the top left in the Power button, click it and see the operations availables: Power On, Power Off and Restart. As we can see in the screenshot below.
 
-image:../images/physical_server_power.png[]
+image:usage/images/physical_server_power.png[]
