@@ -28,4 +28,4 @@ The Physical Infrastructure Provider extends CloudForms management capabilities 
 
 Once added, providers can be viewed by navigating to *Compute → Physical Infrastructure → Providers* as shown below.
 
-image:../images/providers.png[]
+image:usage/images/providers.png[]

@@ -2,7 +2,7 @@
 
 Physical servers can be provisioned using Lenovo XClarity Administrator (LXCA) configuration patterns. Configuration patterns can be thought of as templates that describe the configuration of servers. The Lenovo Physical Infrastructure Provider discovers configuration patterns that are defined on the LXCA instance that is associated with the provider. A pattern can then be applied to a single or multiple physical servers as shown below. _Note:_ Configuration patterns can only be assigned to servers that do not already have a pattern assigned to them.
 
-image:../images/physical_server_provision.png[]
+image:usage/images/physical_server_provision.png[]
 
 ===== Provisioning a Single Server
 
