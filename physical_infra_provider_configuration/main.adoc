@@ -19,17 +19,15 @@ include::configuration/topics/configuration_prerequisites.adoc[]
 
 include::configuration/topics/installing_and_configuring_lxca.adoc[]
 
-include::usage/topics/index.adoc[]
+include::usage/provider/topics/index.adoc[]
 
-include::usage/topics/adding_providers.adoc[]
+include::usage/provider/topics/adding_providers.adoc[]
 
-include::usage/topics/discovering_providers.adoc[]
+include::usage/provider/topics/refreshing_providers.adoc[]
 
-include::usage/topics/refreshing_providers.adoc[]
+include::usage/provider/topics/removing_providers.adoc[]
 
-include::usage/topics/removing_providers.adoc[]
-
-include::usage/topics/editing_providers.adoc[]
+include::usage/provider/topics/editing_providers.adoc[]
 
 include::usage/topics/using_topology_widgets.adoc[]
 

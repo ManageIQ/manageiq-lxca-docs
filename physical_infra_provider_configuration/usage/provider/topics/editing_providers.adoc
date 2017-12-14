@@ -1,0 +1,14 @@
+=== Editing a physical-infrastructure provider
+You can modify system settings for a physical-infrastructure provider by completing the following steps.
+
+. Navigate to *Compute > Physical Infrastructure > Providers*.
+
+. Select the physical-infrastructure provider to be modified.
+
+. Click the *Configuration* button in the menu.
+
+. Click *Edit selected infrastructure providers*.
+
+. Make the required changes, and revalidate credentials if necessary.
+
+. Click *Save*. A flash message is displayed, confirming your changes were performed successfully.
