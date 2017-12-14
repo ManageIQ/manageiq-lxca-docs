@@ -1,0 +1,12 @@
+=== Viewing virtual-host relationships
+You can view a list of all virtual hosts that are associated with physical servers that are managed by a specific physical-infrastructure provider.
+
+. Navigate to *Compute > Physical Infrastructure > Providers*.
+
+. Select the physical-infrastructure provider to be viewed.
+
+. Click *Physical Servers with Host* button in the *Relationships* section.
+
+You should see a list of physical servers that are associated with hosts as shown below.
+
+image:usage/relationship/images/host_relationships.png[]
