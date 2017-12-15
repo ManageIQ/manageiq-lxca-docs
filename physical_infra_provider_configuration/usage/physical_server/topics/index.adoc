@@ -1,0 +1,3 @@
+== Managing physical servers
+
+After the Lenovo physical-infrastructure provider is added, the servers that are managed by Lenovo XClarity Administrator are registered in CloudForms. You can then view and manage those servers.

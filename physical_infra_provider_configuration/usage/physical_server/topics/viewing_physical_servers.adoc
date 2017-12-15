@@ -1,0 +1,8 @@
+=== Viewing a Physical Server
+
+To view a list of all physical servers that are managed by all physical-infrastructure providers, navigate to *Compute > Physical Infrastructure > Servers*. The Physical Servers page is displayed (see the following figure).
+
+*Tip:* You can sort the table columns to make it easier to find specific servers. In addition, you can choose the types of servers to display by selecting server types from the *Filters* drop-down list or entering text (such as a name or IP address) in the *Search* field.
+
+
+image:usage/physical_server/images/physical_servers.png[]

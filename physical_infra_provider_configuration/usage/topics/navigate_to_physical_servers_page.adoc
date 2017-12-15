@@ -1,1 +1,0 @@
-. Navigate to *Compute -> Physical Infrastructure -> Servers*. The *Physical Servers* page should load.

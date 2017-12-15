@@ -1,0 +1,29 @@
+=== Provisioning physical servers using configuration patterns
+
+You can use configuration patterns in Lenovo XClarity Administrator to quickly provision or preprovision multiple servers from a single set of defined configuration settings. Configuration patterns act as templates for configuring logical storage, I/O adapters, boot order, and other baseboard management controller and Unified Extensible Firmware Interface (UEFI) settings.
+
+A physical-infrastructure provider can discover configuration patterns that are defined on the associated Lenovo XClarity Administrator instance. A configuration pattern can then be applied to a single or multiple physical servers.
+
+*Note*: Configuration patterns can be assigned only to physical servers that do not have a pattern assigned to them.
+
+image:usage/physical_server/images/physical_server_provision.png[]
+
+You can deploy a configuration pattern to one or more physical server by completing the following steps.
+
+. Navigate to *Compute > Physical Infrastructure > Servers* to display the Physical Servers page.
+
+. Click a server (to display the server details page) or select multiple servers that you want to provision.
+
+. Click *Lifecycle > Provision Physical Server* from the top menu to display the Add Physical Server page.
+
+. On the *Request* tab, enter an email address into the *E-Mail* field.
+
+. On the *Catalog* tab, select the configuration pattern that you want to deploy from the *Configuration Pattern* drop-down menu, and then click *Submit*. The Requests page is displayed.
+
+. Click the request that was created to deploy the configuration pattern from the *Requests* table. The Apply Configuration Pattern page is displayed.
+
+. Click the check mark button.
+
+. Enter the reason for performing this action in the *Reason* field.
+
+. Click *Submit* to deploy the configuration pattern to the specified server. You can monitor the status of the action in the *Requests* table.
