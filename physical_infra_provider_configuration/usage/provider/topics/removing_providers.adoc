@@ -1,0 +1,11 @@
+=== Removing a physical-infrastructure provider
+
+You can delete a physical-infrastructure provider by completing the following steps.
+
+. Navigate to *Compute > Physical Infrastructure > Providers*.
+
+. Select the physical-infrastructure provider to be removed.
+
+. Click *Configuration*, then click *Remove Infrastructure Providers from Inventory*.
+
+. Click *OK*.

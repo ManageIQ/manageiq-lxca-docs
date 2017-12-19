@@ -1,0 +1,11 @@
+=== Refreshing physical-infrastructure providers
+
+CloudForms regularly polls the physical-infrastructure providers to retrieve the latest data, including managed devices, relationships, and power states. You can manually retrieve the latest data by completing the following steps.
+
+. Navigate to *Compute > Physical Infrastructure > Providers*.
+
+. Select a  physical-infrastructure provider to be refreshed.
+
+. Click *Configuration*, then click *Refresh Relationships and Power States*.
+
+. Click *OK*.
