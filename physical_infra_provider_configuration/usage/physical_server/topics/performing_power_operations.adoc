@@ -1,0 +1,26 @@
+=== Powering on and off a physical server
+
+You can perform power operations on the physical servers by completing the following steps.
+
+. Navigate to *Compute > Physical Infrastructure > Servers*.
+
+. Select the physical server.
+ 
+. Click *Power* from the top menu, and then click one of the following power actions:
+
+* *Power on* - Powers on the server.
+
+* *Power off* - Shuts down the operating system and powers off the server.
+
+* *Power off immediately* - Powers off the server.
+
+* *Restart* - Shuts down the operating system and restarts the server.
+
+* *Restart immediately* - Restarts the server.
+
+* *Restart to System Setup* - Restarts the server to BIOS/UEFI (F1) Setup. 
+
+* *Restart Management Controller* - Restarts the baseboard management controller in the sever. 
+
+
+image:usage/physical_server/images/physical_server_power.png[]

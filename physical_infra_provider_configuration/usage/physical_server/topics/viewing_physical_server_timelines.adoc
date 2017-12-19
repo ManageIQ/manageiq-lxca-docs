@@ -1,0 +1,17 @@
+=== Viewing the timeline for a physical server
+
+A _timeline_ is a tool that enables you to track the state of a physical server over a period of time. This includes power activity, device additions and removals, and firmware changes. The timeline is useful to identify critical failures, identify behavior patterns, audit user actions, and troubleshoot problems.
+
+*Note:* Timelines are available only for physical servers that have associated events.
+
+To view the timeline with events for a specific physical server, complete the following steps
+
+. Navigate to *Compute > Physical Infrastructure > Servers*.
+
+. Select the physical server that has events.
+
+. Click the *Monitoring > Timelines* from the top menu.
+
+. Select the event types and the period in the options filter. Filters can be used to focus attention on specific messages of interest in a specific time interval.
+
+. Click *Apply*. The timeline is displayed with events that match the specified filters. You can click an event to view the event details.

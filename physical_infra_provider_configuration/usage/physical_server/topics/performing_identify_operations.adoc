@@ -1,0 +1,11 @@
+=== Locating a physical server
+
+You can change the Location LED state on a physical server to locate the sever in the data center.
+
+. Navigate to *Compute > Physical Infrastructure > Servers*.
+
+. Select the physical server.
+
+. Click *Identify* from the top menu, and then click the appropriate action: *Blink LED*, *Turn On LED*, or *Turn Off LED*.
+
+image:usage/physical_server/images/physical_server_identify_led.png[]

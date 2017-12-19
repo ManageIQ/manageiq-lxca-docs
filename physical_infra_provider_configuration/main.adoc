@@ -37,17 +37,17 @@ include::usage/relationship/topics/viewing_server_relationships.adoc[]
 
 include::usage/relationship/topics/viewing_host_relationships.adoc[]
 
-include::usage/topics/managing_physical_servers.adoc[]
+include::usage/physical_server/topics/index.adoc[]
 
-include::usage/topics/viewing_physical_servers.adoc[]
+include::usage/physical_server/topics/viewing_physical_servers.adoc[]
 
-include::usage/topics/viewing_physical_server_timelines.adoc[]
+include::usage/physical_server/topics/viewing_physical_server_timelines.adoc[]
 
-include::usage/topics/performing_power_operations.adoc[]
+include::usage/physical_server/topics/performing_power_operations.adoc[]
 
-include::usage/topics/performing_identify_operations.adoc[]
+include::usage/physical_server/topics/performing_identify_operations.adoc[]
 
-include::usage/topics/provisioning_physical_servers.adoc[]
+include::usage/physical_server/topics/provisioning_physical_servers.adoc[]
 
 include::troubleshooting/topics/index.adoc[]
 
