@@ -29,11 +29,13 @@ include::usage/provider/topics/removing_providers.adoc[]
 
 include::usage/provider/topics/editing_providers.adoc[]
 
-include::usage/topics/using_topology_widgets.adoc[]
+include::usage/relationship/topics/index.adoc[]
 
-include::usage/topics/viewing_server_relationships.adoc[]
+include::usage/relationship/topics/viewing_server_host_relationships.adoc[]
 
-include::usage/topics/viewing_host_relationships.adoc[]
+include::usage/relationship/topics/viewing_server_relationships.adoc[]
+
+include::usage/relationship/topics/viewing_host_relationships.adoc[]
 
 include::usage/topics/managing_physical_servers.adoc[]
 

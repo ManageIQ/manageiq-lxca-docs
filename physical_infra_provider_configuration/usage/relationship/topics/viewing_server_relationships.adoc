@@ -1,0 +1,9 @@
+=== Viewing server relationships
+
+You can view a list of all physical servers that are managed by a specific physical-infrastructure provider. 
+
+. Navigate to *Compute > Physical Infrastructure > Providers*.
+
+. Select the physical-infrastructure provider to be viewed.
+
+. Click *Physical Servers* in the *Relationships* section.
