@@ -1,6 +1,6 @@
 == Overview
 
-Lenovo® Physical Infrastructure Provider provides IT administrators the ability to integrate the management features of Lenovo XClarity Administrator with the hybrid-cloud management capabilities of Red Hat CloudForms. Lenovo expands the physical-infrastructure management for on-premise cloud configurations by leveraging Lenovo hardware management. It provides the configuration, monitoring, event management, and power monitoring needed to reduce cost and complexity through server consolidation and simplified management.
+The Lenovo® Physical Infrastructure Provider provides IT administrators the ability to integrate the management features of Lenovo XClarity Administrator with the hybrid-cloud management capabilities of Red Hat CloudForms. Lenovo expands the physical-infrastructure management for on-premise cloud configurations by leveraging Lenovo hardware management. It provides the configuration, monitoring, event management, and power monitoring needed to reduce cost and complexity through server consolidation and simplified management.
 
 Key features include:
 
