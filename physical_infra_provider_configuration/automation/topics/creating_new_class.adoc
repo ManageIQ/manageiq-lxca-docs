@@ -1,9 +1,0 @@
-==== Creating a new Class
-
-. Select the new namespace created **(Functions)**.
-
-. Click **(Configuration)**, then click *(Add a New Class)*.
-
-. Fill the name with *(Methods)*.
-
-. Click **Add**.
