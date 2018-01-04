@@ -54,3 +54,5 @@ include::troubleshooting/topics/index.adoc[]
 include::automation/topics/index.adoc[]
 
 include::automation/topics/creating_automated_tasks.adoc[]
+
+include::automation/topics/invoking_automated_tasks.adoc[]

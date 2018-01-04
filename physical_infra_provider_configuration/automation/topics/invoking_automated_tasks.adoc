@@ -1,0 +1,53 @@
+=== Invoking an automated task when an event occurs
+
+To automatically invoke the task when a certain event occurs, you must create, configure and assign a custom policy.
+
+As an example, the following steps describe how to perform a specific automated task when CloudForms receives certain events (that you define).
+
+*Note:* You must be logged in to CloudForms as a user with permission to create policies. The default user is admin, password smartvm.
+
+===== Step 1. Create and configure a policy.
+
+. Navigate to *Control > Explorer*.
+. Click *Policies > All Policies > Control Policies > Physical Infrastructure Control Policies*. 
+. Click *Configuration > Add a new Physical Server Control Policy* from the top menu.
+. Enter a description (for example, Lenovo_Policy).
+. Click *Add*.
+
+===== Step 2. Create a custom action.
+. Create a custom action.
+.. Navigation to *Action > All Actions*.
+.. Click *Configuration > Add a new action* from the top menu.
+.. Enter a description (for example, Power_Off_Server).
+.. Enter a message with (for example, create).
+.. Specify the following attributes in the order give: 
+* Specify the *Namespace* attribute, and set the value to the new namespace (for example, Functions).
+* Specify the *Class* attribute, and set the value to the class (for example, Power_actions).
+* Specify the *Instance* attribute, and set the value to the instance (for example, Physical_Server_PowerOff).
+.. Click *Add*.
+. Configure the policy that you created.
+.. Select the new policy (for example, Lenovo_Policy).
+.. Click *Configuration > Edit this policy’s Event assignments* from the top menu.
+.. Find Physical Server operation, and select the *Physical Server Shutdown* option.
+.. Click *Save*.
+.. Select the new policy event.
+.. Click *Configuration > Edit Actions for this policy Event* from the top menu.
+.. From the *Order of Actions if All Conditions are True* field, select the custom action that you created in the previous step (for example, Power_Off_Server).
+.. Click *Save*.
+
+===== Step 3. Create and assign a policy profile.
+
+. Create a policy profile.
+.. Click *Policy Profiles > All Policy Profiles*.
+.. Click *Configuration > Add a new Policy Profile* from the top menu.
+.. Enter a description for the policy (for example, Lenovo_Policy_Profile).
+.. Select your domain and drag it to the right.
+.. Click *Add*.
+. Assign the policy profile to the Lenovo physical-infrastructure providers:
+.. Navigate to *Compute > Physical Infrastructure > Providers*.
+.. Select the physical-infrastructure providers to which you want to assign the policy profile.
+.. Click *Policy > Manage Policies* form the top menu.
+.. Select the policy profile that you just created (for example, Lenovo_Policy_Profile).
+.. Click *Save*.
+
+image:automation/images/provider_assign_profile.png[]
