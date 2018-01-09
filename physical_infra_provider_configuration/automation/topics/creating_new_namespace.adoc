@@ -1,9 +1,0 @@
-==== Creating a new Namespace
-
-. Select the new domain created.
-
-. Click **(Configuration)**, then click **(Add a New Namespace)**.
-
-. Fill the name with **(Functions)**.
-
-. Click **Add**.

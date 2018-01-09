@@ -1,9 +1,0 @@
-==== Copy the LenovoXclarity class to the domain created
-
-. Select ManageIQ domain and drill down ManageIQ → System → Event → EmsEvent → LenovoXclarity and select **(LenovoXclarity)**.
-
-. Click **(Configuration)**, then click **(Copy this Class)**.
-
-. Verify the copied path.
-
-. Click **Copy**.

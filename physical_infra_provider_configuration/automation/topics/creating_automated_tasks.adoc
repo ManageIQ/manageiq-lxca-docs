@@ -1,0 +1,124 @@
+=== Creating an automated task
+
+To create an automated task, you must first create and configure a custom domain.
+
+A _domain_ is a collection of tasks that can be automated. The tasks are run in a sequence that is defined by the domain priority. A task in a domain with a higher priority overrides the same task in a lower-priority domain. In this way, CloudForms provides core domains and allows you to override automated tasks using your own custom domains.
+
+Each domain contains a set of namespaces. A _namespace_ is a container that organizes and categorizes tasks. A namespace can contain child namespaces as well as classes.
+
+A _class_ is a template for a specific task. A class uses a schema to populate a class instance with default values. A class instance can contain attributes, calls to methods, and relationships.
+
+The _methods_ define the task that you want to perform. It uses Ruby code to run the various operations.
+
+As an example, the following steps describe how to create an automated task for performing a power action (such as powering on, power off, or restarting the server) on the first physical server known to the Lenovo physical-infrastructure provider.
+
+*Note:* You must be logged in to CloudForms as a user with permission to create domains. The default user is admin, password smartvm.
+
+===== Step 1. Create a custom domain.
+
+. Navigate to *Automation > Automate > Explorer*.
+. Click *Configuration > Add a New Domain* from the top menu.
+. Enter a domain name (for example, Lenovo).
+. Select *Enable* to enable the domain.
+. Click *Add*.
+
+===== Step 2. Add the LenovoXclarity and Event Handler class to the custom domain.
+
+. Copy the LenovoXclarity class to the custom domain.
+.. Select the *ManageIQ* core domain.
+.. Navigate to *ManageIQ > System > Event > EmsEvent > LenovoXclarity*.
+.. Click *Configuration > Copy this Class* from the top menu.
+.. Select the custom domain from the *To Domain* drop-down menu.
+.. Click *Copy*.
+. Copy the Event Handler class to the custom domain.
+.. Select the *ManageIQ* core domain.
+.. Navigate to *ManageIQ > System > Event Handlers*.
+.. Select the instance that you wish (for example, event_action_policy).
+.. Click *Configuration > Copy this Instance* from the top menu.
+.. Select the custom domain from the *To Domain* drop-down menu.
+.. Click *Copy*.
+.. Select the *event_action_policy* method.
+.. Click the *Configuration* icon, and then click the *Copy this method* icon.
+.. Click *Copy*.
+. Create a new instance of the LenovoXclarity class.
+.. Select the *ManageIQ* core domain.
+.. Navigation to name of the custom domain (for example, Lenovo), and click *System > Event > EmsEvent >LenovoXclarity*.
+.. Click *Configuration > Add a new Instance* from the top menu.
+.. Enter a name for the new class instance (for example, FQXHMTS0003G, which is the event that is generated when inventory data cannot be retrieved from a device).
++
+*Important:* The class-instance name must be the same as the name of the event that triggers the task to be invoked. CloudForms matches the class instance with the event by this name. To find the event name, see http://sysmgt.lenovofiles.com/help/topic/com.lenovo.lxca.doc/messages.html?cp=1_22_16[Messages] in the Lenovo XClarity Administrator online documentation.
+.. Add the path to the event handlers copied in the field’s *rel3*.
+
++
+There are three available policy operations:
+
+* Physical Server Reset
+* Physical Server Start
+* Physical Server Shutdown
+
++
+There are three available policy events:
+
+* physical_server_reset
+* physical_server_start
+* physical_server_shutdown
+
++
+The policy actions and the policy events must match.
+For example, use the follow path to the policy operation *Physical Server Shutdown*:
+
++
+----
+/System/event_handlers/event_action_policy? target=physical_server&policy_event=physical_server_shutdown&param=
+The policy_event value is matched with the policy operation applied.
+----
+
++
+.. Click *Add*.
+
+===== Step 3. Create a namespace.
+
+. Select the custom domain (*Lenovo*) .
+. Click *Configuration > Add a New Namespace* from the top menu.
+. Enter a unique name for the namespace (for example, Functions).
+. Click *Add*.
+
+===== Step 4. Create a class.
+
+. Select the namespace that you created in the previous step (for example, Functions).
+. Click *Configuration > Add a New Class* from the top menu.
+. Enter a unique name for the class (for example, Power_actions).
+. Click *Add*.
+
+===== Step 5. Create a method for the class.
+
+. Create a method.
+.. Select the class that you created (for example, Power_actions).
+.. Click the *Methods* tab.
+.. Click *Configuration > Add a new method* from the top menu.
+.. Enter a name for the method (for example, power_off).
+.. Select “inline” for the location. 
+.. Enter the following script in the *Data* field:
++
+----
+server = $evm.vmdb('PhysicalServer').first $evm.log(:info, "Powering Server #{server.name} OFF") 
+server.power_off exit MIQ_OK
+----
+.. Click *Validate* to verify the syntax.
+.. Click *Add*.
+. Add a schema to the class.
+.. Select the class that you created (for example, Power_actions).
+.. Select the *Schema* tab.
+.. Click *Configuration > Edit selected Schema* from the top menu.
+.. Click the *+* icon to add a field to the schema.
+.. Enter *“execute”* for the name.
+.. Select *“Power_actions”* for the type.
+.. Select *“String”* for the data type.
+.. Click the check mark icon.
+.. Click *Save*.
+. Add the method to the class.
+.. Select the *Instances* tab.
+.. Click *Configuration > Add new Instance* from the top menu.
+.. Enter the name of the instance that you created earlier (for example, Physical_Server_PowerOff).
+.. Enter the name of the method that you created earlier (for example, power_off).
+.. Click *Save*.
