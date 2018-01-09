@@ -1,23 +1,17 @@
 :numbered:
 
-Configuring the Physical Infrastructure Provider
-================================================
+Configuring the Lenovo Physical Infrastructure Provider for Red Hat CloudForms
+==============================================================================
 Lenovo Documentation <icfeedback@lenovo.com>
 v1.0, October 17, 2017
 
 include::overview/topics/index.adoc[]
 
-include::overview/topics/lxca_overview.adoc[]
-
-include::overview/topics/architecture_overview.adoc[]
-
-include::overview/topics/configuration_overview.adoc[]
-
 include::configuration/topics/index.adoc[]
 
-include::configuration/topics/configuration_prerequisites.adoc[]
+include::configuration/topics/setting_up_lxca.adoc[]
 
-include::configuration/topics/installing_and_configuring_lxca.adoc[]
+include::configuration/topics/managing_hardware_with_lxca.adoc[]
 
 include::usage/provider/topics/index.adoc[]
 

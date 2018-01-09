@@ -1,1 +1,3 @@
-== Configuring the Physical Infrastructure Provider
+== Configuring Lenovo XClarity Administrator
+
+Lenovo XClarity Administrator virtual appliances are connected to CloudForms by adding physical-infrastructure providers. Physical-infrastructure providers enable you to manage and interact with devices that are managed by Lenovo XClarity Administrator. After the physical-infrastructure provider is added, the servers that are managed by the Lenovo XClarity Administrator are registered in CloudForms. Managed devices can be monitored, configured, and updated using Lenovo XClarity Administrator. The physical-infrastructure provider surfaces information about these managed devices and the Lenovo XClarity Administrator instance.
