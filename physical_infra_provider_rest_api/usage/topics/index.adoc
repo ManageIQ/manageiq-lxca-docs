@@ -1,6 +1,6 @@
 == REST API
 
-You can use REST API to retrieve information about providers, physical-infrastructure providers, and physical servers. You can use the CloudForms REST API if you need information about the servers in your physical infrastructure.
+You can use the REST API to retrieve information about providers, physical-infrastructure providers, and physical servers. You can use the CloudForms REST API if you need information about the servers in your physical infrastructure.
 
 *Before you begin*
 
