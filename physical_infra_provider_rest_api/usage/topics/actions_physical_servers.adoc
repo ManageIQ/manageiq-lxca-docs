@@ -1,61 +1,102 @@
-=== Physical Server Actions
+=== Performing physical server actions
 
-There are some action in a physical server like as: power_on, power_off, power_off_now, restart, restart_now, blink_loc_led and so on.
+You can use the REST API to perform management tasks on a physical server, such as powering on an off, restarting, and changing the location-LED state.
 
-. If you need *power on* a physical server using the REST API, you must use the steps below:
-    
-    .. Create a basic authentication using some tool or library that use wish, and fill the username and password for access the CloudForms API. 
-    
-    .. Send a POST to CloudForms address *(ex. localhost:3000/api/physical_servers/<ID NUMBER>)* with the following JSON below in the body of the request:
-    
-        {"action":"power_on"}
+*Note:* To perform actions on physical servers, you must create a basic authentication using your preferred tool or library, and enter your user name and password to access the CloudForms REST API.
 
-. If you need *power off* a physical server using the REST API, you must use the steps below:
- 
-    .. Create a basic authentication using some tool or library that use wish, and fill the username and password for access the CloudForms api. 
-    
-    .. Send a POST to CloudForms address *(ex. localhost:3000/api/physical_servers/<ID NUMBER>)* with the following JSON below in the body of the request:
-        
-        {"action":"power_off"}
+===== Powering on a physical server
+To power on a specific physical server, send a POST request using the following request URL and JSON request body.
+----------------------------------------------------------------
+POST <CloudForms_address>:<port>/api/physical_servers<server_ID>
+----------------------------------------------------------------
 
-. If you need *power off now* a physical server using the REST API, you must use the steps below:
+Request body:
+----------------------
+{
+   "action":"power_on"
+}
+----------------------
 
-    .. Create a basic authentication using some tool or library that use wish, and fill the username and password for access the CloudForms API. 
-    
-    .. Send a POST to CloudForms address *(ex. localhost:3000/api/physical_servers/<ID NUMBER>)* with the following JSON below in the body of the request:
+===== Powering off a physical server
+To shut down the operating system and power off a specific physical server, send a POST request using the following request URL and JSON request body.
+----------------------------------------------------------------
+POST <CloudForms_address>:<port>/api/physical_servers<server_ID>
+----------------------------------------------------------------
 
-        {"action":"power_of_now"}
+Request body:
+-----------------------
+{
+   "action":"power_off"
+}
+-----------------------
 
-. If you need *restart* a physical server using the REST API, you must use the steps below:
+===== Immediately powering off a physical server
+To immediately power off a specific physical server, send a POST request using the following request URL and JSON request body.
+----------------------------------------------------------------
+POST <CloudForms_address>:<port>/api/physical_servers<server_ID>
+----------------------------------------------------------------
 
-    .. Create a basic authentication using some tool or library that use wish, and fill the username and password for access the CloudForms API. 
-    
-    .. Send a POST to CloudForms address *(ex. localhost:3000/api/physical_servers/<ID NUMBER>)* with the following JSON below in the body of the request:   
+Request body:
+---------------------------
+{
+   "action":"power_off_now"
+}
+---------------------------
 
-        {"action":"restart"}
+===== Restarting a physical server 
+To shut down the operating system and restart a specific physical server, send a POST request using the following request URL and JSON request body.
+----------------------------------------------------------------
+POST <CloudForms_address>:<port>/api/physical_servers<server_ID>
+----------------------------------------------------------------
 
-. If you need *restart now* a physical server using the REST API, you must use the steps below:
+Request body:
+---------------------
+{
+   "action":"restart"
+}
+---------------------
 
-    .. Create a basic authentication using some tool or library that use wish, and fill the username and password for access the CloudForms API. 
-    
-    .. Send a POST to CloudForms address *(ex. localhost:3000/api/physical_servers/<ID NUMBER>)* with the following JSON below in the body of the request:
+===== Immediately restarting a physical server 
+To immediately restart a specific physical server, send a POST request using the following request URL and JSON request body.
+----------------------------------------------------------------
+POST <CloudForms_address>:<port>/api/physical_servers<server_ID>
+----------------------------------------------------------------
 
-        {"action":"restart_now"}
+Request body:
+-------------------------
+{
+   "action":"restart_now"
+}
+-------------------------
 
-. If you need *blink loc led* a physical server using the REST API, you must use the steps below:
+===== Changing the location LED state on a physical server to blinking
+To change the location-LED state to blinking on a specific server, send a POST request using the following request URL and JSON request body.
+----------------------------------------------------------------
+POST <CloudForms_address>:<port>/api/physical_servers<server_ID>
+----------------------------------------------------------------
 
-    .. Create a basic authentication using some tool or library that use wish, and fill the username and password for access the CloudForms API. 
-    
-    .. Send a POST to CloudForms address *(ex. localhost:3000/api/physical_servers/<ID NUMBER>)* with the following JSON below in the body of the request:
-    
-        {"action":"blink_loc_led"}
+Request body:
+--------------------------
+{
+   "action":"blink_loc_led"
+}
+--------------------------
 
-. If you need execute *some action* for multiples physical servers using the Rest API, you must use the steps below:
+===== Performing an action on multiple physical servers 
+To perform an action on more than one physical severs, send a POST request using the following request URL and JSON request body.
+-----------------------------------------------------
+POST <CloudForms_address>:<port>/api/physical_servers
+-----------------------------------------------------
 
-    .. Create a basic authentication using some tool or library that use wish, and fill the username and password for access the CloudForms API. 
-    
-    .. Send a POST to CloudForms address *(ex. localhost:3000/api/physical_servers)* with the following JSON below in the body of the request:
-    
-        {"action":"<ACTION>",
-         "resources": [{"href":"<PHYSICAL SERVER's HREF>"},{"href":"<PHYSICAL SERVER's HREF>"}]
-        }
+Request body:
+-----------------------------
+{
+   "action":"<action>",
+   "resources": [{
+      "href":"<server_ID>"
+   }, 
+   {
+      "href":"<server_ID>"
+   }]
+}
+-----------------------------

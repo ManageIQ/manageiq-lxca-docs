@@ -1,3 +1,17 @@
 == REST API
 
-The REST API can be used for retrieving information about providers, physical infrastructure providers, and physical servers. You can use the CloudForms REST API if you need information about the servers in your physical infrastructure.
+You can use REST API to retrieve information about providers, physical-infrastructure providers, and physical servers. You can use the CloudForms REST API if you need information about the servers in your physical infrastructure.
+
+*Before you begin*
+
+To use the REST API, you must log in to CloudForms Management Engine API as a user who has permission to access the API. The default user is admin, password smartvm.
+
+Use the following URL to access the CloudForms REST API:
+-------------------------------
+<CloudForms_address>:<port>/api
+-------------------------------
+
+For example:
+-------------------
+localhost:3000/api
+-------------------

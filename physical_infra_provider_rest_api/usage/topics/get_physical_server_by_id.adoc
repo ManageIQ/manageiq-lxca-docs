@@ -1,37 +1,44 @@
 === Retrieving Physical Server Details by ID
 
-.  Log in to CloudForms Management Engine API as a user who has permission to access the API. The default user is admin, password smartvm.
+To retrieve information for a specific physical server, use the following request URL:
+----------------------------------------------------------------
+GET <CloudForms_address>:<port>/api/physical_servers/<server_ID>
+----------------------------------------------------------------
 
-.  Use the following url structure for access the api **"<CLOUDFORMS ADDRESS>:<PORT>/api/" (ex. localhost:3000/api/)**.
-
-.  Use the following request for get a physical server by ID. **(ex. localhost:3000/api/physical_servers/<ID NUMBER>)**.
-
-.  It returns JSON with the following keys:
----------------------------
-href
+A JSON response with the following keys is returned.
+----------------------
+actions
+created_at
 ems_id
+ems_ref
+field_replaceable_unit
+health_state
+hostname
+href
+location_led_state
+machine_type
+manufacturer
+model
 name
+power_state
+product_name
+serial_number
 type
 uid_ems
-ems_ref
-created_at
 updated_at
-health_state
-power_state
-hostname
-product_name
-manufacturer
-machine_type
-model
-serial_number
-field_replaceable_unit
 vendor
-location_led_state
-actions
----------------------------
+----------------------
 
-Notes:
+*Examples*
 
-* If you wish get a custom data information, as *name* and *id* or an other attribute you need use the following query: **?attributes=id,name (ex. localhost:3000/api/physical_servers/<ID NUMBER>?attributes=id,name)**.
-
-* If you wish get a custom data information you can add custom attributes like as: firmwares, networks, guest_devices, assets_details and so on **(ex. localhost:3000/api/physical_servers/<ID NUMBER>?expand=resources&attributes=hardware.firmwares,hardware.networks,hardware.guest_devices,asset_details)**.
+* To retrieve a specific information about a specific physical server (such as name and ID), use the *?expand=resources&attributes=<attribute_list>* query parameters, for example:
++
+---------------------------------------------------------------------------------------
+GET localhost:3000/api/physical_servers/<server_ID>?expand=resources&attributes=id,name
+---------------------------------------------------------------------------------------
+* To retrieve a specific information about a specific physical server (such as firmware, networks, guest devices, and asset details), use the *?expand=resources&attributes=<attribute_list>* query parameters, for example:
++
+-----------------------------------------------------------------------------------------------
+ GET localhost:3000/api/physical_servers/<server_ID>?expand=resources
+&attributes=hardware.firmwares,hardware.networks,hardware.guest_devices,hardware.assets_details
+-----------------------------------------------------------------------------------------------
