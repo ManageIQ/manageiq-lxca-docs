@@ -1,7 +1,7 @@
 :numbered:
 
-Physical Infrastructure Provider REST API
-==========================================
+Lenovo Physical Infrastructure Provider REST API
+================================================
 Lenovo Documentation <icfeedback@lenovo.com>
 v1.0, October 17, 2017
 

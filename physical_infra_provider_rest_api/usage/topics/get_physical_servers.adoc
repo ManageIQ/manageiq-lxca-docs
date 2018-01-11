@@ -1,28 +1,40 @@
 === Retrieving Physical Server Details
 
-. Log in to CloudForms Management Engine API as a user who has permission to access the API. The default user is admin, password smartvm.
+To retrieve information for all physical servers, use the following request URL:
+-----------------------------------------------------
+GET <CloudForms_address>:<port>/api/physical_servers
+-----------------------------------------------------
 
-. Use the following url structure for access the api **"<CLOUDFORMS ADDRESS>:<PORT>/api/" (ex. localhost:3000/api/)**.
-
-. Use the following request for get all physical servers. **(ex. localhost:3000/api/physical_servers)**.
-
-. It returns JSON with the following keys:
--------------------------------------------------------
-name (URI name)
-count (count of the physical servers)
-subcount (count of the physical servers returned)
-pages (count of pages)
-resource (list of URLs of the each physical servers)
+A JSON response with the following keys is returned.
+------------------------------------------------------
 actions (list of actions that can be used)
--------------------------------------------------------
-Notes:
+count (count of the physical servers)
+name (URI name)
+pages (count of pages)
+resource (list of URLs of the each physical servers) 
+subcount (count of the physical servers returned) 
+------------------------------------------------------
 
-* The resource return only the list of URLs for all physical servers managed by the CloudForms.
-        
-* If you wish get all the data information, you need use the following parameters: **?expand=resources (ex. localhost:3000/api/physical_servers?expand=resources)**.
-        
-* If you wish get a custom data information, as name and id or an other attribute you need use the following query: ?attributes=id,name **(ex. localhost:3000/api/physical_servers?expand=resources&attributes=id,name)**.
-        
-* If you wish get a specific physical server, you can use the filter attribute on all physical servers’ resource. Can be used the attribute name and so on **(ex. localhost:3000/api/physical_servers?expand=resources&filter[]=name='Demo - 20127X5462')**.
-        
-* If you wish get a custom data information you can add custom attributes like as: firmwares, networks, guest_devices, assets_details and so on **(ex. localhost:3000/api/physical_servers?expand=resources&attributes=hardware.firmwares,hardware.networks,hardware.guest_devices,asset_details)**.
+*Examples*
+
+* To retrieve all information about the physical servers, use the *?expand=resources* query parameter, for example:
++
+--------------------------------------------------------
+GET localhost:3000/api/physical_servers?expand=resources
+--------------------------------------------------------
+* To retrieve a specific information about the physical servers (such as name and ID), use the *?expand=resources&attributes=<attribute_list>* query parameters, for example:
++
+---------------------------------------------------------------------------
+GET localhost:3000/api/physical_servers?expand=resources&attributes=id,name
+---------------------------------------------------------------------------
+* To retrieve specific information about the physical servers (such as firmware, networks, guest devices, and asset details), use the *?expand=resources&attributes=<attribute_list>* query parameters, for example: 
++
+-----------------------------------------------------------------------------------
+GET localhost:3000/api/physical_servers?expand=resources&attributes= hardware.firmwares,hardware.networks,hardware.guest_devices,hardware.assets_details
+-----------------------------------------------------------------------------------
+
+* To retrieve information about only a specific physical server, use the *?expand=resources&filter[]=name=<server_name>* query attributes on all physical-server resources, for example:
++
+------------------------------------------------------------------------------------------
+GET localhost:3000/api/physical_servers?expand=resources&filter[]=name=Server1-20127X5462
+------------------------------------------------------------------------------------------

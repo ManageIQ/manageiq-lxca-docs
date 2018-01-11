@@ -1,58 +1,105 @@
-=== Physical Infrastructure Provider Actions
+=== Performing physical-infrastructure provider actions
 
-There are some action in a physical infra provider like as: create, edit, refresh, delete and so on. 
+You can use the REST API to perform actions on a physical-infrastructure provider, such as creating, modifying and deleting.
 
-. If you need *create* a new physical infra provider lenovo using the REST api, you must use the steps below:
+*Note:* To perform actions on physical-infrastructure providers, you must create a basic authentication using your preferred tool or library, and enter your user name and password to access the CloudForms REST API.
 
-    .. Create a basic authentication using some tool or library that use wish, and fill the username and password for access the CloudForms api.
-    
-    .. Send a POST to CloudForms address **(ex. localhost:3000/api/providers)** with the following JSON below in the body of the request:
+===== Creating a Lenovo physical-infrastructure provider
 
-        {
-        "type":"ManageIQ::Providers::Lenovo::PhysicalInfraManager",
-        "name":"<NAME>",
-        "hostname":"<LENOVO XCLARITY ADMINISTRATOR ADDRESS>",
-        "port":"<THE SERVICE PORT>",
-        "credentials":{ "password":"<PASSWORD>","userid":"<USERNAME>" },
-        "action":"create"
-        }
+To create Lenovo physical-infrastructure provider, a POST request using the following request URL and JSON request body.
+----------------------------------------------
+POST <CloudForms_address>:<port>/api/providers
+----------------------------------------------
 
-. If you need *edit* a physical infra provider lenovo using the REST api, you must use the steps below:
+Request body:
+--------------------------------------------------------------
+{
+   "action": "create",  
+   "credentials": {
+      "password": "<PASSWORD>",
+      "userid": "<USERNAME>" 
+   }, 
+   "hostname": "<LENOVO XCLARITY ADMINISTRATOR ADDRESS>",
+   "name": "<NAME>", 
+   "port": "<THE SERVICE PORT>", 
+   "type": "ManageIQ::Providers::Lenovo::PhysicalInfraManager"
+}
+--------------------------------------------------------------
 
-    .. Create a basic authentication using some tool or library that use wish, and fill the username and password for access the CloudForms api.
-    
-    .. Send a POST to CloudForms address **(ex. localhost:3000/api/providers)** with the following JSON below in the body of the request:
-        
-        {
-        "name":"<NEW NAME>",
-        "hostname":"<NEW LENOVO XCLARITY ADMINISTRATOR ADDRESS>",
-        "port":"<NEW SERVICE PORT>",
-        "credentials":{ "password":"< NEW PASSWORD>","userid":"< NEW USERNAME>" },
-        "action":"edit"
-        }
+===== Modifying properties for a Lenovo physical-infrastructure provider 
 
-. If you need *refresh* a physical infra provider lenovo using the REST api, you must use the steps below:
+To modify properties of a Lenovo physical-infrastructure provider, send a POST request using the following request URL and JSON request body.
+----------------------------------------------
+POST <CloudForms_address>:<port>/api/providers
+----------------------------------------------
 
-    .. Create a basic authentication using some tool or library that use wish, and fill the username and password for access the CloudForms api.
-    
-    .. Send a POST to CloudForms address **(ex. localhost:3000/api/providers)** with the following JSON below in the body of the request:
+Request body:
+------------------------------------------------------------
+{
+   "action":"edit",
+   "credentials": { 
+      "password":"<new_passowrd>",
+      "userid":"<new_user_name>" 
+   }, 
+   "hostname":"<New_Lenovo_XClarity_Administrator_address>",
+   "name":"<new_provider_name>", 
+   "port":"<new_service_port>"
+}
+------------------------------------------------------------
 
-        {"action":"refresh"}
+===== Refreshing information about all providers
 
-. If you need *delete* the physical infra provider lenovo using the REST api, you must use the steps below:
+To refresh information about all provider, send a POST request using the following request URL and JSON request body.
+----------------------------------------------
+POST <CloudForms_address>:<port>/api/providers
+----------------------------------------------
 
-    .. Create a basic authentication using some tool or library that use wish, and fill the username and password for access the CloudForms api.
-    
-    .. Send a POST or DELETE to CloudForms address **(ex. localhost:3000/api/providers)** with the following JSON below in the body of the request:
+Request body:
+---------------------
+{
+   "action":"refresh"
+}
+---------------------
 
-        {"action":"delete"}
-        
-. If you need execute *some action* for multiples physical infra providers using the Rest API, you must use the steps below:
+===== Deleting a physical-infrastructure provider
 
-    .. Create a basic authentication using some tool or library that use wish, and fill the username and password for access the CloudForms API. 
-    
-    .. Send a POST to CloudForms address *(ex. localhost:3000/api/physical_servers)* with the following JSON below in the body of the request:
-    
-        {"action":"<ACTION>",
-         "resources": [{"href":"<PHYSICAL INFRA PROVIDER's HREF>"},{"href":"<PHYSICAL INFRA PROVIDER's HREF>"}]
-        }
+To delete a specific provider:
+
+* Send a DELETE request using the following request URL.
++
+--------------------------------------------------------------
+DELETE <CloudForms_address>:<port>/api/providers/<provider_ID>
+--------------------------------------------------------------
+* Send a POST request using the following request URL and JSON request body.
++
+------------------------------------------------------------
+POST <CloudForms_address>:<port>/api/providers/<provider_ID>
+------------------------------------------------------------
++
+Request body:
++
+--------------------
+{
+   "action":"delete"
+}
+--------------------
+
+===== Performing an action on multiple physical-infrastructure providers
+
+To perform an action on more than one physical-infrastructure providers, send a POST request using the following request URL and JSON request body.
+----------------------------------------------
+POST <CloudForms_address>:<port>/api/providers
+----------------------------------------------
+
+Request body:
+-----------------------------
+{
+   "action":"<action>",  
+   "resources": [{
+      "href":"<provider_ID>"
+   }, 
+   {
+      "href":"<provider_ID>"
+   }]
+}
+-----------------------------

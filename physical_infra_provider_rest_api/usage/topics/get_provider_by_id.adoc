@@ -1,12 +1,11 @@
 === Retrieving Provider Details by ID
 
-. Log in to CloudForms Management Engine API as a user who has permission to access the API. The default user is admin, password smartvm.
+To retrieve information for a specific provider, use the following request URL where <provider_ID> is the unique identifier of the provider:
+------------------------------------------------------------
+GET <CloudForms_address>:<port>/api/providers/<provider_ID>
+------------------------------------------------------------
 
-. Use the following url structure for access the api **"<CLOUDFORMS ADDRESS>:<PORT>/api/" (ex. localhost:3000/api/)**.
-
-. Use the following request for get a provider by ID. **(ex.localhost:3000/api/providers/<ID NUMBER>)**.
-
-. It returns JSON with the following keys:
+A JSON response with the following keys is returned.
 --------------------
 href
 id
@@ -23,8 +22,16 @@ options
 actions
 --------------------
 
-Notes:
+*Examples*
 
-* If you wish get a custom data information, as name and id or an other attribute you need use the following query: **?attributes=id,name (ex. localhost:3000/api/providers/<ID NUMBER>?attributes=id,name)**.
-
-* If you wish get a custom data information as port, hostname and ipaddress, you must use the following query for add that new attributes: **?attributes=port,hostname,ipaddress(ex. localhost:3000/api/providers/<ID NUMBER>?attributes=port,hostname,ipaddress).**
+• To retrieve a specific information about the provider (such as name and ID), use the *?attributes=<attribute_list>* query parameters, for example:
++
+----------------------------------------------------------------------------------
+GET localhost:3000/api/providers/<provider_ID>?expand=resources&attributes=id,name
+----------------------------------------------------------------------------------
+• To retrieve additional information about the provider (such as port, hostname, and IP address), use the *?attributes=<attribute_list>* query parameters, for example:
++
+----------------------------------------------------------------
+ GET localhost:3000/api/providers/<provider_ID>?expand=resources
+&attributes=port,hostname,ipaddress
+----------------------------------------------------------------
