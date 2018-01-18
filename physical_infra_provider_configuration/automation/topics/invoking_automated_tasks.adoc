@@ -19,9 +19,11 @@ As an example, the following steps describe how to perform a specific automated 
 .. Navigation to *Action > All Actions*.
 .. Click *Configuration > Add a new action* from the top menu.
 .. Enter a description (for example, Power_Off_Server).
+.. For Action Type select *Invoke a custom Automation*.
 .. Enter a message with (for example, create).
+.. Fill the Request field with *Call_Instance*.
 .. Specify the following attributes in the order give: 
-* Specify the *Namespace* attribute, and set the value to the new namespace (for example, Functions).
+* Specify the *Namespace* attribute, and set the value to the new domain and namespace (<domain_name>/<namespace>) (for example, Lenovo/Functions).
 * Specify the *Class* attribute, and set the value to the class (for example, Power_actions).
 * Specify the *Instance* attribute, and set the value to the instance (for example, Physical_Server_PowerOff).
 .. Click *Add*.

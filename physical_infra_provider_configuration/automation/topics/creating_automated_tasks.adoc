@@ -121,4 +121,4 @@ server.power_off exit MIQ_OK
 .. Click *Configuration > Add new Instance* from the top menu.
 .. Enter the name of the instance that you created earlier (for example, Physical_Server_PowerOff).
 .. Enter the name of the method that you created earlier (for example, power_off).
-.. Click *Save*.
+.. Click *Add*.
