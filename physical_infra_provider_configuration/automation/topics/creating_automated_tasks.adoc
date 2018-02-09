@@ -69,9 +69,11 @@ For example, use the following path to the policy operation *Physical Server Shu
 
 +
 ----
-/System/event_handlers/event_action_policy? target=physical_server&policy_event=physical_server_shutdown&param=
-The policy_event value is matched with the policy operation applied.
+/System/event_handlers/event_action_policy?target=physical_server&policy_event=physical_server_shutdown&param=
 ----
+
++
+The policy_event value is matched with the policy operation applied.
 
 +
 .. Click *Add*.
@@ -101,8 +103,10 @@ The policy_event value is matched with the policy operation applied.
 .. Enter the following script in the *Data* field:
 +
 ----
-server = $evm.vmdb('PhysicalServer').first $evm.log(:info, "Powering Server #{server.name} OFF") 
-server.power_off exit MIQ_OK
+server = $evm.vmdb('PhysicalServer').first
+$evm.log(:info, "Powering Server #{server.name} OFF")
+server.power_off
+exit MIQ_OK
 ----
 .. Click *Validate* to verify the syntax.
 .. Click *Add*.
@@ -112,7 +116,7 @@ server.power_off exit MIQ_OK
 .. Click *Configuration > Edit selected Schema* from the top menu.
 .. Click the *+* icon to add a field to the schema.
 .. Enter *“execute”* for the name.
-.. Select *“Method”* for the type
+.. Select *“Method”* for the type.
 .. Select *“String”* for the data type.
 .. Enter *“Power_actions”* for the default value.
 .. Click the check mark icon.
