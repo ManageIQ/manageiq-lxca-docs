@@ -20,7 +20,7 @@ As an example, the following steps describe how to perform a specific automated 
 .. Click *Configuration > Add a new action* from the top menu.
 .. Enter a description (for example, Power_Off_Server).
 .. For Action Type select *Invoke a custom Automation*.
-.. Enter a message with (for example, create).
+.. Enter a message (for example, create).
 .. Fill the Request field with *Call_Instance*.
 .. Specify the following attributes in the order give: 
 * Specify the *Namespace* attribute, and set the value to the new domain and namespace (<domain_name>/<namespace>) (for example, Lenovo/Functions).
@@ -43,7 +43,7 @@ As an example, the following steps describe how to perform a specific automated 
 .. Click *Policy Profiles > All Policy Profiles*.
 .. Click *Configuration > Add a new Policy Profile* from the top menu.
 .. Enter a description for the policy (for example, Lenovo_Policy_Profile).
-.. Select your domain and drag it to the right.
+.. Select your policy and drag it to the right.
 .. Click *Add*.
 . Assign the policy profile to the Lenovo physical-infrastructure providers:
 .. Navigate to *Compute > Physical Infrastructure > Providers*.

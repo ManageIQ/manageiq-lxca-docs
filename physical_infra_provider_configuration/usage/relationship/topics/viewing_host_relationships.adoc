@@ -1,5 +1,5 @@
 === Viewing virtual-host relationships
-You can view a list of all virtual hosts that are associated with physical servers that are managed by a specific physical-infrastructure provider.
+You can view a list of physical servers that are associated with hosts that are managed by a specific physical-infrastructure provider.
 
 . Navigate to *Compute > Physical Infrastructure > Providers*.
 

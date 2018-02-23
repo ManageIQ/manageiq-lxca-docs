@@ -10,7 +10,7 @@ A _class_ is a template for a specific task. A class uses a schema to populate a
 
 The _methods_ define the task that you want to perform. It uses Ruby code to run the various operations.
 
-As an example, the following steps describe how to create an automated task for performing a power action (such as powering on, power off, or restarting the server) on the first physical server known to the Lenovo physical-infrastructure provider.
+As an example, the following steps describe how to create an automated task for performing a power action (such as powering on, power off, or restarting the server) on the physical server which is first detected by the Lenovo physical-infrastructure provider.
 
 *Note:* You must be logged in to CloudForms as a user with permission to create domains. The default user is admin, password smartvm.
 
@@ -65,7 +65,7 @@ There are three available policy events:
 
 +
 The policy actions and the policy events must match.
-For example, use the follow path to the policy operation *Physical Server Shutdown*:
+For example, use the following path to the policy operation *Physical Server Shutdown*:
 
 +
 ----
@@ -96,8 +96,8 @@ The policy_event value is matched with the policy operation applied.
 .. Select the class that you created (for example, Power_actions).
 .. Click the *Methods* tab.
 .. Click *Configuration > Add a new method* from the top menu.
+.. Select *“inline”* for the type.
 .. Enter a name for the method (for example, power_off).
-.. Select “inline” for the location. 
 .. Enter the following script in the *Data* field:
 +
 ----
@@ -112,13 +112,12 @@ server.power_off exit MIQ_OK
 .. Click *Configuration > Edit selected Schema* from the top menu.
 .. Click the *+* icon to add a field to the schema.
 .. Enter *“execute”* for the name.
-.. Select *“Power_actions”* for the type.
+.. Select *“Method”* for the type
 .. Select *“String”* for the data type.
+.. Enter *“Power_actions”* for the default value.
 .. Click the check mark icon.
 .. Click *Save*.
 . Add the method to the class.
 .. Select the *Instances* tab.
-.. Click *Configuration > Add new Instance* from the top menu.
-.. Enter the name of the instance that you created earlier (for example, Physical_Server_PowerOff).
 .. Enter the name of the method that you created earlier (for example, power_off).
 .. Click *Add*.
