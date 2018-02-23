@@ -18,7 +18,7 @@ You can perform power operations on the physical servers by completing the follo
 
 * *Restart immediately* - Restarts the server.
 
-* *Restart to System Setup* - Restarts the server to BIOS/UEFI (F1) Setup. 
+* *Restart to System Setup* - Restarts the server back to default BIOS/UEFI (F1) Setup. 
 
 * *Restart Management Controller* - Restarts the baseboard management controller in the sever. 
 
