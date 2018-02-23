@@ -4,7 +4,7 @@ You can use the REST API to retrieve information about providers, physical-infra
 
 *Before you begin*
 
-To use the REST API, you must log in to CloudForms Management Engine API as a user who has permission to access the API. The default user is admin, password smartvm.
+To use the REST API, you must log in to CloudForms Management Engine API as a user who has permission to access the API. The default user is admin, password is smartvm.
 
 Use the following URL to access the CloudForms REST API:
 -------------------------------

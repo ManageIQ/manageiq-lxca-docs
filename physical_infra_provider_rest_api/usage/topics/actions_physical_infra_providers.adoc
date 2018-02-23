@@ -2,11 +2,11 @@
 
 You can use the REST API to perform actions on a physical-infrastructure provider, such as creating, modifying and deleting.
 
-*Note:* To perform actions on physical-infrastructure providers, you must create a basic authentication using your preferred tool or library, and enter your user name and password to access the CloudForms REST API.
+*Note:* To perform actions on physical-infrastructure providers, you must create a basic authentication using your preferred tool or library, and use the user name and password for the CloudForms instance when using the REST API.
 
 ===== Creating a Lenovo physical-infrastructure provider
 
-To create Lenovo physical-infrastructure provider, a POST request using the following request URL and JSON request body.
+To create a Lenovo physical-infrastructure provider, send a POST request using the following request URL and JSON request body.
 ----------------------------------------------
 POST <CloudForms_address>:<port>/api/providers
 ----------------------------------------------
@@ -49,7 +49,7 @@ Request body:
 
 ===== Refreshing information about all providers
 
-To refresh information about all provider, send a POST request using the following request URL and JSON request body.
+To refresh information about all providers, send a POST request using the following request URL and JSON request body.
 ----------------------------------------------
 POST <CloudForms_address>:<port>/api/providers
 ----------------------------------------------
