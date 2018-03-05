@@ -1,0 +1,774 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 0\n"
+"POT-Creation-Date: 2018-02-26 09:57+1000\n"
+"PO-Revision-Date: 2018-02-26 09:57+1000\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: None\n"
+"Language: en-US \n"
+"MIME-Version: 1.0\n"
+"Content-Type: application/x-publican; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Publican v4.3.3\n"
+
+msgid "Configuring the Lenovo Physical Infrastructure Provider"
+msgstr ""
+
+msgid "Adding and configuring the Lenovo physical infrastructure provider in Red Hat CloudForms"
+msgstr ""
+
+msgid "Red Hat CloudForms"
+msgstr ""
+
+msgid "Adding and configuring the Lenovo physical infrastructure provider in Red Hat CloudForms."
+msgstr ""
+
+msgid "If you have a suggestion for improving this guide or have found an error, please submit a Bugzilla report at <link xlink:href=\"https://bugzilla.redhat.com/enter_bug.cgi?product=Red%20Hat%20CloudForms%20Management%20Engine\">http://bugzilla.redhat.com</link> against <emphasis role=\"strong\">Red Hat CloudForms Management Engine</emphasis> for the <emphasis role=\"strong\">Documentation</emphasis> component. Please provide specific details, such as the section number, guide name, and CloudForms version so we can easily locate the content."
+msgstr ""
+
+msgid "Overview"
+msgstr ""
+
+msgid "The Lenovo® Physical Infrastructure Provider provides IT administrators the ability to integrate the management features of Lenovo XClarity Administrator with the hybrid-cloud management capabilities of Red Hat CloudForms. Lenovo expands the physical-infrastructure management for on-premise cloud configurations by leveraging Lenovo hardware management. It provides the configuration, monitoring, event management, and power monitoring needed to reduce cost and complexity through server consolidation and simplified management."
+msgstr ""
+
+msgid "Key features include:"
+msgstr ""
+
+msgid "Seamlessly integrates with one or more Lenovo XClarity Administrator virtual appliances, providing a summary view of the Lenovo infrastructure, relationship views of physical servers and virtual hosts, and configuration of servers using Configuration Patterns"
+msgstr ""
+
+msgid "Provides a single interface to monitor Lenovo hardware that is managed by multiple instances of Lenovo XClarity Administrator"
+msgstr ""
+
+msgid "Automatically discovers hardware that is managed by Lenovo XClarity Administrator"
+msgstr ""
+
+msgid "Manage devices for use in on-premise cloud deployments"
+msgstr ""
+
+msgid "Provides a timeline of server events"
+msgstr ""
+
+msgid "Uses customizable filters to organize views of managed devices across the data center"
+msgstr ""
+
+msgid "Generates relationships between physical servers and the virtual hosts (such as ESXI, ovirt, KVM, and Red Hat OpenStack)"
+msgstr ""
+
+msgid "Manages current system settings (such as BMC, uEFI, and boot order settings) on the managed devices"
+msgstr ""
+
+msgid "Simplifies system management through custom policies and automation that respond to the health status of physical servers"
+msgstr ""
+
+msgid "Configuring Lenovo XClarity Administrator"
+msgstr ""
+
+msgid "Lenovo XClarity Administrator virtual appliances are connected to CloudForms by adding physical-infrastructure providers. Physical-infrastructure providers enable you to manage and interact with devices that are managed by Lenovo XClarity Administrator. After the physical-infrastructure provider is added, the servers that are managed by the Lenovo XClarity Administrator are registered in CloudForms. Managed devices can be monitored, configured, and updated using Lenovo XClarity Administrator. The physical-infrastructure provider surfaces information about these managed devices and the Lenovo XClarity Administrator instance."
+msgstr ""
+
+msgid "Setting up Lenovo XClarity Administrator"
+msgstr ""
+
+msgid "For information about downloading and setting up Lenovo XClarity Administrator, see <link xlink:href=\"http://sysmgt.lenovofiles.com/help/topic/com.lenovo.lxca.doc/setup.html?cp=1_6\">Installing and setting up Lenovo XClarity Administrator</link> in the Lenovo XClarity Administrator online documentation."
+msgstr ""
+
+msgid "<emphasis role=\"strong\">Note:</emphasis> You can use all available features in Lenovo XClarity Administrator for free for up to 90 days. After 90 days, you can continue to use Lenovo XClarity Administrator to manage and monitor your hardware for free; however, you must purchase a full-function-enablement license to continue using Lenovo XClarity Administrator to configure your hardware using Configuration Patterns and to deploy operating systems. Lenovo XClarity Pro provides entitlement to service and support and the full-function-enablement license for Lenovo XClarity Administrator. For more information about purchasing Lenovo XClarity Pro, contact your Lenovo representative or authorized business partner."
+msgstr ""
+
+msgid "Discovering and managing hardware using Lenovo XClarity Administrator"
+msgstr ""
+
+msgid "Lenovo XClarity Administrator can discover manageable devices in your environment by performing an SLP discovery for devices that are on the same IP subnet as Lenovo XClarity Administrator. A specified IP address or range of IP addresses also can be used, or information can be imported from a spreadsheet, a process that is known as a <emphasis>bulk import</emphasis>. Discovery options can be accessed by clicking <emphasis role=\"strong\">Hardware &gt; Discover and Manage New Devices</emphasis> from the menu bar. Discovered devices can then be managed by Lenovo XClarity Administrator. During the management process, you are asked for login credentials for the management controller of the target servers and given the option to create a recovery account for the servers. For more information about discovering and managing devices, see the <link xlink:href=\"http://sysmgt.lenovofiles.com/help/index.jsp?topic=%2Fcom.lenovo.lxca.doc%2Faug_product_page.html\">Lenovo XClarity Administrator online documentation</link>."
+msgstr ""
+
+msgid "<emphasis role=\"strong\">Note:</emphasis>"
+msgstr ""
+
+msgid "Ensure that the devices that you intend to manage are supported by Lenovo XClarity Administrator. For information about supported devices, see <link xlink:href=\"http://sysmgt.lenovofiles.com/help/topic/com.lenovo.lxca.doc/plan_supportedhw.html?cp=1_3_1_1\">Supported devices</link> in the Lenovo XClarity Administrator online documentation."
+msgstr ""
+
+msgid "Ensure that firmware for all devices that you intend to manage using Lenovo XClarity Administrator are at the required levels. For more information about supported firmware levels, see <link xlink:href=\"http://sysmgt.lenovofiles.com/help/topic/com.lenovo.lxca.doc/plan_supportedfw.html?cp=1_3_1_2\">Supported firmware</link> in the Lenovo XClarity Administrator online documentation."
+msgstr ""
+
+msgid "Managing physical-infrastructure providers"
+msgstr ""
+
+msgid "Adding a physical-infrastructure provider"
+msgstr ""
+
+msgid "Lenovo XClarity Administrator virtual appliances are connected to CloudForms by adding physical-infrastructure providers. Physical-infrastructure providers enable you to manage and interact with devices that are managed by Lenovo XClarity Administrator."
+msgstr ""
+
+msgid "<emphasis role=\"strong\">Note:</emphasis> You must be logged in to CloudForms as a user with permission to add providers. The default user is admin, password smartvm."
+msgstr ""
+
+msgid "Complete the following steps for each Lenovo XClarity Administrator instance that you want to connect to CloudForms."
+msgstr ""
+
+msgid "To connect to a specific Lenovo XClarity Administrator instance:"
+msgstr ""
+
+msgid "Navigate to <emphasis role=\"strong\">Compute &gt; Physical Infrastructure &gt; Providers.</emphasis>"
+msgstr ""
+
+msgid "Click <emphasis role=\"strong\">Configuration</emphasis>, then click <emphasis role=\"strong\">Add a New Infrastructure Provider</emphasis>."
+msgstr ""
+
+msgid "Enter a <emphasis role=\"strong\">Name</emphasis> for the provider (for example, Physical Infrastructure Manager)."
+msgstr ""
+
+msgid "From the <emphasis role=\"strong\">Type</emphasis> list, select \"Lenovo XClarity\"."
+msgstr ""
+
+msgid "Accept the default <emphasis role=\"strong\">Zone</emphasis>."
+msgstr ""
+
+msgid "In the credentials area, provide the following:"
+msgstr ""
+
+msgid "Enter the hostname, IPv4 address, or IPv6 address of the Lenovo XClarity Administrator instance."
+msgstr ""
+
+msgid "Enter “443” for the API port."
+msgstr ""
+
+msgid "Enter the username and password used to log in to the Lenovo XClarity Administrator instance."
+msgstr ""
+
+msgid "Click <emphasis role=\"strong\">Validate</emphasis> to confirm that you can connect to the Lenovo XClarity Administrator instance."
+msgstr ""
+
+msgid "Click <emphasis role=\"strong\">Add</emphasis>."
+msgstr ""
+
+msgid "To discover and then connect to a range of Lenovo XClarity Administrator instances:"
+msgstr ""
+
+msgid "Discover Lenovo XClarity Administrator instances:"
+msgstr ""
+
+msgid "Navigate to <emphasis role=\"strong\">Compute &gt; Physical Infrastructure &gt; Providers</emphasis>."
+msgstr ""
+
+msgid "Click <emphasis role=\"strong\">Configuration</emphasis>, then click <emphasis role=\"strong\">Discover Physical Infrastructure Providers</emphasis>."
+msgstr ""
+
+msgid "From the <emphasis role=\"strong\">Type</emphasis> list, select “Lenovo XClarity Administrator.”"
+msgstr ""
+
+msgid "Enter the IP address range starting with <emphasis role=\"strong\">From Address</emphasis> and ending with <emphasis role=\"strong\">To Address</emphasis>."
+msgstr ""
+
+msgid "Enter the port."
+msgstr ""
+
+msgid "Click <emphasis role=\"strong\">Start</emphasis> to begin the discovery process."
+msgstr ""
+
+msgid "Update credentials for each discovered physical-infrastructure provider (Lenovo XClarity Administrator instance):"
+msgstr ""
+
+msgid "Select the providers to be edited."
+msgstr ""
+
+msgid "Click the <emphasis role=\"strong\">Configuration</emphasis> button in the menu."
+msgstr ""
+
+msgid "Click <emphasis role=\"strong\">Edit selected infrastructure providers</emphasis>."
+msgstr ""
+
+msgid "Click <emphasis role=\"strong\">Save</emphasis>. A flash message is displayed, confirming your changes were performed successfully."
+msgstr ""
+
+msgid "After adding the physical-infrastructure providers, you can view all available providers by navigating to <emphasis role=\"strong\">Compute &gt; Physical Infrastructure &gt; Providers</emphasis> as shown below."
+msgstr ""
+
+msgid "<inlinemediaobject> <imageobject> <imagedata fileref=\"images/usage/provider/images/providers.png\" /> </imageobject> <textobject><phrase>providers</phrase></textobject> </inlinemediaobject>"
+msgstr ""
+
+msgid "Refreshing physical-infrastructure providers"
+msgstr ""
+
+msgid "CloudForms regularly polls the physical-infrastructure providers to retrieve the latest data, including managed devices, relationships, and power states. You can manually retrieve the latest data by completing the following steps."
+msgstr ""
+
+msgid "Select a physical-infrastructure provider to be refreshed."
+msgstr ""
+
+msgid "Click <emphasis role=\"strong\">Configuration</emphasis>, then click <emphasis role=\"strong\">Refresh Relationships and Power States</emphasis>."
+msgstr ""
+
+msgid "Click <emphasis role=\"strong\">OK</emphasis>."
+msgstr ""
+
+msgid "Removing a physical-infrastructure provider"
+msgstr ""
+
+msgid "You can delete a physical-infrastructure provider by completing the following steps."
+msgstr ""
+
+msgid "Select the physical-infrastructure provider to be removed."
+msgstr ""
+
+msgid "Click <emphasis role=\"strong\">Configuration</emphasis>, then click <emphasis role=\"strong\">Remove Infrastructure Providers from Inventory</emphasis>."
+msgstr ""
+
+msgid "Editing a physical-infrastructure provider"
+msgstr ""
+
+msgid "You can modify system settings for a physical-infrastructure provider by completing the following steps."
+msgstr ""
+
+msgid "Select the physical-infrastructure provider to be modified."
+msgstr ""
+
+msgid "Make the required changes, and revalidate credentials if necessary."
+msgstr ""
+
+msgid "Viewing relationships"
+msgstr ""
+
+msgid "Viewing relationships between physical servers and virtual hosts"
+msgstr ""
+
+msgid "CloudForms shows relationships between virtual host systems and physical servers and the virtual hosts for each physical-infrastructure provider. The topology view provides a graphical representation of the relationships, allowing you to easily navigate between connected nodes (see the following figure)."
+msgstr ""
+
+msgid "<inlinemediaobject> <imageobject> <imagedata fileref=\"images/usage/relationship/images/topology_widget.png\" /> </imageobject> <textobject><phrase>topology widget</phrase></textobject> </inlinemediaobject>"
+msgstr ""
+
+msgid "To display the topology view for a specific physical-infrastructure provider, complete the following steps."
+msgstr ""
+
+msgid "Select the physical-infrastructure provider to be viewed."
+msgstr ""
+
+msgid "From the overview section, select <emphasis role=\"strong\">Topology</emphasis> to display the Topology page. From this page, you can perform the following actions:"
+msgstr ""
+
+msgid "Hide or show all physical server by clicking <emphasis role=\"strong\">Physical Servers</emphasis>."
+msgstr ""
+
+msgid "Hide or show all hosts by clicking <emphasis role=\"strong\">Hosts</emphasis>."
+msgstr ""
+
+msgid "Hide or show all VMs by clicking <emphasis role=\"strong\">VMs</emphasis>."
+msgstr ""
+
+msgid "Double-click or right-click a node in the graph to navigate to the summary pages for that node."
+msgstr ""
+
+msgid "Viewing server relationships"
+msgstr ""
+
+msgid "You can view a list of all physical servers that are managed by a specific physical-infrastructure provider."
+msgstr ""
+
+msgid "Click <emphasis role=\"strong\">Physical Servers</emphasis> in the <emphasis role=\"strong\">Relationships</emphasis> section."
+msgstr ""
+
+msgid "Viewing virtual-host relationships"
+msgstr ""
+
+msgid "You can view a list of physical servers that are associated with hosts that are managed by a specific physical-infrastructure provider."
+msgstr ""
+
+msgid "Click <emphasis role=\"strong\">Physical Servers with Host</emphasis> button in the <emphasis role=\"strong\">Relationships</emphasis> section."
+msgstr ""
+
+msgid "You should see a list of physical servers that are associated with hosts as shown below."
+msgstr ""
+
+msgid "<inlinemediaobject> <imageobject> <imagedata fileref=\"images/usage/relationship/images/host_relationships.png\" /> </imageobject> <textobject><phrase>host relationships</phrase></textobject> </inlinemediaobject>"
+msgstr ""
+
+msgid "Managing physical servers"
+msgstr ""
+
+msgid "After the Lenovo physical-infrastructure provider is added, the servers that are managed by Lenovo XClarity Administrator are registered in CloudForms. You can then view and manage those servers."
+msgstr ""
+
+msgid "Viewing a Physical Server"
+msgstr ""
+
+msgid "To view a list of all physical servers that are managed by all physical-infrastructure providers, navigate to <emphasis role=\"strong\">Compute &gt; Physical Infrastructure &gt; Servers</emphasis>. The Physical Servers page is displayed (see the following figure)."
+msgstr ""
+
+msgid "<emphasis role=\"strong\">Tip:</emphasis> You can sort the table columns to make it easier to find specific servers. In addition, you can choose the types of servers to display by selecting server types from the <emphasis role=\"strong\">Filters</emphasis> drop-down list or entering text (such as a name or IP address) in the <emphasis role=\"strong\">Search</emphasis> field."
+msgstr ""
+
+msgid "<inlinemediaobject> <imageobject> <imagedata fileref=\"images/usage/physical_server/images/physical_servers.png\" /> </imageobject> <textobject><phrase>physical servers</phrase></textobject> </inlinemediaobject>"
+msgstr ""
+
+msgid "Viewing the timeline for a physical server"
+msgstr ""
+
+msgid "A <emphasis>timeline</emphasis> is a tool that enables you to track the state of a physical server over a period of time. This includes power activity, device additions and removals, and firmware changes. The timeline is useful to identify critical failures, identify behavior patterns, audit user actions, and troubleshoot problems."
+msgstr ""
+
+msgid "<emphasis role=\"strong\">Note:</emphasis> Timelines are available only for physical servers that have associated events."
+msgstr ""
+
+msgid "To view the timeline with events for a specific physical server, complete the following steps"
+msgstr ""
+
+msgid "Navigate to <emphasis role=\"strong\">Compute &gt; Physical Infrastructure &gt; Servers</emphasis>."
+msgstr ""
+
+msgid "Select the physical server that has events."
+msgstr ""
+
+msgid "Click the <emphasis role=\"strong\">Monitoring &gt; Timelines</emphasis> from the top menu."
+msgstr ""
+
+msgid "Select the event types and the period in the options filter. Filters can be used to focus attention on specific messages of interest in a specific time interval."
+msgstr ""
+
+msgid "Click <emphasis role=\"strong\">Apply</emphasis>. The timeline is displayed with events that match the specified filters. You can click an event to view the event details."
+msgstr ""
+
+msgid "Powering on and off a physical server"
+msgstr ""
+
+msgid "You can perform power operations on the physical servers by completing the following steps."
+msgstr ""
+
+msgid "Select the physical server."
+msgstr ""
+
+msgid "Click <emphasis role=\"strong\">Power</emphasis> from the top menu, and then click one of the following power actions:"
+msgstr ""
+
+msgid "<emphasis role=\"strong\">Power on</emphasis> - Powers on the server."
+msgstr ""
+
+msgid "<emphasis role=\"strong\">Power off</emphasis> - Shuts down the operating system and powers off the server."
+msgstr ""
+
+msgid "<emphasis role=\"strong\">Power off immediately</emphasis> - Powers off the server."
+msgstr ""
+
+msgid "<emphasis role=\"strong\">Restart</emphasis> - Shuts down the operating system and restarts the server."
+msgstr ""
+
+msgid "<emphasis role=\"strong\">Restart immediately</emphasis> - Restarts the server."
+msgstr ""
+
+msgid "<emphasis role=\"strong\">Restart to System Setup</emphasis> - Restarts the server back to default BIOS/UEFI (F1) Setup."
+msgstr ""
+
+msgid "<emphasis role=\"strong\">Restart Management Controller</emphasis> - Restarts the baseboard management controller in the sever."
+msgstr ""
+
+msgid "<inlinemediaobject> <imageobject> <imagedata fileref=\"images/usage/physical_server/images/physical_server_power.png\" /> </imageobject> <textobject><phrase>physical server power</phrase></textobject> </inlinemediaobject>"
+msgstr ""
+
+msgid "Locating a physical server"
+msgstr ""
+
+msgid "You can change the Location LED state on a physical server to locate the sever in the data center."
+msgstr ""
+
+msgid "Click <emphasis role=\"strong\">Identify</emphasis> from the top menu, and then click the appropriate action: <emphasis role=\"strong\">Blink LED</emphasis>, <emphasis role=\"strong\">Turn On LED</emphasis>, or <emphasis role=\"strong\">Turn Off LED</emphasis>."
+msgstr ""
+
+msgid "<inlinemediaobject> <imageobject> <imagedata fileref=\"images/usage/physical_server/images/physical_server_identify_led.png\" /> </imageobject> <textobject><phrase>physical server identify led</phrase></textobject> </inlinemediaobject>"
+msgstr ""
+
+msgid "Provisioning physical servers using configuration patterns"
+msgstr ""
+
+msgid "You can use configuration patterns in Lenovo XClarity Administrator to quickly provision or preprovision multiple servers from a single set of defined configuration settings. Configuration patterns act as templates for configuring logical storage, I/O adapters, boot order, and other baseboard management controller and Unified Extensible Firmware Interface (UEFI) settings."
+msgstr ""
+
+msgid "A physical-infrastructure provider can discover configuration patterns that are defined on the associated Lenovo XClarity Administrator instance. A configuration pattern can then be applied to a single or multiple physical servers."
+msgstr ""
+
+msgid "<emphasis role=\"strong\">Note</emphasis>: Configuration patterns can be assigned only to physical servers that do not have a pattern assigned to them."
+msgstr ""
+
+msgid "<inlinemediaobject> <imageobject> <imagedata fileref=\"images/usage/physical_server/images/physical_server_provision.png\" /> </imageobject> <textobject><phrase>physical server provision</phrase></textobject> </inlinemediaobject>"
+msgstr ""
+
+msgid "You can deploy a configuration pattern to one or more physical server by completing the following steps."
+msgstr ""
+
+msgid "Navigate to <emphasis role=\"strong\">Compute &gt; Physical Infrastructure &gt; Servers</emphasis> to display the Physical Servers page."
+msgstr ""
+
+msgid "Click a server (to display the server details page) or select multiple servers that you want to provision."
+msgstr ""
+
+msgid "Click <emphasis role=\"strong\">Lifecycle &gt; Provision Physical Server</emphasis> from the top menu to display the Add Physical Server page."
+msgstr ""
+
+msgid "On the <emphasis role=\"strong\">Request</emphasis> tab, enter an email address into the <emphasis role=\"strong\">E-Mail</emphasis> field."
+msgstr ""
+
+msgid "On the <emphasis role=\"strong\">Catalog</emphasis> tab, select the configuration pattern that you want to deploy from the <emphasis role=\"strong\">Configuration Pattern</emphasis> drop-down menu, and then click <emphasis role=\"strong\">Submit</emphasis>. The Requests page is displayed."
+msgstr ""
+
+msgid "Click the request that was created to deploy the configuration pattern from the <emphasis role=\"strong\">Requests</emphasis> table. The Apply Configuration Pattern page is displayed."
+msgstr ""
+
+msgid "Click the check mark button."
+msgstr ""
+
+msgid "Enter the reason for performing this action in the <emphasis role=\"strong\">Reason</emphasis> field."
+msgstr ""
+
+msgid "Click <emphasis role=\"strong\">Submit</emphasis> to deploy the configuration pattern to the specified server. You can monitor the status of the action in the <emphasis role=\"strong\">Requests</emphasis> table."
+msgstr ""
+
+msgid "Troubleshooting Physical Infrastructure Provider Problems"
+msgstr ""
+
+msgid "Automating tasks based on events"
+msgstr ""
+
+msgid "You can use CloudForms to automatically perform specific tasks when certain events occur on servers that are managed by Lenovo XClarity Administrator through a Lenovo physical-infrastructure provider. To create an automation task, you must create and configure a custom domain. To automatically invoke the task when a certain event occurs, you must create, configure and assign a custom policy."
+msgstr ""
+
+msgid "For more information about the CloudForms automation function, see <link xlink:href=\"https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.0/html/scripting_actions_in_cloudforms/\">Scripting Actions in CloudForms</link> website."
+msgstr ""
+
+msgid "Creating an automated task"
+msgstr ""
+
+msgid "To create an automated task, you must first create and configure a custom domain."
+msgstr ""
+
+msgid "A <emphasis>domain</emphasis> is a collection of tasks that can be automated. The tasks are run in a sequence that is defined by the domain priority. A task in a domain with a higher priority overrides the same task in a lower-priority domain. In this way, CloudForms provides core domains and allows you to override automated tasks using your own custom domains."
+msgstr ""
+
+msgid "Each domain contains a set of namespaces. A <emphasis>namespace</emphasis> is a container that organizes and categorizes tasks. A namespace can contain child namespaces as well as classes."
+msgstr ""
+
+msgid "A <emphasis>class</emphasis> is a template for a specific task. A class uses a schema to populate a class instance with default values. A class instance can contain attributes, calls to methods, and relationships."
+msgstr ""
+
+msgid "The <emphasis>methods</emphasis> define the task that you want to perform. It uses Ruby code to run the various operations."
+msgstr ""
+
+msgid "As an example, the following steps describe how to create an automated task for performing a power action (such as powering on, power off, or restarting the server) on the physical server which is first detected by the Lenovo physical-infrastructure provider."
+msgstr ""
+
+msgid "<emphasis role=\"strong\">Note:</emphasis> You must be logged in to CloudForms as a user with permission to create domains. The default user is admin, password smartvm."
+msgstr ""
+
+msgid "Step 1. Create a custom domain."
+msgstr ""
+
+msgid "Navigate to <emphasis role=\"strong\">Automation &gt; Automate &gt; Explorer</emphasis>."
+msgstr ""
+
+msgid "Click <emphasis role=\"strong\">Configuration &gt; Add a New Domain</emphasis> from the top menu."
+msgstr ""
+
+msgid "Enter a domain name (for example, Lenovo)."
+msgstr ""
+
+msgid "Select <emphasis role=\"strong\">Enable</emphasis> to enable the domain."
+msgstr ""
+
+msgid "Step 2. Add the LenovoXclarity and Event Handler class to the custom domain."
+msgstr ""
+
+msgid "Copy the LenovoXclarity class to the custom domain."
+msgstr ""
+
+msgid "Select the <emphasis role=\"strong\">ManageIQ</emphasis> core domain."
+msgstr ""
+
+msgid "Navigate to <emphasis role=\"strong\">ManageIQ &gt; System &gt; Event &gt; EmsEvent &gt; LenovoXclarity</emphasis>."
+msgstr ""
+
+msgid "Click <emphasis role=\"strong\">Configuration &gt; Copy this Class</emphasis> from the top menu."
+msgstr ""
+
+msgid "Select the custom domain from the <emphasis role=\"strong\">To Domain</emphasis> drop-down menu."
+msgstr ""
+
+msgid "Click <emphasis role=\"strong\">Copy</emphasis>."
+msgstr ""
+
+msgid "Copy the Event Handler class to the custom domain."
+msgstr ""
+
+msgid "Navigate to <emphasis role=\"strong\">ManageIQ &gt; System &gt; Event Handlers</emphasis>."
+msgstr ""
+
+msgid "Select the instance that you wish (for example, event_action_policy)."
+msgstr ""
+
+msgid "Click <emphasis role=\"strong\">Configuration &gt; Copy this Instance</emphasis> from the top menu."
+msgstr ""
+
+msgid "Select the <emphasis role=\"strong\">event_action_policy</emphasis> method."
+msgstr ""
+
+msgid "Click the <emphasis role=\"strong\">Configuration</emphasis> icon, and then click the <emphasis role=\"strong\">Copy this method</emphasis> icon."
+msgstr ""
+
+msgid "Create a new instance of the LenovoXclarity class."
+msgstr ""
+
+msgid "Navigation to name of the custom domain (for example, Lenovo), and click <emphasis role=\"strong\">System &gt; Event &gt; EmsEvent &gt;LenovoXclarity</emphasis>."
+msgstr ""
+
+msgid "Click <emphasis role=\"strong\">Configuration &gt; Add a new Instance</emphasis> from the top menu."
+msgstr ""
+
+msgid "Enter a name for the new class instance (for example, FQXHMTS0003G, which is the event that is generated when inventory data cannot be retrieved from a device)."
+msgstr ""
+
+msgid "<emphasis role=\"strong\">Important:</emphasis> The class-instance name must be the same as the name of the event that triggers the task to be invoked. CloudForms matches the class instance with the event by this name. To find the event name, see <link xlink:href=\"http://sysmgt.lenovofiles.com/help/topic/com.lenovo.lxca.doc/messages.html?cp=1_22_16\">Messages</link> in the Lenovo XClarity Administrator online documentation."
+msgstr ""
+
+msgid "Add the path to the event handlers copied in the field’s <emphasis role=\"strong\">rel3</emphasis>."
+msgstr ""
+
+msgid "There are three available policy operations:"
+msgstr ""
+
+msgid "Physical Server Reset"
+msgstr ""
+
+msgid "Physical Server Start"
+msgstr ""
+
+msgid "Physical Server Shutdown"
+msgstr ""
+
+msgid "There are three available policy events:"
+msgstr ""
+
+msgid "physical_server_reset"
+msgstr ""
+
+msgid "physical_server_start"
+msgstr ""
+
+msgid "physical_server_shutdown"
+msgstr ""
+
+msgid "The policy actions and the policy events must match. For example, use the following path to the policy operation <emphasis role=\"strong\">Physical Server Shutdown</emphasis>:"
+msgstr ""
+
+msgid "/System/event_handlers/event_action_policy? target=physical_server&amp;policy_event=physical_server_shutdown&amp;param=\n"
+"The policy_event value is matched with the policy operation applied."
+msgstr ""
+
+msgid "Step 3. Create a namespace."
+msgstr ""
+
+msgid "Select the custom domain (<emphasis role=\"strong\">Lenovo</emphasis>) ."
+msgstr ""
+
+msgid "Click <emphasis role=\"strong\">Configuration &gt; Add a New Namespace</emphasis> from the top menu."
+msgstr ""
+
+msgid "Enter a unique name for the namespace (for example, Functions)."
+msgstr ""
+
+msgid "Step 4. Create a class."
+msgstr ""
+
+msgid "Select the namespace that you created in the previous step (for example, Functions)."
+msgstr ""
+
+msgid "Click <emphasis role=\"strong\">Configuration &gt; Add a New Class</emphasis> from the top menu."
+msgstr ""
+
+msgid "Enter a unique name for the class (for example, Power_actions)."
+msgstr ""
+
+msgid "Step 5. Create a method for the class."
+msgstr ""
+
+msgid "Create a method."
+msgstr ""
+
+msgid "Select the class that you created (for example, Power_actions)."
+msgstr ""
+
+msgid "Click the <emphasis role=\"strong\">Methods</emphasis> tab."
+msgstr ""
+
+msgid "Click <emphasis role=\"strong\">Configuration &gt; Add a new method</emphasis> from the top menu."
+msgstr ""
+
+msgid "Select <emphasis role=\"strong\">“inline”</emphasis> for the type."
+msgstr ""
+
+msgid "Enter a name for the method (for example, power_off)."
+msgstr ""
+
+msgid "Enter the following script in the <emphasis role=\"strong\">Data</emphasis> field:"
+msgstr ""
+
+msgid "server = $evm.vmdb('PhysicalServer').first $evm.log(:info, \"Powering Server #{server.name} OFF\")\n"
+"server.power_off exit MIQ_OK"
+msgstr ""
+
+msgid "Click <emphasis role=\"strong\">Validate</emphasis> to verify the syntax."
+msgstr ""
+
+msgid "Add a schema to the class."
+msgstr ""
+
+msgid "Select the <emphasis role=\"strong\">Schema</emphasis> tab."
+msgstr ""
+
+msgid "Click <emphasis role=\"strong\">Configuration &gt; Edit selected Schema</emphasis> from the top menu."
+msgstr ""
+
+msgid "Click the <emphasis role=\"strong\">+</emphasis> icon to add a field to the schema."
+msgstr ""
+
+msgid "Enter <emphasis role=\"strong\">“execute”</emphasis> for the name."
+msgstr ""
+
+msgid "Select <emphasis role=\"strong\">“Method”</emphasis> for the type"
+msgstr ""
+
+msgid "Select <emphasis role=\"strong\">“String”</emphasis> for the data type."
+msgstr ""
+
+msgid "Enter <emphasis role=\"strong\">“Power_actions”</emphasis> for the default value."
+msgstr ""
+
+msgid "Click the check mark icon."
+msgstr ""
+
+msgid "Click <emphasis role=\"strong\">Save</emphasis>."
+msgstr ""
+
+msgid "Add the method to the class."
+msgstr ""
+
+msgid "Select the <emphasis role=\"strong\">Instances</emphasis> tab."
+msgstr ""
+
+msgid "Enter the name of the method that you created earlier (for example, power_off)."
+msgstr ""
+
+msgid "Invoking an automated task when an event occurs"
+msgstr ""
+
+msgid "To automatically invoke the task when a certain event occurs, you must create, configure and assign a custom policy."
+msgstr ""
+
+msgid "As an example, the following steps describe how to perform a specific automated task when CloudForms receives certain events (that you define)."
+msgstr ""
+
+msgid "<emphasis role=\"strong\">Note:</emphasis> You must be logged in to CloudForms as a user with permission to create policies. The default user is admin, password smartvm."
+msgstr ""
+
+msgid "Step 1. Create and configure a policy."
+msgstr ""
+
+msgid "Navigate to <emphasis role=\"strong\">Control &gt; Explorer</emphasis>."
+msgstr ""
+
+msgid "Click <emphasis role=\"strong\">Policies &gt; All Policies &gt; Control Policies &gt; Physical Infrastructure Control Policies</emphasis>."
+msgstr ""
+
+msgid "Click <emphasis role=\"strong\">Configuration &gt; Add a new Physical Server Control Policy</emphasis> from the top menu."
+msgstr ""
+
+msgid "Enter a description (for example, Lenovo_Policy)."
+msgstr ""
+
+msgid "Step 2. Create a custom action."
+msgstr ""
+
+msgid "Create a custom action."
+msgstr ""
+
+msgid "Navigation to <emphasis role=\"strong\">Action &gt; All Actions</emphasis>."
+msgstr ""
+
+msgid "Click <emphasis role=\"strong\">Configuration &gt; Add a new action</emphasis> from the top menu."
+msgstr ""
+
+msgid "Enter a description (for example, Power_Off_Server)."
+msgstr ""
+
+msgid "For Action Type select <emphasis role=\"strong\">Invoke a custom Automation</emphasis>."
+msgstr ""
+
+msgid "Enter a message (for example, create)."
+msgstr ""
+
+msgid "Fill the Request field with <emphasis role=\"strong\">Call_Instance</emphasis>."
+msgstr ""
+
+msgid "Specify the following attributes in the order give:"
+msgstr ""
+
+msgid "Specify the <emphasis role=\"strong\">Namespace</emphasis> attribute, and set the value to the new domain and namespace (&lt;domain_name&gt;/&lt;namespace&gt;) (for example, Lenovo/Functions)."
+msgstr ""
+
+msgid "Specify the <emphasis role=\"strong\">Class</emphasis> attribute, and set the value to the class (for example, Power_actions)."
+msgstr ""
+
+msgid "Specify the <emphasis role=\"strong\">Instance</emphasis> attribute, and set the value to the instance (for example, Physical_Server_PowerOff)."
+msgstr ""
+
+msgid "Configure the policy that you created."
+msgstr ""
+
+msgid "Select the new policy (for example, Lenovo_Policy)."
+msgstr ""
+
+msgid "Click <emphasis role=\"strong\">Configuration &gt; Edit this policy’s Event assignments</emphasis> from the top menu."
+msgstr ""
+
+msgid "Find Physical Server operation, and select the <emphasis role=\"strong\">Physical Server Shutdown</emphasis> option."
+msgstr ""
+
+msgid "Select the new policy event."
+msgstr ""
+
+msgid "Click <emphasis role=\"strong\">Configuration &gt; Edit Actions for this policy Event</emphasis> from the top menu."
+msgstr ""
+
+msgid "From the <emphasis role=\"strong\">Order of Actions if All Conditions are True</emphasis> field, select the custom action that you created in the previous step (for example, Power_Off_Server)."
+msgstr ""
+
+msgid "Step 3. Create and assign a policy profile."
+msgstr ""
+
+msgid "Create a policy profile."
+msgstr ""
+
+msgid "Click <emphasis role=\"strong\">Policy Profiles &gt; All Policy Profiles</emphasis>."
+msgstr ""
+
+msgid "Click <emphasis role=\"strong\">Configuration &gt; Add a new Policy Profile</emphasis> from the top menu."
+msgstr ""
+
+msgid "Enter a description for the policy (for example, Lenovo_Policy_Profile)."
+msgstr ""
+
+msgid "Select your policy and drag it to the right."
+msgstr ""
+
+msgid "Assign the policy profile to the Lenovo physical-infrastructure providers:"
+msgstr ""
+
+msgid "Select the physical-infrastructure providers to which you want to assign the policy profile."
+msgstr ""
+
+msgid "Click <emphasis role=\"strong\">Policy &gt; Manage Policies</emphasis> form the top menu."
+msgstr ""
+
+msgid "Select the policy profile that you just created (for example, Lenovo_Policy_Profile)."
+msgstr ""
+
+msgid "<inlinemediaobject> <imageobject> <imagedata fileref=\"images/automation/images/provider_assign_profile.png\" /> </imageobject> <textobject><phrase>provider assign profile</phrase></textobject> </inlinemediaobject>"
+msgstr ""
+
