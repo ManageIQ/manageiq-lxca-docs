@@ -1,0 +1,438 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 0\n"
+"POT-Creation-Date: 2018-02-26 09:56+1000\n"
+"PO-Revision-Date: 2018-02-26 09:56+1000\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: None\n"
+"Language: en-US \n"
+"MIME-Version: 1.0\n"
+"Content-Type: application/x-publican; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Publican v4.3.3\n"
+
+msgid "Lenovo Physical Infrastructure Provider REST API"
+msgstr ""
+
+msgid "A reference to the Lenovo physical infrastructure provider REST API"
+msgstr ""
+
+msgid "Red Hat CloudForms"
+msgstr ""
+
+msgid "A reference to the Lenovo physical infrastructure provider REST API."
+msgstr ""
+
+msgid "If you have a suggestion for improving this guide or have found an error, please submit a Bugzilla report at <link xlink:href=\"https://bugzilla.redhat.com/enter_bug.cgi?product=Red%20Hat%20CloudForms%20Management%20Engine\">http://bugzilla.redhat.com</link> against <emphasis role=\"strong\">Red Hat CloudForms Management Engine</emphasis> for the <emphasis role=\"strong\">Documentation</emphasis> component. Please provide specific details, such as the section number, guide name, and CloudForms version so we can easily locate the content."
+msgstr ""
+
+msgid "REST API"
+msgstr ""
+
+msgid "You can use the REST API to retrieve information about providers, physical-infrastructure providers, and physical servers. You can use the CloudForms REST API if you need information about the servers in your physical infrastructure."
+msgstr ""
+
+msgid "<emphasis role=\"strong\">Before you begin</emphasis>"
+msgstr ""
+
+msgid "To use the REST API, you must log in to CloudForms Management Engine API as a user who has permission to access the API. The default user is admin, password is smartvm."
+msgstr ""
+
+msgid "Use the following URL to access the CloudForms REST API:"
+msgstr ""
+
+msgid "&lt;CloudForms_address&gt;:&lt;port&gt;/api"
+msgstr ""
+
+msgid "For example:"
+msgstr ""
+
+msgid "localhost:3000/api"
+msgstr ""
+
+msgid "Retrieving Provider Details"
+msgstr ""
+
+msgid "To retrieve information for all providers, use the following request URL:"
+msgstr ""
+
+msgid "GET &lt;CloudForms_address&gt;:&lt;port&gt;/api/providers"
+msgstr ""
+
+msgid "A JSON response with the following keys is returned."
+msgstr ""
+
+msgid ""
+"actions (list of actions that can be used)\n"
+"count (total number of providers)\n"
+"name (URI name)\n"
+"pages (count of pages)\n"
+"resource (list of URLs for each provider that is managed by CloudForms)\n"
+"subcount (number of providers returned)"
+msgstr ""
+
+msgid "<emphasis role=\"strong\">Examples</emphasis>"
+msgstr ""
+
+msgid "To retrieve all information about the providers, use the <emphasis role=\"strong\">?expand=resources</emphasis> query parameter, for example:"
+msgstr ""
+
+msgid "GET localhost:3000/api/providers?expand=resources"
+msgstr ""
+
+msgid "To retrieve a specific information about the providers (such as name and ID), use the <emphasis role=\"strong\">?expand=resources&amp;attributes=&lt;attribute_list&gt;</emphasis> query parameters, for example:"
+msgstr ""
+
+msgid "GET localhost:3000/ api/providers?expand=resources&amp;attributes=id,name"
+msgstr ""
+
+msgid "To retrieve additional information about the providers (such as port, hostname, and IP address), use the <emphasis role=\"strong\">?expand=resources&amp;attributes=&lt;attribute_list&gt;</emphasis> query parameters, for example:"
+msgstr ""
+
+msgid "GET localhost:3000/api/providers?expand=resources&amp;attributes=port,hostname,ipaddress"
+msgstr ""
+
+msgid "To retrieve information about only Lenovo physical-infrastructure providers, use the <emphasis role=\"strong\">?expand=resources&amp;filter[]=type=&lt;provider_type&gt;</emphasis> attribute against all provider resources, for example:"
+msgstr ""
+
+msgid "GET localhost:3000/api/providers?expand=resources&amp;filter[]=type=ManageIQ::Providers::Lenovo::PhysicalInfraManager"
+msgstr ""
+
+msgid "Retrieving Provider Details by ID"
+msgstr ""
+
+msgid "To retrieve information for a specific provider, use the following request URL where &lt;provider_ID&gt; is the unique identifier of the provider:"
+msgstr ""
+
+msgid "GET &lt;CloudForms_address&gt;:&lt;port&gt;/api/providers/&lt;provider_ID&gt;"
+msgstr ""
+
+msgid ""
+"href\n"
+"id\n"
+"name\n"
+"created_on\n"
+"updated_on\n"
+"guid\n"
+"zone_id\n"
+"type\n"
+"last_refresh_date\n"
+"tenant_id\n"
+"enabled\n"
+"options\n"
+"actions"
+msgstr ""
+
+msgid "To retrieve a specific information about the provider (such as name and ID), use the <emphasis role=\"strong\">?attributes=&lt;attribute_list&gt;</emphasis> query parameters, for example:"
+msgstr ""
+
+msgid "GET localhost:3000/api/providers/&lt;provider_ID&gt;?expand=resources&amp;attributes=id,name"
+msgstr ""
+
+msgid "To retrieve additional information about the provider (such as port, hostname, and IP address), use the <emphasis role=\"strong\">?attributes=&lt;attribute_list&gt;</emphasis> query parameters, for example:"
+msgstr ""
+
+msgid " GET localhost:3000/api/providers/&lt;provider_ID&gt;?expand=resources\n"
+"&amp;attributes=port,hostname,ipaddress"
+msgstr ""
+
+msgid "Performing physical-infrastructure provider actions"
+msgstr ""
+
+msgid "You can use the REST API to perform actions on a physical-infrastructure provider, such as creating, modifying and deleting."
+msgstr ""
+
+msgid "<emphasis role=\"strong\">Note:</emphasis> To perform actions on physical-infrastructure providers, you must create a basic authentication using your preferred tool or library, and use the user name and password for the CloudForms instance when using the REST API."
+msgstr ""
+
+msgid "Creating a Lenovo physical-infrastructure provider"
+msgstr ""
+
+msgid "To create a Lenovo physical-infrastructure provider, send a POST request using the following request URL and JSON request body."
+msgstr ""
+
+msgid "POST &lt;CloudForms_address&gt;:&lt;port&gt;/api/providers"
+msgstr ""
+
+msgid "Request body:"
+msgstr ""
+
+msgid ""
+"{\n"
+"   \"action\": \"create\",\n"
+"   \"credentials\": {\n"
+"      \"password\": \"&lt;PASSWORD&gt;\",\n"
+"      \"userid\": \"&lt;USERNAME&gt;\"\n"
+"   },\n"
+"   \"hostname\": \"&lt;LENOVO XCLARITY ADMINISTRATOR ADDRESS&gt;\",\n"
+"   \"name\": \"&lt;NAME&gt;\",\n"
+"   \"port\": \"&lt;THE SERVICE PORT&gt;\",\n"
+"   \"type\": \"ManageIQ::Providers::Lenovo::PhysicalInfraManager\"\n"
+"}"
+msgstr ""
+
+msgid "Modifying properties for a Lenovo physical-infrastructure provider"
+msgstr ""
+
+msgid "To modify properties of a Lenovo physical-infrastructure provider, send a POST request using the following request URL and JSON request body."
+msgstr ""
+
+msgid ""
+"{\n"
+"   \"action\":\"edit\",\n"
+"   \"credentials\": {\n"
+"      \"password\":\"&lt;new_passowrd&gt;\",\n"
+"      \"userid\":\"&lt;new_user_name&gt;\"\n"
+"   },\n"
+"   \"hostname\":\"&lt;New_Lenovo_XClarity_Administrator_address&gt;\",\n"
+"   \"name\":\"&lt;new_provider_name&gt;\",\n"
+"   \"port\":\"&lt;new_service_port&gt;\"\n"
+"}"
+msgstr ""
+
+msgid "Refreshing information about all providers"
+msgstr ""
+
+msgid "To refresh information about all providers, send a POST request using the following request URL and JSON request body."
+msgstr ""
+
+msgid ""
+"{\n"
+"   \"action\":\"refresh\"\n"
+"}"
+msgstr ""
+
+msgid "Deleting a physical-infrastructure provider"
+msgstr ""
+
+msgid "To delete a specific provider:"
+msgstr ""
+
+msgid "Send a DELETE request using the following request URL."
+msgstr ""
+
+msgid "DELETE &lt;CloudForms_address&gt;:&lt;port&gt;/api/providers/&lt;provider_ID&gt;"
+msgstr ""
+
+msgid "Send a POST request using the following request URL and JSON request body."
+msgstr ""
+
+msgid "POST &lt;CloudForms_address&gt;:&lt;port&gt;/api/providers/&lt;provider_ID&gt;"
+msgstr ""
+
+msgid ""
+"{\n"
+"   \"action\":\"delete\"\n"
+"}"
+msgstr ""
+
+msgid "Performing an action on multiple physical-infrastructure providers"
+msgstr ""
+
+msgid "To perform an action on more than one physical-infrastructure providers, send a POST request using the following request URL and JSON request body."
+msgstr ""
+
+msgid ""
+"{\n"
+"   \"action\":\"&lt;action&gt;\",\n"
+"   \"resources\": [{\n"
+"      \"href\":\"&lt;provider_ID&gt;\"\n"
+"   },\n"
+"   {\n"
+"      \"href\":\"&lt;provider_ID&gt;\"\n"
+"   }]\n"
+"}"
+msgstr ""
+
+msgid "Retrieving Physical Server Details"
+msgstr ""
+
+msgid "To retrieve information for all physical servers, use the following request URL:"
+msgstr ""
+
+msgid "GET &lt;CloudForms_address&gt;:&lt;port&gt;/api/physical_servers"
+msgstr ""
+
+msgid ""
+"actions (list of actions that can be used)\n"
+"count (count of the physical servers)\n"
+"name (URI name)\n"
+"pages (count of pages)\n"
+"resource (list of URLs of the each physical servers)\n"
+"subcount (count of the physical servers returned)"
+msgstr ""
+
+msgid "To retrieve all information about the physical servers, use the <emphasis role=\"strong\">?expand=resources</emphasis> query parameter, for example:"
+msgstr ""
+
+msgid "GET localhost:3000/api/physical_servers?expand=resources"
+msgstr ""
+
+msgid "To retrieve a specific information about the physical servers (such as name and ID), use the <emphasis role=\"strong\">?expand=resources&amp;attributes=&lt;attribute_list&gt;</emphasis> query parameters, for example:"
+msgstr ""
+
+msgid "GET localhost:3000/api/physical_servers?expand=resources&amp;attributes=id,name"
+msgstr ""
+
+msgid "To retrieve specific information about the physical servers (such as firmware, networks, guest devices, and asset details), use the <emphasis role=\"strong\">?expand=resources&amp;attributes=&lt;attribute_list&gt;</emphasis> query parameters, for example:"
+msgstr ""
+
+msgid "GET localhost:3000/api/physical_servers?expand=resources&amp;attributes= hardware.firmwares,hardware.networks,hardware.guest_devices,hardware.assets_details"
+msgstr ""
+
+msgid "To retrieve information about only a specific physical server, use the <emphasis role=\"strong\">?expand=resources&amp;filter[]=name=&lt;server_name&gt;</emphasis> query attributes on all physical-server resources, for example:"
+msgstr ""
+
+msgid "GET localhost:3000/api/physical_servers?expand=resources&amp;filter[]=name=Server1-20127X5462"
+msgstr ""
+
+msgid "Retrieving Physical Server Details by ID"
+msgstr ""
+
+msgid "To retrieve information for a specific physical server, use the following request URL:"
+msgstr ""
+
+msgid "GET &lt;CloudForms_address&gt;:&lt;port&gt;/api/physical_servers/&lt;server_ID&gt;"
+msgstr ""
+
+msgid ""
+"actions\n"
+"created_at\n"
+"ems_id\n"
+"ems_ref\n"
+"field_replaceable_unit\n"
+"health_state\n"
+"hostname\n"
+"href\n"
+"location_led_state\n"
+"machine_type\n"
+"manufacturer\n"
+"model\n"
+"name\n"
+"power_state\n"
+"product_name\n"
+"serial_number\n"
+"type\n"
+"uid_ems\n"
+"updated_at\n"
+"vendor"
+msgstr ""
+
+msgid "To retrieve a specific information about a specific physical server (such as name and ID), use the <emphasis role=\"strong\">?expand=resources&amp;attributes=&lt;attribute_list&gt;</emphasis> query parameters, for example:"
+msgstr ""
+
+msgid "GET localhost:3000/api/physical_servers/&lt;server_ID&gt;?expand=resources&amp;attributes=id,name"
+msgstr ""
+
+msgid "To retrieve a specific information about a specific physical server (such as firmware, networks, guest devices, and asset details), use the <emphasis role=\"strong\">?expand=resources&amp;attributes=&lt;attribute_list&gt;</emphasis> query parameters, for example:"
+msgstr ""
+
+msgid " GET localhost:3000/api/physical_servers/&lt;server_ID&gt;?expand=resources\n"
+"&amp;attributes=hardware.firmwares,hardware.networks,hardware.guest_devices,hardware.assets_details"
+msgstr ""
+
+msgid "Performing physical server actions"
+msgstr ""
+
+msgid "You can use the REST API to perform management tasks on a physical server, such as powering on an off, restarting, and changing the location-LED state."
+msgstr ""
+
+msgid "<emphasis role=\"strong\">Note:</emphasis> To perform actions on physical servers, you must create a basic authentication using your preferred tool or library, and enter your user name and password to access the CloudForms REST API."
+msgstr ""
+
+msgid "Powering on a physical server"
+msgstr ""
+
+msgid "To power on a specific physical server, send a POST request using the following request URL and JSON request body."
+msgstr ""
+
+msgid "POST &lt;CloudForms_address&gt;:&lt;port&gt;/api/physical_servers/&lt;server_ID&gt;"
+msgstr ""
+
+msgid ""
+"{\n"
+"   \"action\":\"power_on\"\n"
+"}"
+msgstr ""
+
+msgid "Powering off a physical server"
+msgstr ""
+
+msgid "To shut down the operating system and power off a specific physical server, send a POST request using the following request URL and JSON request body."
+msgstr ""
+
+msgid ""
+"{\n"
+"   \"action\":\"power_off\"\n"
+"}"
+msgstr ""
+
+msgid "Immediately powering off a physical server"
+msgstr ""
+
+msgid "To immediately power off a specific physical server, send a POST request using the following request URL and JSON request body."
+msgstr ""
+
+msgid ""
+"{\n"
+"   \"action\":\"power_off_now\"\n"
+"}"
+msgstr ""
+
+msgid "Restarting a physical server"
+msgstr ""
+
+msgid "To shut down the operating system and restart a specific physical server, send a POST request using the following request URL and JSON request body."
+msgstr ""
+
+msgid ""
+"{\n"
+"   \"action\":\"restart\"\n"
+"}"
+msgstr ""
+
+msgid "Immediately restarting a physical server"
+msgstr ""
+
+msgid "To immediately restart a specific physical server, send a POST request using the following request URL and JSON request body."
+msgstr ""
+
+msgid ""
+"{\n"
+"   \"action\":\"restart_now\"\n"
+"}"
+msgstr ""
+
+msgid "Changing the location LED state on a physical server to blinking"
+msgstr ""
+
+msgid "To change the location-LED state to blinking on a specific server, send a POST request using the following request URL and JSON request body."
+msgstr ""
+
+msgid ""
+"{\n"
+"   \"action\":\"blink_loc_led\"\n"
+"}"
+msgstr ""
+
+msgid "Performing an action on multiple physical servers"
+msgstr ""
+
+msgid "To perform an action on more than one physical severs, send a POST request using the following request URL and JSON request body."
+msgstr ""
+
+msgid "POST &lt;CloudForms_address&gt;:&lt;port&gt;/api/physical_servers"
+msgstr ""
+
+msgid ""
+"{\n"
+"   \"action\":\"&lt;action&gt;\",\n"
+"   \"resources\": [{\n"
+"      \"href\":\"&lt;server_ID&gt;\"\n"
+"   },\n"
+"   {\n"
+"      \"href\":\"&lt;server_ID&gt;\"\n"
+"   }]\n"
+"}"
+msgstr ""
+

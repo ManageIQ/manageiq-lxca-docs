@@ -1,0 +1,880 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE book [
+<!ENTITY % sgml.features "IGNORE">
+<!ENTITY % xml.features "INCLUDE">
+<!ENTITY % DOCBOOK_ENTS PUBLIC "-//OASIS//ENTITIES DocBook Character Entities V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/dbcentx.mod">
+%DOCBOOK_ENTS;
+]>
+<?asciidoc-toc?><?asciidoc-numbered?><book xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">
+<info>
+<title>Configuring the Lenovo Physical Infrastructure Provider</title><subtitle>Adding and configuring the Lenovo physical infrastructure provider in Red Hat CloudForms</subtitle>
+
+<date>2018-03-05</date>
+<productname>Red Hat CloudForms</productname>
+<productnumber>4.6</productnumber>
+<abstract>
+	<para>Adding and configuring the Lenovo physical infrastructure provider in Red Hat CloudForms.</para>
+	<para>If you have a suggestion for improving this guide or have found an error, please submit a Bugzilla report at <link xlink:href="https://bugzilla.redhat.com/enter_bug.cgi?product=Red%20Hat%20CloudForms%20Management%20Engine">http://bugzilla.redhat.com</link> against <emphasis role="strong">Red Hat CloudForms Management Engine</emphasis> for the <emphasis role="strong">Documentation</emphasis> component. Please provide specific details, such as the section number, guide name, and CloudForms version so we can easily locate the content.</para>
+</abstract>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="Author_Group.xml"/>
+</info>
+<chapter xml:id="overview" remap="_overview">
+<title>Overview</title>
+<simpara>The Lenovo® Physical Infrastructure Provider provides IT administrators the ability to integrate the management features of Lenovo XClarity Administrator with the hybrid-cloud management capabilities of Red Hat CloudForms. Lenovo expands the physical-infrastructure management for on-premise cloud configurations by leveraging Lenovo hardware management. It provides the configuration, monitoring, event management, and power monitoring needed to reduce cost and complexity through server consolidation and simplified management.</simpara>
+<simpara>Key features include:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>Seamlessly integrates with one or more Lenovo XClarity Administrator virtual appliances, providing a summary view of the Lenovo infrastructure, relationship views of physical servers and virtual hosts, and configuration of servers using Configuration Patterns</simpara>
+</listitem>
+<listitem>
+<simpara>Provides a single interface to monitor Lenovo hardware that is managed by multiple instances of Lenovo XClarity Administrator</simpara>
+</listitem>
+<listitem>
+<simpara>Automatically discovers hardware that is managed by Lenovo XClarity Administrator</simpara>
+</listitem>
+<listitem>
+<simpara>Manage devices for use in on-premise cloud deployments</simpara>
+</listitem>
+<listitem>
+<simpara>Provides a timeline of server events</simpara>
+</listitem>
+<listitem>
+<simpara>Uses customizable filters to organize views of managed devices across the data center</simpara>
+</listitem>
+<listitem>
+<simpara>Generates relationships between physical servers and the virtual hosts (such as ESXI, ovirt, KVM, and Red Hat OpenStack)</simpara>
+</listitem>
+<listitem>
+<simpara>Manages current system settings (such as BMC, uEFI, and boot order settings) on the managed devices</simpara>
+</listitem>
+<listitem>
+<simpara>Simplifies system management through custom policies and automation that respond to the health status of physical servers</simpara>
+</listitem>
+</itemizedlist>
+</chapter>
+<chapter xml:id="configuring_lenovo_xclarity_administrator" remap="_configuring_lenovo_xclarity_administrator">
+<title>Configuring Lenovo XClarity Administrator</title>
+<simpara>Lenovo XClarity Administrator virtual appliances are connected to CloudForms by adding physical-infrastructure providers. Physical-infrastructure providers enable you to manage and interact with devices that are managed by Lenovo XClarity Administrator. After the physical-infrastructure provider is added, the servers that are managed by the Lenovo XClarity Administrator are registered in CloudForms. Managed devices can be monitored, configured, and updated using Lenovo XClarity Administrator. The physical-infrastructure provider surfaces information about these managed devices and the Lenovo XClarity Administrator instance.</simpara>
+<section xml:id="setting_up_lenovo_xclarity_administrator" remap="_setting_up_lenovo_xclarity_administrator">
+<title>Setting up Lenovo XClarity Administrator</title>
+<simpara>For information about downloading and setting up Lenovo XClarity Administrator, see <link xlink:href="http://sysmgt.lenovofiles.com/help/topic/com.lenovo.lxca.doc/setup.html?cp=1_6">Installing and setting up Lenovo XClarity Administrator</link> in the Lenovo XClarity Administrator online documentation.</simpara>
+<simpara><emphasis role="strong">Note:</emphasis> You can use all available features in Lenovo XClarity Administrator for free for up to 90 days. After 90 days, you can continue to use Lenovo XClarity Administrator to manage and monitor your hardware for free; however, you must purchase a full-function-enablement license to continue using Lenovo XClarity Administrator to configure your hardware using Configuration Patterns and to deploy operating systems. Lenovo XClarity Pro provides entitlement to service and support and the full-function-enablement license for Lenovo XClarity Administrator. For more information about purchasing Lenovo XClarity Pro, contact your Lenovo representative or authorized business partner.</simpara>
+</section>
+<section xml:id="discovering_and_managing_hardware_using_lenovo_xclarity_administrator" remap="_discovering_and_managing_hardware_using_lenovo_xclarity_administrator">
+<title>Discovering and managing hardware using Lenovo XClarity Administrator</title>
+<simpara>Lenovo XClarity Administrator can discover manageable devices in your environment by performing an SLP discovery for devices that are on the same IP subnet as Lenovo XClarity Administrator. A specified IP address or range of IP addresses also can be used, or information can be imported from a spreadsheet, a process that is known as a <emphasis>bulk import</emphasis>. Discovery options can be accessed by clicking <emphasis role="strong">Hardware &gt; Discover and Manage New Devices</emphasis> from the menu bar. Discovered devices can then be managed by Lenovo XClarity Administrator. During the management process, you are asked for login credentials for the management controller of the target servers and given the option to create a recovery account for the servers. For more information about discovering and managing devices, see the <link xlink:href="http://sysmgt.lenovofiles.com/help/index.jsp?topic=%2Fcom.lenovo.lxca.doc%2Faug_product_page.html">Lenovo XClarity Administrator online documentation</link>.</simpara>
+<simpara><emphasis role="strong">Note:</emphasis></simpara>
+<itemizedlist>
+<listitem>
+<simpara>Ensure that the devices that you intend to manage are supported by Lenovo XClarity Administrator. For information about supported devices, see <link xlink:href="http://sysmgt.lenovofiles.com/help/topic/com.lenovo.lxca.doc/plan_supportedhw.html?cp=1_3_1_1">Supported devices</link> in the Lenovo XClarity Administrator online documentation.</simpara>
+</listitem>
+<listitem>
+<simpara>Ensure that firmware for all devices that you intend to manage using Lenovo XClarity Administrator are at the required levels. For more information about supported firmware levels, see <link xlink:href="http://sysmgt.lenovofiles.com/help/topic/com.lenovo.lxca.doc/plan_supportedfw.html?cp=1_3_1_2">Supported firmware</link> in the Lenovo XClarity Administrator online documentation.</simpara>
+</listitem>
+</itemizedlist>
+</section>
+</chapter>
+<chapter xml:id="managing_physical_infrastructure_providers" remap="_managing_physical_infrastructure_providers">
+<title>Managing physical-infrastructure providers</title>
+<section xml:id="adding_a_physical_infrastructure_provider" remap="_adding_a_physical_infrastructure_provider">
+<title>Adding a physical-infrastructure provider</title>
+<simpara>Lenovo XClarity Administrator virtual appliances are connected to CloudForms by adding physical-infrastructure providers. Physical-infrastructure providers enable you to manage and interact with devices that are managed by Lenovo XClarity Administrator.</simpara>
+<simpara><emphasis role="strong">Note:</emphasis> You must be logged in to CloudForms as a user with permission to add providers. The default user is admin, password smartvm.</simpara>
+<simpara>Complete the following steps for each Lenovo XClarity Administrator instance that you want to connect to CloudForms.</simpara>
+<simpara>To connect to a specific Lenovo XClarity Administrator instance:</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Navigate to <emphasis role="strong">Compute &gt; Physical Infrastructure &gt; Providers.</emphasis></simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Configuration</emphasis>, then click <emphasis role="strong">Add a New Infrastructure Provider</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Enter a <emphasis role="strong">Name</emphasis> for the provider (for example, Physical Infrastructure Manager).</simpara>
+</listitem>
+<listitem>
+<simpara>From the <emphasis role="strong">Type</emphasis> list, select "Lenovo XClarity".</simpara>
+</listitem>
+<listitem>
+<simpara>Accept the default <emphasis role="strong">Zone</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>In the credentials area, provide the following:</simpara>
+<orderedlist numeration="loweralpha">
+<listitem>
+<simpara>Enter the hostname, IPv4 address, or IPv6 address of the Lenovo XClarity Administrator instance.</simpara>
+</listitem>
+<listitem>
+<simpara>Enter “443” for the API port.</simpara>
+</listitem>
+<listitem>
+<simpara>Enter the username and password used to log in to the Lenovo XClarity Administrator instance.</simpara>
+</listitem>
+</orderedlist>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Validate</emphasis> to confirm that you can connect to the Lenovo XClarity Administrator instance.</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Add</emphasis>.</simpara>
+</listitem>
+</orderedlist>
+<simpara>To discover and then connect to a range of Lenovo XClarity Administrator instances:</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Discover Lenovo XClarity Administrator instances:</simpara>
+<orderedlist numeration="loweralpha">
+<listitem>
+<simpara>Navigate to <emphasis role="strong">Compute &gt; Physical Infrastructure &gt; Providers</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Configuration</emphasis>, then click <emphasis role="strong">Discover Physical Infrastructure Providers</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>From the <emphasis role="strong">Type</emphasis> list, select “Lenovo XClarity Administrator.”</simpara>
+</listitem>
+<listitem>
+<simpara>Enter the IP address range starting with <emphasis role="strong">From Address</emphasis> and ending with <emphasis role="strong">To Address</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Enter the port.</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Start</emphasis> to begin the discovery process.</simpara>
+</listitem>
+</orderedlist>
+</listitem>
+<listitem>
+<simpara>Update credentials for each discovered physical-infrastructure provider (Lenovo XClarity Administrator instance):</simpara>
+<orderedlist numeration="loweralpha">
+<listitem>
+<simpara>Navigate to <emphasis role="strong">Compute &gt; Physical Infrastructure &gt; Providers</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Select the providers to be edited.</simpara>
+</listitem>
+<listitem>
+<simpara>Click the <emphasis role="strong">Configuration</emphasis> button in the menu.</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Edit selected infrastructure providers</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Enter the username and password used to log in to the Lenovo XClarity Administrator instance.</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Validate</emphasis> to confirm that you can connect to the Lenovo XClarity Administrator instance.</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Save</emphasis>. A flash message is displayed, confirming your changes were performed successfully.</simpara>
+</listitem>
+</orderedlist>
+</listitem>
+</orderedlist>
+<simpara>After adding the physical-infrastructure providers, you can view all available providers by navigating to <emphasis role="strong">Compute &gt; Physical Infrastructure &gt; Providers</emphasis> as shown below.</simpara>
+<simpara><inlinemediaobject>
+<imageobject>
+<imagedata fileref="images/usage/provider/images/providers.png"/>
+</imageobject>
+<textobject><phrase>providers</phrase></textobject>
+</inlinemediaobject></simpara>
+</section>
+<section xml:id="refreshing_physical_infrastructure_providers" remap="_refreshing_physical_infrastructure_providers">
+<title>Refreshing physical-infrastructure providers</title>
+<simpara>CloudForms regularly polls the physical-infrastructure providers to retrieve the latest data, including managed devices, relationships, and power states. You can manually retrieve the latest data by completing the following steps.</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Navigate to <emphasis role="strong">Compute &gt; Physical Infrastructure &gt; Providers</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Select a  physical-infrastructure provider to be refreshed.</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Configuration</emphasis>, then click <emphasis role="strong">Refresh Relationships and Power States</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">OK</emphasis>.</simpara>
+</listitem>
+</orderedlist>
+</section>
+<section xml:id="removing_a_physical_infrastructure_provider" remap="_removing_a_physical_infrastructure_provider">
+<title>Removing a physical-infrastructure provider</title>
+<simpara>You can delete a physical-infrastructure provider by completing the following steps.</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Navigate to <emphasis role="strong">Compute &gt; Physical Infrastructure &gt; Providers</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Select the physical-infrastructure provider to be removed.</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Configuration</emphasis>, then click <emphasis role="strong">Remove Infrastructure Providers from Inventory</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">OK</emphasis>.</simpara>
+</listitem>
+</orderedlist>
+</section>
+<section xml:id="editing_a_physical_infrastructure_provider" remap="_editing_a_physical_infrastructure_provider">
+<title>Editing a physical-infrastructure provider</title>
+<simpara>You can modify system settings for a physical-infrastructure provider by completing the following steps.</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Navigate to <emphasis role="strong">Compute &gt; Physical Infrastructure &gt; Providers</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Select the physical-infrastructure provider to be modified.</simpara>
+</listitem>
+<listitem>
+<simpara>Click the <emphasis role="strong">Configuration</emphasis> button in the menu.</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Edit selected infrastructure providers</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Make the required changes, and revalidate credentials if necessary.</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Save</emphasis>. A flash message is displayed, confirming your changes were performed successfully.</simpara>
+</listitem>
+</orderedlist>
+</section>
+</chapter>
+<chapter xml:id="viewing_relationships" remap="_viewing_relationships">
+<title>Viewing relationships</title>
+<section xml:id="viewing_relationships_between_physical_servers_and_virtual_hosts" remap="_viewing_relationships_between_physical_servers_and_virtual_hosts">
+<title>Viewing relationships between physical servers and virtual hosts</title>
+<simpara>CloudForms shows relationships between virtual host systems and physical servers and the virtual hosts for each physical-infrastructure provider. The topology view provides a graphical representation of the relationships, allowing you to easily navigate between connected nodes (see the following figure).</simpara>
+<simpara><inlinemediaobject>
+<imageobject>
+<imagedata fileref="images/usage/relationship/images/topology_widget.png"/>
+</imageobject>
+<textobject><phrase>topology widget</phrase></textobject>
+</inlinemediaobject></simpara>
+<simpara>To display the topology view for a specific physical-infrastructure provider, complete the following steps.</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Navigate to <emphasis role="strong">Compute &gt; Physical Infrastructure &gt; Providers</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Select the physical-infrastructure provider to be viewed.</simpara>
+</listitem>
+<listitem>
+<simpara>From the overview section, select <emphasis role="strong">Topology</emphasis> to display the Topology page. From this page, you can perform the following actions:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>Hide or show all physical server by clicking <emphasis role="strong">Physical Servers</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Hide or show all hosts by clicking <emphasis role="strong">Hosts</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Hide or show all VMs by clicking <emphasis role="strong">VMs</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Double-click or right-click a node in the graph to navigate to the summary pages for that node.</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+</orderedlist>
+</section>
+<section xml:id="viewing_server_relationships" remap="_viewing_server_relationships">
+<title>Viewing server relationships</title>
+<simpara>You can view a list of all physical servers that are managed by a specific physical-infrastructure provider.</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Navigate to <emphasis role="strong">Compute &gt; Physical Infrastructure &gt; Providers</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Select the physical-infrastructure provider to be viewed.</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Physical Servers</emphasis> in the <emphasis role="strong">Relationships</emphasis> section.</simpara>
+</listitem>
+</orderedlist>
+</section>
+<section xml:id="viewing_virtual_host_relationships" remap="_viewing_virtual_host_relationships">
+<title>Viewing virtual-host relationships</title>
+<simpara>You can view a list of physical servers that are associated with hosts that are managed by a specific physical-infrastructure provider.</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Navigate to <emphasis role="strong">Compute &gt; Physical Infrastructure &gt; Providers</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Select the physical-infrastructure provider to be viewed.</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Physical Servers with Host</emphasis> button in the <emphasis role="strong">Relationships</emphasis> section.</simpara>
+</listitem>
+</orderedlist>
+<simpara>You should see a list of physical servers that are associated with hosts as shown below.</simpara>
+<simpara><inlinemediaobject>
+<imageobject>
+<imagedata fileref="images/usage/relationship/images/host_relationships.png"/>
+</imageobject>
+<textobject><phrase>host relationships</phrase></textobject>
+</inlinemediaobject></simpara>
+</section>
+</chapter>
+<chapter xml:id="managing_physical_servers" remap="_managing_physical_servers">
+<title>Managing physical servers</title>
+<simpara>After the Lenovo physical-infrastructure provider is added, the servers that are managed by Lenovo XClarity Administrator are registered in CloudForms. You can then view and manage those servers.</simpara>
+<section xml:id="viewing_a_physical_server" remap="_viewing_a_physical_server">
+<title>Viewing a Physical Server</title>
+<simpara>To view a list of all physical servers that are managed by all physical-infrastructure providers, navigate to <emphasis role="strong">Compute &gt; Physical Infrastructure &gt; Servers</emphasis>. The Physical Servers page is displayed (see the following figure).</simpara>
+<simpara><emphasis role="strong">Tip:</emphasis> You can sort the table columns to make it easier to find specific servers. In addition, you can choose the types of servers to display by selecting server types from the <emphasis role="strong">Filters</emphasis> drop-down list or entering text (such as a name or IP address) in the <emphasis role="strong">Search</emphasis> field.</simpara>
+<simpara><inlinemediaobject>
+<imageobject>
+<imagedata fileref="images/usage/physical_server/images/physical_servers.png"/>
+</imageobject>
+<textobject><phrase>physical servers</phrase></textobject>
+</inlinemediaobject></simpara>
+</section>
+<section xml:id="viewing_the_timeline_for_a_physical_server" remap="_viewing_the_timeline_for_a_physical_server">
+<title>Viewing the timeline for a physical server</title>
+<simpara>A <emphasis>timeline</emphasis> is a tool that enables you to track the state of a physical server over a period of time. This includes power activity, device additions and removals, and firmware changes. The timeline is useful to identify critical failures, identify behavior patterns, audit user actions, and troubleshoot problems.</simpara>
+<simpara><emphasis role="strong">Note:</emphasis> Timelines are available only for physical servers that have associated events.</simpara>
+<simpara>To view the timeline with events for a specific physical server, complete the following steps</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Navigate to <emphasis role="strong">Compute &gt; Physical Infrastructure &gt; Servers</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Select the physical server that has events.</simpara>
+</listitem>
+<listitem>
+<simpara>Click the <emphasis role="strong">Monitoring &gt; Timelines</emphasis> from the top menu.</simpara>
+</listitem>
+<listitem>
+<simpara>Select the event types and the period in the options filter. Filters can be used to focus attention on specific messages of interest in a specific time interval.</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Apply</emphasis>. The timeline is displayed with events that match the specified filters. You can click an event to view the event details.</simpara>
+</listitem>
+</orderedlist>
+</section>
+<section xml:id="powering_on_and_off_a_physical_server" remap="_powering_on_and_off_a_physical_server">
+<title>Powering on and off a physical server</title>
+<simpara>You can perform power operations on the physical servers by completing the following steps.</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Navigate to <emphasis role="strong">Compute &gt; Physical Infrastructure &gt; Servers</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Select the physical server.</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Power</emphasis> from the top menu, and then click one of the following power actions:</simpara>
+<itemizedlist>
+<listitem>
+<simpara><emphasis role="strong">Power on</emphasis> - Powers on the server.</simpara>
+</listitem>
+<listitem>
+<simpara><emphasis role="strong">Power off</emphasis> - Shuts down the operating system and powers off the server.</simpara>
+</listitem>
+<listitem>
+<simpara><emphasis role="strong">Power off immediately</emphasis> - Powers off the server.</simpara>
+</listitem>
+<listitem>
+<simpara><emphasis role="strong">Restart</emphasis> - Shuts down the operating system and restarts the server.</simpara>
+</listitem>
+<listitem>
+<simpara><emphasis role="strong">Restart immediately</emphasis> - Restarts the server.</simpara>
+</listitem>
+<listitem>
+<simpara><emphasis role="strong">Restart to System Setup</emphasis> - Restarts the server back to default BIOS/UEFI (F1) Setup.</simpara>
+</listitem>
+<listitem>
+<simpara><emphasis role="strong">Restart Management Controller</emphasis> - Restarts the baseboard management controller in the sever.</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+</orderedlist>
+<simpara><inlinemediaobject>
+<imageobject>
+<imagedata fileref="images/usage/physical_server/images/physical_server_power.png"/>
+</imageobject>
+<textobject><phrase>physical server power</phrase></textobject>
+</inlinemediaobject></simpara>
+</section>
+<section xml:id="locating_a_physical_server" remap="_locating_a_physical_server">
+<title>Locating a physical server</title>
+<simpara>You can change the Location LED state on a physical server to locate the sever in the data center.</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Navigate to <emphasis role="strong">Compute &gt; Physical Infrastructure &gt; Servers</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Select the physical server.</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Identify</emphasis> from the top menu, and then click the appropriate action: <emphasis role="strong">Blink LED</emphasis>, <emphasis role="strong">Turn On LED</emphasis>, or <emphasis role="strong">Turn Off LED</emphasis>.</simpara>
+</listitem>
+</orderedlist>
+<simpara><inlinemediaobject>
+<imageobject>
+<imagedata fileref="images/usage/physical_server/images/physical_server_identify_led.png"/>
+</imageobject>
+<textobject><phrase>physical server identify led</phrase></textobject>
+</inlinemediaobject></simpara>
+</section>
+<section xml:id="provisioning_physical_servers_using_configuration_patterns" remap="_provisioning_physical_servers_using_configuration_patterns">
+<title>Provisioning physical servers using configuration patterns</title>
+<simpara>You can use configuration patterns in Lenovo XClarity Administrator to quickly provision or preprovision multiple servers from a single set of defined configuration settings. Configuration patterns act as templates for configuring logical storage, I/O adapters, boot order, and other baseboard management controller and Unified Extensible Firmware Interface (UEFI) settings.</simpara>
+<simpara>A physical-infrastructure provider can discover configuration patterns that are defined on the associated Lenovo XClarity Administrator instance. A configuration pattern can then be applied to a single or multiple physical servers.</simpara>
+<simpara><emphasis role="strong">Note</emphasis>: Configuration patterns can be assigned only to physical servers that do not have a pattern assigned to them.</simpara>
+<simpara><inlinemediaobject>
+<imageobject>
+<imagedata fileref="images/usage/physical_server/images/physical_server_provision.png"/>
+</imageobject>
+<textobject><phrase>physical server provision</phrase></textobject>
+</inlinemediaobject></simpara>
+<simpara>You can deploy a configuration pattern to one or more physical server by completing the following steps.</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Navigate to <emphasis role="strong">Compute &gt; Physical Infrastructure &gt; Servers</emphasis> to display the Physical Servers page.</simpara>
+</listitem>
+<listitem>
+<simpara>Click a server (to display the server details page) or select multiple servers that you want to provision.</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Lifecycle &gt; Provision Physical Server</emphasis> from the top menu to display the Add Physical Server page.</simpara>
+</listitem>
+<listitem>
+<simpara>On the <emphasis role="strong">Request</emphasis> tab, enter an email address into the <emphasis role="strong">E-Mail</emphasis> field.</simpara>
+</listitem>
+<listitem>
+<simpara>On the <emphasis role="strong">Catalog</emphasis> tab, select the configuration pattern that you want to deploy from the <emphasis role="strong">Configuration Pattern</emphasis> drop-down menu, and then click <emphasis role="strong">Submit</emphasis>. The Requests page is displayed.</simpara>
+</listitem>
+<listitem>
+<simpara>Click the request that was created to deploy the configuration pattern from the <emphasis role="strong">Requests</emphasis> table. The Apply Configuration Pattern page is displayed.</simpara>
+</listitem>
+<listitem>
+<simpara>Click the check mark button.</simpara>
+</listitem>
+<listitem>
+<simpara>Enter the reason for performing this action in the <emphasis role="strong">Reason</emphasis> field.</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Submit</emphasis> to deploy the configuration pattern to the specified server. You can monitor the status of the action in the <emphasis role="strong">Requests</emphasis> table.</simpara>
+</listitem>
+</orderedlist>
+</section>
+</chapter>
+<chapter xml:id="troubleshooting_physical_infrastructure_provider_problems" remap="_troubleshooting_physical_infrastructure_provider_problems">
+<title>Troubleshooting Physical Infrastructure Provider Problems</title>
+
+</chapter>
+<chapter xml:id="automating_tasks_based_on_events" remap="_automating_tasks_based_on_events">
+<title>Automating tasks based on events</title>
+<simpara>You can use CloudForms to automatically perform specific tasks when certain events occur on servers that are managed by Lenovo XClarity Administrator through a Lenovo physical-infrastructure provider. To create an automation task, you must create and configure a custom domain. To automatically invoke the task when a certain event occurs, you must create, configure and assign a custom policy.</simpara>
+<simpara>For more information about the CloudForms automation function, see <link xlink:href="https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.0/html/scripting_actions_in_cloudforms/">Scripting Actions in CloudForms</link> website.</simpara>
+<section xml:id="creating_an_automated_task" remap="_creating_an_automated_task">
+<title>Creating an automated task</title>
+<simpara>To create an automated task, you must first create and configure a custom domain.</simpara>
+<simpara>A <emphasis>domain</emphasis> is a collection of tasks that can be automated. The tasks are run in a sequence that is defined by the domain priority. A task in a domain with a higher priority overrides the same task in a lower-priority domain. In this way, CloudForms provides core domains and allows you to override automated tasks using your own custom domains.</simpara>
+<simpara>Each domain contains a set of namespaces. A <emphasis>namespace</emphasis> is a container that organizes and categorizes tasks. A namespace can contain child namespaces as well as classes.</simpara>
+<simpara>A <emphasis>class</emphasis> is a template for a specific task. A class uses a schema to populate a class instance with default values. A class instance can contain attributes, calls to methods, and relationships.</simpara>
+<simpara>The <emphasis>methods</emphasis> define the task that you want to perform. It uses Ruby code to run the various operations.</simpara>
+<simpara>As an example, the following steps describe how to create an automated task for performing a power action (such as powering on, power off, or restarting the server) on the physical server which is first detected by the Lenovo physical-infrastructure provider.</simpara>
+<simpara><emphasis role="strong">Note:</emphasis> You must be logged in to CloudForms as a user with permission to create domains. The default user is admin, password smartvm.</simpara>
+<section xml:id="step_1_create_a_custom_domain" remap="_step_1_create_a_custom_domain">
+<title>Step 1. Create a custom domain.</title>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Navigate to <emphasis role="strong">Automation &gt; Automate &gt; Explorer</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Configuration &gt; Add a New Domain</emphasis> from the top menu.</simpara>
+</listitem>
+<listitem>
+<simpara>Enter a domain name (for example, Lenovo).</simpara>
+</listitem>
+<listitem>
+<simpara>Select <emphasis role="strong">Enable</emphasis> to enable the domain.</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Add</emphasis>.</simpara>
+</listitem>
+</orderedlist>
+</section>
+<section xml:id="step_2_add_the_lenovoxclarity_and_event_handler_class_to_the_custom_domain" remap="_step_2_add_the_lenovoxclarity_and_event_handler_class_to_the_custom_domain">
+<title>Step 2. Add the LenovoXclarity and Event Handler class to the custom domain.</title>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Copy the LenovoXclarity class to the custom domain.</simpara>
+<orderedlist numeration="loweralpha">
+<listitem>
+<simpara>Select the <emphasis role="strong">ManageIQ</emphasis> core domain.</simpara>
+</listitem>
+<listitem>
+<simpara>Navigate to <emphasis role="strong">ManageIQ &gt; System &gt; Event &gt; EmsEvent &gt; LenovoXclarity</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Configuration &gt; Copy this Class</emphasis> from the top menu.</simpara>
+</listitem>
+<listitem>
+<simpara>Select the custom domain from the <emphasis role="strong">To Domain</emphasis> drop-down menu.</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Copy</emphasis>.</simpara>
+</listitem>
+</orderedlist>
+</listitem>
+<listitem>
+<simpara>Copy the Event Handler class to the custom domain.</simpara>
+<orderedlist numeration="loweralpha">
+<listitem>
+<simpara>Select the <emphasis role="strong">ManageIQ</emphasis> core domain.</simpara>
+</listitem>
+<listitem>
+<simpara>Navigate to <emphasis role="strong">ManageIQ &gt; System &gt; Event Handlers</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Select the instance that you wish (for example, event_action_policy).</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Configuration &gt; Copy this Instance</emphasis> from the top menu.</simpara>
+</listitem>
+<listitem>
+<simpara>Select the custom domain from the <emphasis role="strong">To Domain</emphasis> drop-down menu.</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Copy</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Select the <emphasis role="strong">event_action_policy</emphasis> method.</simpara>
+</listitem>
+<listitem>
+<simpara>Click the <emphasis role="strong">Configuration</emphasis> icon, and then click the <emphasis role="strong">Copy this method</emphasis> icon.</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Copy</emphasis>.</simpara>
+</listitem>
+</orderedlist>
+</listitem>
+<listitem>
+<simpara>Create a new instance of the LenovoXclarity class.</simpara>
+<orderedlist numeration="loweralpha">
+<listitem>
+<simpara>Select the <emphasis role="strong">ManageIQ</emphasis> core domain.</simpara>
+</listitem>
+<listitem>
+<simpara>Navigation to name of the custom domain (for example, Lenovo), and click <emphasis role="strong">System &gt; Event &gt; EmsEvent &gt;LenovoXclarity</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Configuration &gt; Add a new Instance</emphasis> from the top menu.</simpara>
+</listitem>
+<listitem>
+<simpara>Enter a name for the new class instance (for example, FQXHMTS0003G, which is the event that is generated when inventory data cannot be retrieved from a device).</simpara>
+<simpara><emphasis role="strong">Important:</emphasis> The class-instance name must be the same as the name of the event that triggers the task to be invoked. CloudForms matches the class instance with the event by this name. To find the event name, see <link xlink:href="http://sysmgt.lenovofiles.com/help/topic/com.lenovo.lxca.doc/messages.html?cp=1_22_16">Messages</link> in the Lenovo XClarity Administrator online documentation.</simpara>
+</listitem>
+<listitem>
+<simpara>Add the path to the event handlers copied in the field’s <emphasis role="strong">rel3</emphasis>.</simpara>
+<simpara>There are three available policy operations:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>Physical Server Reset</simpara>
+</listitem>
+<listitem>
+<simpara>Physical Server Start</simpara>
+</listitem>
+<listitem>
+<simpara>Physical Server Shutdown</simpara>
+<simpara>There are three available policy events:</simpara>
+</listitem>
+<listitem>
+<simpara>physical_server_reset</simpara>
+</listitem>
+<listitem>
+<simpara>physical_server_start</simpara>
+</listitem>
+<listitem>
+<simpara>physical_server_shutdown</simpara>
+<simpara>The policy actions and the policy events must match.
+For example, use the following path to the policy operation <emphasis role="strong">Physical Server Shutdown</emphasis>:</simpara>
+</listitem>
+</itemizedlist>
+<screen>/System/event_handlers/event_action_policy? target=physical_server&amp;policy_event=physical_server_shutdown&amp;param=
+The policy_event value is matched with the policy operation applied.</screen>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Add</emphasis>.</simpara>
+</listitem>
+</orderedlist>
+</listitem>
+</orderedlist>
+</section>
+<section xml:id="step_3_create_a_namespace" remap="_step_3_create_a_namespace">
+<title>Step 3. Create a namespace.</title>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Select the custom domain (<emphasis role="strong">Lenovo</emphasis>) .</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Configuration &gt; Add a New Namespace</emphasis> from the top menu.</simpara>
+</listitem>
+<listitem>
+<simpara>Enter a unique name for the namespace (for example, Functions).</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Add</emphasis>.</simpara>
+</listitem>
+</orderedlist>
+</section>
+<section xml:id="step_4_create_a_class" remap="_step_4_create_a_class">
+<title>Step 4. Create a class.</title>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Select the namespace that you created in the previous step (for example, Functions).</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Configuration &gt; Add a New Class</emphasis> from the top menu.</simpara>
+</listitem>
+<listitem>
+<simpara>Enter a unique name for the class (for example, Power_actions).</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Add</emphasis>.</simpara>
+</listitem>
+</orderedlist>
+</section>
+<section xml:id="step_5_create_a_method_for_the_class" remap="_step_5_create_a_method_for_the_class">
+<title>Step 5. Create a method for the class.</title>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Create a method.</simpara>
+<orderedlist numeration="loweralpha">
+<listitem>
+<simpara>Select the class that you created (for example, Power_actions).</simpara>
+</listitem>
+<listitem>
+<simpara>Click the <emphasis role="strong">Methods</emphasis> tab.</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Configuration &gt; Add a new method</emphasis> from the top menu.</simpara>
+</listitem>
+<listitem>
+<simpara>Select <emphasis role="strong">“inline”</emphasis> for the type.</simpara>
+</listitem>
+<listitem>
+<simpara>Enter a name for the method (for example, power_off).</simpara>
+</listitem>
+<listitem>
+<simpara>Enter the following script in the <emphasis role="strong">Data</emphasis> field:</simpara>
+<screen>server = $evm.vmdb('PhysicalServer').first $evm.log(:info, "Powering Server #{server.name} OFF")
+server.power_off exit MIQ_OK</screen>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Validate</emphasis> to verify the syntax.</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Add</emphasis>.</simpara>
+</listitem>
+</orderedlist>
+</listitem>
+<listitem>
+<simpara>Add a schema to the class.</simpara>
+<orderedlist numeration="loweralpha">
+<listitem>
+<simpara>Select the class that you created (for example, Power_actions).</simpara>
+</listitem>
+<listitem>
+<simpara>Select the <emphasis role="strong">Schema</emphasis> tab.</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Configuration &gt; Edit selected Schema</emphasis> from the top menu.</simpara>
+</listitem>
+<listitem>
+<simpara>Click the <emphasis role="strong">+</emphasis> icon to add a field to the schema.</simpara>
+</listitem>
+<listitem>
+<simpara>Enter <emphasis role="strong">“execute”</emphasis> for the name.</simpara>
+</listitem>
+<listitem>
+<simpara>Select <emphasis role="strong">“Method”</emphasis> for the type</simpara>
+</listitem>
+<listitem>
+<simpara>Select <emphasis role="strong">“String”</emphasis> for the data type.</simpara>
+</listitem>
+<listitem>
+<simpara>Enter <emphasis role="strong">“Power_actions”</emphasis> for the default value.</simpara>
+</listitem>
+<listitem>
+<simpara>Click the check mark icon.</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Save</emphasis>.</simpara>
+</listitem>
+</orderedlist>
+</listitem>
+<listitem>
+<simpara>Add the method to the class.</simpara>
+<orderedlist numeration="loweralpha">
+<listitem>
+<simpara>Select the <emphasis role="strong">Instances</emphasis> tab.</simpara>
+</listitem>
+<listitem>
+<simpara>Enter the name of the method that you created earlier (for example, power_off).</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Add</emphasis>.</simpara>
+</listitem>
+</orderedlist>
+</listitem>
+</orderedlist>
+</section>
+</section>
+<section xml:id="invoking_an_automated_task_when_an_event_occurs" remap="_invoking_an_automated_task_when_an_event_occurs">
+<title>Invoking an automated task when an event occurs</title>
+<simpara>To automatically invoke the task when a certain event occurs, you must create, configure and assign a custom policy.</simpara>
+<simpara>As an example, the following steps describe how to perform a specific automated task when CloudForms receives certain events (that you define).</simpara>
+<simpara><emphasis role="strong">Note:</emphasis> You must be logged in to CloudForms as a user with permission to create policies. The default user is admin, password smartvm.</simpara>
+<section xml:id="step_1_create_and_configure_a_policy" remap="_step_1_create_and_configure_a_policy">
+<title>Step 1. Create and configure a policy.</title>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Navigate to <emphasis role="strong">Control &gt; Explorer</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Policies &gt; All Policies &gt; Control Policies &gt; Physical Infrastructure Control Policies</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Configuration &gt; Add a new Physical Server Control Policy</emphasis> from the top menu.</simpara>
+</listitem>
+<listitem>
+<simpara>Enter a description (for example, Lenovo_Policy).</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Add</emphasis>.</simpara>
+</listitem>
+</orderedlist>
+</section>
+<section xml:id="step_2_create_a_custom_action" remap="_step_2_create_a_custom_action">
+<title>Step 2. Create a custom action.</title>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Create a custom action.</simpara>
+<orderedlist numeration="loweralpha">
+<listitem>
+<simpara>Navigation to <emphasis role="strong">Action &gt; All Actions</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Configuration &gt; Add a new action</emphasis> from the top menu.</simpara>
+</listitem>
+<listitem>
+<simpara>Enter a description (for example, Power_Off_Server).</simpara>
+</listitem>
+<listitem>
+<simpara>For Action Type select <emphasis role="strong">Invoke a custom Automation</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Enter a message (for example, create).</simpara>
+</listitem>
+<listitem>
+<simpara>Fill the Request field with <emphasis role="strong">Call_Instance</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Specify the following attributes in the order give:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>Specify the <emphasis role="strong">Namespace</emphasis> attribute, and set the value to the new domain and namespace (&lt;domain_name&gt;/&lt;namespace&gt;) (for example, Lenovo/Functions).</simpara>
+</listitem>
+<listitem>
+<simpara>Specify the <emphasis role="strong">Class</emphasis> attribute, and set the value to the class (for example, Power_actions).</simpara>
+</listitem>
+<listitem>
+<simpara>Specify the <emphasis role="strong">Instance</emphasis> attribute, and set the value to the instance (for example, Physical_Server_PowerOff).</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Add</emphasis>.</simpara>
+</listitem>
+</orderedlist>
+</listitem>
+<listitem>
+<simpara>Configure the policy that you created.</simpara>
+<orderedlist numeration="loweralpha">
+<listitem>
+<simpara>Select the new policy (for example, Lenovo_Policy).</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Configuration &gt; Edit this policy’s Event assignments</emphasis> from the top menu.</simpara>
+</listitem>
+<listitem>
+<simpara>Find Physical Server operation, and select the <emphasis role="strong">Physical Server Shutdown</emphasis> option.</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Save</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Select the new policy event.</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Configuration &gt; Edit Actions for this policy Event</emphasis> from the top menu.</simpara>
+</listitem>
+<listitem>
+<simpara>From the <emphasis role="strong">Order of Actions if All Conditions are True</emphasis> field, select the custom action that you created in the previous step (for example, Power_Off_Server).</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Save</emphasis>.</simpara>
+</listitem>
+</orderedlist>
+</listitem>
+</orderedlist>
+</section>
+<section xml:id="step_3_create_and_assign_a_policy_profile" remap="_step_3_create_and_assign_a_policy_profile">
+<title>Step 3. Create and assign a policy profile.</title>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Create a policy profile.</simpara>
+<orderedlist numeration="loweralpha">
+<listitem>
+<simpara>Click <emphasis role="strong">Policy Profiles &gt; All Policy Profiles</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Configuration &gt; Add a new Policy Profile</emphasis> from the top menu.</simpara>
+</listitem>
+<listitem>
+<simpara>Enter a description for the policy (for example, Lenovo_Policy_Profile).</simpara>
+</listitem>
+<listitem>
+<simpara>Select your policy and drag it to the right.</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Add</emphasis>.</simpara>
+</listitem>
+</orderedlist>
+</listitem>
+<listitem>
+<simpara>Assign the policy profile to the Lenovo physical-infrastructure providers:</simpara>
+<orderedlist numeration="loweralpha">
+<listitem>
+<simpara>Navigate to <emphasis role="strong">Compute &gt; Physical Infrastructure &gt; Providers</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Select the physical-infrastructure providers to which you want to assign the policy profile.</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Policy &gt; Manage Policies</emphasis> form the top menu.</simpara>
+</listitem>
+<listitem>
+<simpara>Select the policy profile that you just created (for example, Lenovo_Policy_Profile).</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Save</emphasis>.</simpara>
+</listitem>
+</orderedlist>
+</listitem>
+</orderedlist>
+<simpara><inlinemediaobject>
+<imageobject>
+<imagedata fileref="images/automation/images/provider_assign_profile.png"/>
+</imageobject>
+<textobject><phrase>provider assign profile</phrase></textobject>
+</inlinemediaobject></simpara>
+</section>
+</section>
+</chapter>
+</book>

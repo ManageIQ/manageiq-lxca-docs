@@ -1,0 +1,316 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE book [
+<!ENTITY % sgml.features "IGNORE">
+<!ENTITY % xml.features "INCLUDE">
+<!ENTITY % DOCBOOK_ENTS PUBLIC "-//OASIS//ENTITIES DocBook Character Entities V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/dbcentx.mod">
+%DOCBOOK_ENTS;
+]>
+<?asciidoc-toc?><?asciidoc-numbered?><book xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">
+<info>
+<title>Lenovo Physical Infrastructure Provider REST API</title><subtitle>A reference to the Lenovo physical infrastructure provider REST API</subtitle>
+
+<date>2018-03-05</date>
+<productname>Red Hat CloudForms</productname>
+<productnumber>4.6</productnumber>
+<abstract>
+	<para>A reference to the Lenovo physical infrastructure provider REST API.</para>
+	<para>If you have a suggestion for improving this guide or have found an error, please submit a Bugzilla report at <link xlink:href="https://bugzilla.redhat.com/enter_bug.cgi?product=Red%20Hat%20CloudForms%20Management%20Engine">http://bugzilla.redhat.com</link> against <emphasis role="strong">Red Hat CloudForms Management Engine</emphasis> for the <emphasis role="strong">Documentation</emphasis> component. Please provide specific details, such as the section number, guide name, and CloudForms version so we can easily locate the content.</para>
+</abstract>
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="Author_Group.xml"/>
+</info>
+<chapter xml:id="rest_api" remap="_rest_api">
+<title>REST API</title>
+<simpara>You can use the REST API to retrieve information about providers, physical-infrastructure providers, and physical servers. You can use the CloudForms REST API if you need information about the servers in your physical infrastructure.</simpara>
+<simpara><emphasis role="strong">Before you begin</emphasis></simpara>
+<simpara>To use the REST API, you must log in to CloudForms Management Engine API as a user who has permission to access the API. The default user is admin, password is smartvm.</simpara>
+<simpara>Use the following URL to access the CloudForms REST API:</simpara>
+<screen>&lt;CloudForms_address&gt;:&lt;port&gt;/api</screen>
+<simpara>For example:</simpara>
+<screen>localhost:3000/api</screen>
+<section xml:id="retrieving_provider_details" remap="_retrieving_provider_details">
+<title>Retrieving Provider Details</title>
+<simpara>To retrieve information for all providers, use the following request URL:</simpara>
+<screen>GET &lt;CloudForms_address&gt;:&lt;port&gt;/api/providers</screen>
+<simpara>A JSON response with the following keys is returned.</simpara>
+<screen>actions (list of actions that can be used)
+count (total number of providers)
+name (URI name)
+pages (count of pages)
+resource (list of URLs for each provider that is managed by CloudForms)
+subcount (number of providers returned)</screen>
+<simpara><emphasis role="strong">Examples</emphasis></simpara>
+<itemizedlist>
+<listitem>
+<simpara>To retrieve all information about the providers, use the <emphasis role="strong">?expand=resources</emphasis> query parameter, for example:</simpara>
+<screen>GET localhost:3000/api/providers?expand=resources</screen>
+</listitem>
+<listitem>
+<simpara>To retrieve a specific information about the providers (such as name and ID), use the <emphasis role="strong">?expand=resources&amp;attributes=&lt;attribute_list&gt;</emphasis> query parameters, for example:</simpara>
+<screen>GET localhost:3000/ api/providers?expand=resources&amp;attributes=id,name</screen>
+</listitem>
+<listitem>
+<simpara>To retrieve additional information about the providers (such as port, hostname, and IP address), use the <emphasis role="strong">?expand=resources&amp;attributes=&lt;attribute_list&gt;</emphasis> query parameters, for example:</simpara>
+<screen>GET localhost:3000/api/providers?expand=resources&amp;attributes=port,hostname,ipaddress</screen>
+</listitem>
+<listitem>
+<simpara>To retrieve information about only Lenovo physical-infrastructure providers, use the <emphasis role="strong">?expand=resources&amp;filter[]=type=&lt;provider_type&gt;</emphasis> attribute against all provider resources, for example:</simpara>
+<screen>GET localhost:3000/api/providers?expand=resources&amp;filter[]=type=ManageIQ::Providers::Lenovo::PhysicalInfraManager</screen>
+</listitem>
+</itemizedlist>
+</section>
+<section xml:id="retrieving_provider_details_by_id" remap="_retrieving_provider_details_by_id">
+<title>Retrieving Provider Details by ID</title>
+<simpara>To retrieve information for a specific provider, use the following request URL where &lt;provider_ID&gt; is the unique identifier of the provider:</simpara>
+<screen>GET &lt;CloudForms_address&gt;:&lt;port&gt;/api/providers/&lt;provider_ID&gt;</screen>
+<simpara>A JSON response with the following keys is returned.</simpara>
+<screen>href
+id
+name
+created_on
+updated_on
+guid
+zone_id
+type
+last_refresh_date
+tenant_id
+enabled
+options
+actions</screen>
+<simpara><emphasis role="strong">Examples</emphasis></simpara>
+<itemizedlist>
+<listitem>
+<simpara>To retrieve a specific information about the provider (such as name and ID), use the <emphasis role="strong">?attributes=&lt;attribute_list&gt;</emphasis> query parameters, for example:</simpara>
+<screen>GET localhost:3000/api/providers/&lt;provider_ID&gt;?expand=resources&amp;attributes=id,name</screen>
+</listitem>
+<listitem>
+<simpara>To retrieve additional information about the provider (such as port, hostname, and IP address), use the <emphasis role="strong">?attributes=&lt;attribute_list&gt;</emphasis> query parameters, for example:</simpara>
+<screen> GET localhost:3000/api/providers/&lt;provider_ID&gt;?expand=resources
+&amp;attributes=port,hostname,ipaddress</screen>
+</listitem>
+</itemizedlist>
+</section>
+<section xml:id="performing_physical_infrastructure_provider_actions" remap="_performing_physical_infrastructure_provider_actions">
+<title>Performing physical-infrastructure provider actions</title>
+<simpara>You can use the REST API to perform actions on a physical-infrastructure provider, such as creating, modifying and deleting.</simpara>
+<simpara><emphasis role="strong">Note:</emphasis> To perform actions on physical-infrastructure providers, you must create a basic authentication using your preferred tool or library, and use the user name and password for the CloudForms instance when using the REST API.</simpara>
+<section xml:id="creating_a_lenovo_physical_infrastructure_provider" remap="_creating_a_lenovo_physical_infrastructure_provider">
+<title>Creating a Lenovo physical-infrastructure provider</title>
+<simpara>To create a Lenovo physical-infrastructure provider, send a POST request using the following request URL and JSON request body.</simpara>
+<screen>POST &lt;CloudForms_address&gt;:&lt;port&gt;/api/providers</screen>
+<simpara>Request body:</simpara>
+<screen>{
+   "action": "create",
+   "credentials": {
+      "password": "&lt;PASSWORD&gt;",
+      "userid": "&lt;USERNAME&gt;"
+   },
+   "hostname": "&lt;LENOVO XCLARITY ADMINISTRATOR ADDRESS&gt;",
+   "name": "&lt;NAME&gt;",
+   "port": "&lt;THE SERVICE PORT&gt;",
+   "type": "ManageIQ::Providers::Lenovo::PhysicalInfraManager"
+}</screen>
+</section>
+<section xml:id="modifying_properties_for_a_lenovo_physical_infrastructure_provider" remap="_modifying_properties_for_a_lenovo_physical_infrastructure_provider">
+<title>Modifying properties for a Lenovo physical-infrastructure provider</title>
+<simpara>To modify properties of a Lenovo physical-infrastructure provider, send a POST request using the following request URL and JSON request body.</simpara>
+<screen>POST &lt;CloudForms_address&gt;:&lt;port&gt;/api/providers</screen>
+<simpara>Request body:</simpara>
+<screen>{
+   "action":"edit",
+   "credentials": {
+      "password":"&lt;new_passowrd&gt;",
+      "userid":"&lt;new_user_name&gt;"
+   },
+   "hostname":"&lt;New_Lenovo_XClarity_Administrator_address&gt;",
+   "name":"&lt;new_provider_name&gt;",
+   "port":"&lt;new_service_port&gt;"
+}</screen>
+</section>
+<section xml:id="refreshing_information_about_all_providers" remap="_refreshing_information_about_all_providers">
+<title>Refreshing information about all providers</title>
+<simpara>To refresh information about all providers, send a POST request using the following request URL and JSON request body.</simpara>
+<screen>POST &lt;CloudForms_address&gt;:&lt;port&gt;/api/providers</screen>
+<simpara>Request body:</simpara>
+<screen>{
+   "action":"refresh"
+}</screen>
+</section>
+<section xml:id="deleting_a_physical_infrastructure_provider" remap="_deleting_a_physical_infrastructure_provider">
+<title>Deleting a physical-infrastructure provider</title>
+<simpara>To delete a specific provider:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>Send a DELETE request using the following request URL.</simpara>
+<screen>DELETE &lt;CloudForms_address&gt;:&lt;port&gt;/api/providers/&lt;provider_ID&gt;</screen>
+</listitem>
+<listitem>
+<simpara>Send a POST request using the following request URL and JSON request body.</simpara>
+<screen>POST &lt;CloudForms_address&gt;:&lt;port&gt;/api/providers/&lt;provider_ID&gt;</screen>
+<simpara>Request body:</simpara>
+<screen>{
+   "action":"delete"
+}</screen>
+</listitem>
+</itemizedlist>
+</section>
+<section xml:id="performing_an_action_on_multiple_physical_infrastructure_providers" remap="_performing_an_action_on_multiple_physical_infrastructure_providers">
+<title>Performing an action on multiple physical-infrastructure providers</title>
+<simpara>To perform an action on more than one physical-infrastructure providers, send a POST request using the following request URL and JSON request body.</simpara>
+<screen>POST &lt;CloudForms_address&gt;:&lt;port&gt;/api/providers</screen>
+<simpara>Request body:</simpara>
+<screen>{
+   "action":"&lt;action&gt;",
+   "resources": [{
+      "href":"&lt;provider_ID&gt;"
+   },
+   {
+      "href":"&lt;provider_ID&gt;"
+   }]
+}</screen>
+</section>
+</section>
+<section xml:id="retrieving_physical_server_details" remap="_retrieving_physical_server_details">
+<title>Retrieving Physical Server Details</title>
+<simpara>To retrieve information for all physical servers, use the following request URL:</simpara>
+<screen>GET &lt;CloudForms_address&gt;:&lt;port&gt;/api/physical_servers</screen>
+<simpara>A JSON response with the following keys is returned.</simpara>
+<screen>actions (list of actions that can be used)
+count (count of the physical servers)
+name (URI name)
+pages (count of pages)
+resource (list of URLs of the each physical servers)
+subcount (count of the physical servers returned)</screen>
+<simpara><emphasis role="strong">Examples</emphasis></simpara>
+<itemizedlist>
+<listitem>
+<simpara>To retrieve all information about the physical servers, use the <emphasis role="strong">?expand=resources</emphasis> query parameter, for example:</simpara>
+<screen>GET localhost:3000/api/physical_servers?expand=resources</screen>
+</listitem>
+<listitem>
+<simpara>To retrieve a specific information about the physical servers (such as name and ID), use the <emphasis role="strong">?expand=resources&amp;attributes=&lt;attribute_list&gt;</emphasis> query parameters, for example:</simpara>
+<screen>GET localhost:3000/api/physical_servers?expand=resources&amp;attributes=id,name</screen>
+</listitem>
+<listitem>
+<simpara>To retrieve specific information about the physical servers (such as firmware, networks, guest devices, and asset details), use the <emphasis role="strong">?expand=resources&amp;attributes=&lt;attribute_list&gt;</emphasis> query parameters, for example:</simpara>
+<screen>GET localhost:3000/api/physical_servers?expand=resources&amp;attributes= hardware.firmwares,hardware.networks,hardware.guest_devices,hardware.assets_details</screen>
+</listitem>
+<listitem>
+<simpara>To retrieve information about only a specific physical server, use the <emphasis role="strong">?expand=resources&amp;filter[]=name=&lt;server_name&gt;</emphasis> query attributes on all physical-server resources, for example:</simpara>
+<screen>GET localhost:3000/api/physical_servers?expand=resources&amp;filter[]=name=Server1-20127X5462</screen>
+</listitem>
+</itemizedlist>
+</section>
+<section xml:id="retrieving_physical_server_details_by_id" remap="_retrieving_physical_server_details_by_id">
+<title>Retrieving Physical Server Details by ID</title>
+<simpara>To retrieve information for a specific physical server, use the following request URL:</simpara>
+<screen>GET &lt;CloudForms_address&gt;:&lt;port&gt;/api/physical_servers/&lt;server_ID&gt;</screen>
+<simpara>A JSON response with the following keys is returned.</simpara>
+<screen>actions
+created_at
+ems_id
+ems_ref
+field_replaceable_unit
+health_state
+hostname
+href
+location_led_state
+machine_type
+manufacturer
+model
+name
+power_state
+product_name
+serial_number
+type
+uid_ems
+updated_at
+vendor</screen>
+<simpara><emphasis role="strong">Examples</emphasis></simpara>
+<itemizedlist>
+<listitem>
+<simpara>To retrieve a specific information about a specific physical server (such as name and ID), use the <emphasis role="strong">?expand=resources&amp;attributes=&lt;attribute_list&gt;</emphasis> query parameters, for example:</simpara>
+<screen>GET localhost:3000/api/physical_servers/&lt;server_ID&gt;?expand=resources&amp;attributes=id,name</screen>
+</listitem>
+<listitem>
+<simpara>To retrieve a specific information about a specific physical server (such as firmware, networks, guest devices, and asset details), use the <emphasis role="strong">?expand=resources&amp;attributes=&lt;attribute_list&gt;</emphasis> query parameters, for example:</simpara>
+<screen> GET localhost:3000/api/physical_servers/&lt;server_ID&gt;?expand=resources
+&amp;attributes=hardware.firmwares,hardware.networks,hardware.guest_devices,hardware.assets_details</screen>
+</listitem>
+</itemizedlist>
+</section>
+<section xml:id="performing_physical_server_actions" remap="_performing_physical_server_actions">
+<title>Performing physical server actions</title>
+<simpara>You can use the REST API to perform management tasks on a physical server, such as powering on an off, restarting, and changing the location-LED state.</simpara>
+<simpara><emphasis role="strong">Note:</emphasis> To perform actions on physical servers, you must create a basic authentication using your preferred tool or library, and enter your user name and password to access the CloudForms REST API.</simpara>
+<section xml:id="powering_on_a_physical_server" remap="_powering_on_a_physical_server">
+<title>Powering on a physical server</title>
+<simpara>To power on a specific physical server, send a POST request using the following request URL and JSON request body.</simpara>
+<screen>POST &lt;CloudForms_address&gt;:&lt;port&gt;/api/physical_servers/&lt;server_ID&gt;</screen>
+<simpara>Request body:</simpara>
+<screen>{
+   "action":"power_on"
+}</screen>
+</section>
+<section xml:id="powering_off_a_physical_server" remap="_powering_off_a_physical_server">
+<title>Powering off a physical server</title>
+<simpara>To shut down the operating system and power off a specific physical server, send a POST request using the following request URL and JSON request body.</simpara>
+<screen>POST &lt;CloudForms_address&gt;:&lt;port&gt;/api/physical_servers/&lt;server_ID&gt;</screen>
+<simpara>Request body:</simpara>
+<screen>{
+   "action":"power_off"
+}</screen>
+</section>
+<section xml:id="immediately_powering_off_a_physical_server" remap="_immediately_powering_off_a_physical_server">
+<title>Immediately powering off a physical server</title>
+<simpara>To immediately power off a specific physical server, send a POST request using the following request URL and JSON request body.</simpara>
+<screen>POST &lt;CloudForms_address&gt;:&lt;port&gt;/api/physical_servers/&lt;server_ID&gt;</screen>
+<simpara>Request body:</simpara>
+<screen>{
+   "action":"power_off_now"
+}</screen>
+</section>
+<section xml:id="restarting_a_physical_server" remap="_restarting_a_physical_server">
+<title>Restarting a physical server</title>
+<simpara>To shut down the operating system and restart a specific physical server, send a POST request using the following request URL and JSON request body.</simpara>
+<screen>POST &lt;CloudForms_address&gt;:&lt;port&gt;/api/physical_servers/&lt;server_ID&gt;</screen>
+<simpara>Request body:</simpara>
+<screen>{
+   "action":"restart"
+}</screen>
+</section>
+<section xml:id="immediately_restarting_a_physical_server" remap="_immediately_restarting_a_physical_server">
+<title>Immediately restarting a physical server</title>
+<simpara>To immediately restart a specific physical server, send a POST request using the following request URL and JSON request body.</simpara>
+<screen>POST &lt;CloudForms_address&gt;:&lt;port&gt;/api/physical_servers/&lt;server_ID&gt;</screen>
+<simpara>Request body:</simpara>
+<screen>{
+   "action":"restart_now"
+}</screen>
+</section>
+<section xml:id="changing_the_location_led_state_on_a_physical_server_to_blinking" remap="_changing_the_location_led_state_on_a_physical_server_to_blinking">
+<title>Changing the location LED state on a physical server to blinking</title>
+<simpara>To change the location-LED state to blinking on a specific server, send a POST request using the following request URL and JSON request body.</simpara>
+<screen>POST &lt;CloudForms_address&gt;:&lt;port&gt;/api/physical_servers/&lt;server_ID&gt;</screen>
+<simpara>Request body:</simpara>
+<screen>{
+   "action":"blink_loc_led"
+}</screen>
+</section>
+<section xml:id="performing_an_action_on_multiple_physical_servers" remap="_performing_an_action_on_multiple_physical_servers">
+<title>Performing an action on multiple physical servers</title>
+<simpara>To perform an action on more than one physical severs, send a POST request using the following request URL and JSON request body.</simpara>
+<screen>POST &lt;CloudForms_address&gt;:&lt;port&gt;/api/physical_servers</screen>
+<simpara>Request body:</simpara>
+<screen>{
+   "action":"&lt;action&gt;",
+   "resources": [{
+      "href":"&lt;server_ID&gt;"
+   },
+   {
+      "href":"&lt;server_ID&gt;"
+   }]
+}</screen>
+</section>
+</section>
+</chapter>
+</book>
