@@ -1,0 +1,9 @@
+=== Viewing storage relationships
+
+You can view a list of all storage systems that are managed by a specific physical-infrastructure provider.
+
+. Navigate to *Compute > Physical Infrastructure > Providers*.
+
+. Select the physical-infrastructure provider to be viewed. The Physical Infrastructure Provider Summary page is displayed.
+
+. Click on *Physical Storages* in the *Relationships* section.

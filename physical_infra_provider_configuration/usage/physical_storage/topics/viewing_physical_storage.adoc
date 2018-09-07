@@ -1,0 +1,7 @@
+=== Viewing physical storage systems
+
+To view a list of all physical storage systems that are managed by all physical-infrastructure providers, navigate to *Compute > Physical Infrastructure > Storages*. The Physical Storages page is displayed (see the following figure).
+
+*Tip:* You can sort the table columns to make it easier to find a specific storage system.
+
+image:usage/physical_storage/images/physical_storage.png[]

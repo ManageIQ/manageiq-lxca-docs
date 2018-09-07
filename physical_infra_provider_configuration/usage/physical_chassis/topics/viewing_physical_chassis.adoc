@@ -1,0 +1,7 @@
+=== Viewing physical chassis
+
+To view a list of all physical chassis that are managed by all physical-infrastructure providers, navigate to *Compute > Physical Infrastructure > Chassis*. The Physical Chassis page is displayed (see the following figure).
+
+*Tip:* You can sort the table columns to make it easier to find a specific chassis.
+
+image:usage/physical_chassis/images/physical_chassis.png[]

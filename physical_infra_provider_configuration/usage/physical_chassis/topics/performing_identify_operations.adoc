@@ -1,0 +1,11 @@
+=== Locating a physical chassis
+
+You can change the Location LED state on a physical chassis to locate a chassis in the data center.
+
+. Navigate to *Compute > Physical Infrastructure > Chassis*.
+
+. Select the physical chassis. The Physical Chassis Summary page is displayed.
+
+. Click on *Identify* in the top menu, and then click on the appropriate action: *Blink LED*, *Turn On LED*, or *Turn Off LED*.
+
+image:usage/physical_chassis/images/physical_chassis_identify_led.png[]

@@ -1,0 +1,9 @@
+=== Viewing storage devices associated with a physical server
+
+From the Physical Server Summary page, you can access details about storage devices such as RAID cards.
+
+. Access the Physical Servers page, as described in the <<Viewing a Physical Server>> section, and select a physical server. The Physical Server Summary page is displayed.
+. Click on the *Storage Devices* count in the *Properties* table. A list of storage devices is displayed.
+. Select a storage device from the list. The Storage Device Summary page is displayed.
+
+image:usage/physical_server/images/storage_device_summary.png[]

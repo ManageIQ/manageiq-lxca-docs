@@ -1,0 +1,8 @@
+== Updating physical server firmware using ansible playbooks
+
+In CloudForms, physical server firmware can be updated through the use of an ansible playbook.
+
+_Note_: An Ansible Tower provider, pointing to a Ansible Tower instance, must be added to CloudForms. See the _Adding an Ansible Tower Provider_ section in the _CloudForms Managing Providers_ documentation.
+
+. Within Ansible Tower, create a job template for the config.yml playbook. This playbook will allow you to perform a firmware upgrade on a physical server. You can get this playbook from: https://github.com/lenovo/ansible.lenovo-lxca
+. Follow the steps described in the _Executing an Ansible Tower Job Template from a Service Catalog_ section in the _CloudForms Managing Providers_ documentation and use the job template created in the previous step (should be discovered by the Ansible Tower provider).
