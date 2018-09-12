@@ -1,0 +1,9 @@
+=== Creating a user belonging to the physical infrastructure usergroup
+
+The physical infrastructure usergroup can be used for managing physical infrastructures. Users belonging to this group have a default dashboard with the physical server widgets displayed that show useful information such as server health, availability, and recently discovered servers.
+
+To gain the benefits of this usergroup, you must create a new user belonging to the physical infrastructure group.
+
+. Follow the steps described in the _Creating a User_ section in the _CloudForms General Configuration_ documentation. For the group, choose _EvmGroup-physical_infrastructure_.
+
+After the user is created, log in as the new user, and the default dashboard containing physical server widgets will be displayed.

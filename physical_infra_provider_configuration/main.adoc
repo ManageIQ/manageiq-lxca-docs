@@ -57,6 +57,8 @@ include::usage/physical_server/topics/viewing_physical_server_storage_devices.ad
 
 include::usage/physical_server/topics/adding_physical_server_widgets_to_dashboard.adoc[]
 
+include::usage/physical_server/topics/creating_a_physical_infrastructure_user.adoc[]
+
 include::usage/physical_chassis/topics/index.adoc[]
 
 include::usage/physical_chassis/topics/viewing_physical_chassis.adoc[]
@@ -90,3 +92,5 @@ include::automation/topics/creating_health_alerts.adoc[]
 include::automation/topics/creating_server_power_policies.adoc[]
 
 include::automation/topics/updating_firmware_using_ansible_playbooks.adoc[]
+
+include::automation/topics/provisioning_physical_servers_using_ansible_playbooks.adoc[]
