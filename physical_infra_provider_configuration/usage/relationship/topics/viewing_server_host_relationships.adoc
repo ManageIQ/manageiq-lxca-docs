@@ -18,4 +18,6 @@ To display the topology view for a specific physical-infrastructure provider, co
 
 * Hide or show all VMs by clicking *VMs*.
 
+* Hide or show nodes in the graph that have a particular health state by clicking on one of the following states: *Valid*, *Warning*, *Critical*, or *Unknown*.
+
 * Double-click or right-click a node in the graph to navigate to the summary pages for that node.

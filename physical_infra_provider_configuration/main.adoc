@@ -23,6 +23,8 @@ include::usage/provider/topics/removing_providers.adoc[]
 
 include::usage/provider/topics/editing_providers.adoc[]
 
+include::usage/provider/topics/changing_lxca_password_from_provider.adoc[]
+
 include::usage/relationship/topics/index.adoc[]
 
 include::usage/relationship/topics/viewing_server_host_relationships.adoc[]

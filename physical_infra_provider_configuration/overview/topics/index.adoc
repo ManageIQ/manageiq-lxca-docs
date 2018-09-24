@@ -4,7 +4,9 @@ The Lenovo® Physical Infrastructure Provider provides IT administrators the abi
 
 Key features include:
 
-* Seamlessly integrates with one or more Lenovo XClarity Administrator virtual appliances, providing a summary view of the Lenovo infrastructure, relationship views of physical servers and virtual hosts, and configuration of servers using Configuration Patterns
+* Seamlessly integrates with one or more Lenovo XClarity Administrator virtual appliances, providing a summary view of the Lenovo infrastructure, relationship views of physical servers and virtual hosts, and configuration of servers using Configuration Patterns. In addition, there is a dashboard view that displays the following: 
+** The number of servers, switches, racks, and storage systems being mangaged
+** Widgets that display information about server health, availability, and recently discovered servers
 * Provides a single interface to monitor Lenovo hardware that is managed by multiple instances of Lenovo XClarity Administrator
 * Automatically discovers hardware that is managed by Lenovo XClarity Administrator
 * Manage devices for use in on-premise cloud deployments 
