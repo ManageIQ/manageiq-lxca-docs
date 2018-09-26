@@ -3,9 +3,11 @@ You can view a list of physical servers that are associated with hosts that are 
 
 . Navigate to *Compute > Physical Infrastructure > Providers*.
 
-. Select the physical-infrastructure provider to be viewed. The Physical Infrastructure Provider Summary page is displayed.
+. Click on the physical-infrastructure provider to be viewed.
 
-. Click *Physical Servers with Host* button in the *Relationships* section.
+. Once the page loads, ensure that the summary view is being used.
+
+. Click on *Physical Servers with Host* in the *Relationships* table.
 
 You should see a list of physical servers that are associated with hosts as shown below.
 

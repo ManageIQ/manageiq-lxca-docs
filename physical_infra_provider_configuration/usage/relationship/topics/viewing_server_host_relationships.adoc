@@ -8,9 +8,11 @@ To display the topology view for a specific physical-infrastructure provider, co
 
 . Navigate to *Compute > Physical Infrastructure > Providers*.
 
-. Select the physical-infrastructure provider to be viewed. The Physical Infrastructure Provider Summary page is displayed.
+. Click on the physical-infrastructure provider to be viewed.
 
-. From the overview section, select *Topology* to display the Topology page. From this page, you can perform the following actions:
+. Once the page loads, ensure that the summary view is being used.
+
+. Click on *Topology* in the *Overview* table to display the Topology page. From this page, you can perform the following actions:
 
 * Hide or show all physical server by clicking *Physical Servers*.
 

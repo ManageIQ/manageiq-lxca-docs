@@ -2,8 +2,22 @@
 
 You can view a list of all storage systems that are managed by a specific physical-infrastructure provider.
 
+===== From the physical-infrastructure provider summary view
+
 . Navigate to *Compute > Physical Infrastructure > Providers*.
 
-. Select the physical-infrastructure provider to be viewed. The Physical Infrastructure Provider Summary page is displayed.
+. Click on the physical-infrastructure provider to be viewed.
 
-. Click on *Physical Storages* in the *Relationships* section.
+. Once the page loads, ensure that the summary view is being used.
+
+. Click on *Physical Storages* in the *Relationships* table.
+
+===== From the physical-infrastructure provider dashboard view
+
+. Navigate to *Compute > Physical Infrastructure > Providers*.
+
+. Click on the physical-infrastructure provider to be viewed.
+
+. Once the page loads, ensure that the dashboard view is being used.
+
+. Click on the number of storage systems displayed in the *Storages* card.
