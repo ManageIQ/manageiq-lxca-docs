@@ -1,0 +1,34 @@
+=== Retrieving Physical Switch Details by ID
+
+To retrieve information for a specific physical switch, use the following request URL:
+----------------------------------------------------------------
+GET <CloudForms_address>:<port>/api/physical_switches/<switch_ID>
+----------------------------------------------------------------
+
+A JSON response with the following keys is returned.
+----------------------
+href
+id
+name
+ports
+uid_ems
+allow_promiscuous
+forged_transmits
+mac_changes
+switch_uuid
+shared
+mtu
+ems_id
+type
+health_state
+power_state
+actions
+----------------------
+
+*Examples*
+
+* To retrieve a specific information about a specific physical switch (such as name and ID), use the *?expand=resources&attributes=<attribute_list>* query parameters, for example:
++
+---------------------------------------------------------------------------------------
+GET localhost:3000/api/physical_switches/<switch_ID>?expand=resources&attributes=id,name
+---------------------------------------------------------------------------------------

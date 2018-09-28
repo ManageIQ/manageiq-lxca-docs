@@ -1,0 +1,37 @@
+=== Performing physical chassis actions
+
+You can use the REST API to perform management tasks on a physical chassis such as changing the location LED state.
+
+*Note:* To perform actions on physical chassis, you must create a basic authentication using your preferred tool or library, and enter your user name and password to access the CloudForms REST API.
+
+===== Changing the location LED state on a physical chassis to blinking
+To change the location LED state to blinking on a specific chassis, send a POST request using the following request URL and JSON request body.
+----------------------------------------------------------------
+POST <CloudForms_address>:<port>/api/physical_chassis/<chassis_ID>
+----------------------------------------------------------------
+
+Request body:
+--------------------------
+{
+   "action":"blink_loc_led"
+}
+--------------------------
+
+===== Performing an action on multiple physical chassis
+To perform an action on more than one physical chassis, send a POST request using the following request URL and JSON request body.
+-----------------------------------------------------
+POST <CloudForms_address>:<port>/api/physical_chassis
+-----------------------------------------------------
+
+Request body:
+-----------------------------
+{
+   "action":"<action>",
+   "resources": [{
+      "href":"<chassis_ID>"
+   }, 
+   {
+      "href":"<chassis_ID>"
+   }]
+}
+-----------------------------

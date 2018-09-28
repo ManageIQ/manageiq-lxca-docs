@@ -1,0 +1,37 @@
+=== Performing physical switch actions
+
+You can use the REST API to perform management tasks on a physical switch such as restarting it.
+
+*Note:* To perform actions on physical switch, you must create a basic authentication using your preferred tool or library, and enter your user name and password to access the CloudForms REST API.
+
+===== Restarting a physical switch
+To restart a specific switch, send a POST request using the following request URL and JSON request body.
+----------------------------------------------------------------
+POST <CloudForms_address>:<port>/api/physical_switches/<switch_ID>
+----------------------------------------------------------------
+
+Request body:
+--------------------------
+{
+   "action":"restart"
+}
+--------------------------
+
+===== Performing an action on multiple physical switches
+To perform an action on more than one physical switch, send a POST request using the following request URL and JSON request body.
+-----------------------------------------------------
+POST <CloudForms_address>:<port>/api/physical_switches
+-----------------------------------------------------
+
+Request body:
+-----------------------------
+{
+   "action":"<action>",
+   "resources": [{
+      "href":"<switch_ID>"
+   }, 
+   {
+      "href":"<switch_ID>"
+   }]
+}
+-----------------------------

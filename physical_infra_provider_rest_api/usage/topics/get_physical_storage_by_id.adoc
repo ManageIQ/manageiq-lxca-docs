@@ -1,0 +1,34 @@
+=== Retrieving Physical Storage Details by ID
+
+To retrieve information for a specific physical storage system, use the following request URL:
+----------------------------------------------------------------
+GET <CloudForms_address>:<port>/api/physical_storages/<storage_ID>
+----------------------------------------------------------------
+
+A JSON response with the following keys is returned.
+----------------------
+href
+id
+ems_ref
+uid_ems
+name
+type
+access_state
+health_state
+overall_health_state
+ems_id
+physical_rack_id
+drive_bays
+enclosures
+canister_slots
+physical_chassis_id
+actions
+----------------------
+
+*Examples*
+
+* To retrieve a specific information about a specific physical storage system (such as name and ID), use the *?expand=resources&attributes=<attribute_list>* query parameters, for example:
++
+---------------------------------------------------------------------------------------
+GET localhost:3000/api/physical_storages/<storage_ID>?expand=resources&attributes=id,name
+---------------------------------------------------------------------------------------

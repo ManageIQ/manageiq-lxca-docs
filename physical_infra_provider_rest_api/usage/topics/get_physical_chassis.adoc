@@ -1,0 +1,34 @@
+=== Retrieving Physical Chassis Details
+
+To retrieve information for all physical chassis, use the following request URL:
+-----------------------------------------------------
+GET <CloudForms_address>:<port>/api/physical_chassis
+-----------------------------------------------------
+
+A JSON response with the following keys is returned.
+------------------------------------------------------
+actions (list of actions that can be used)
+count (count of the physical chassis)
+name (URI name)
+pages (count of pages)
+resources (list of URLs of each physical chassis) 
+subcount (count of the physical chassis returned) 
+------------------------------------------------------
+
+*Examples*
+
+* To retrieve all information about the physical chassis, use the *?expand=resources* query parameter, for example:
++
+--------------------------------------------------------
+GET localhost:3000/api/physical_chassis?expand=resources
+--------------------------------------------------------
+* To retrieve specific information about the physical chassis (such as name and ID), use the *?expand=resources&attributes=<attribute_list>* query parameters, for example:
++
+---------------------------------------------------------------------------
+GET localhost:3000/api/physical_chassis?expand=resources&attributes=id,name
+---------------------------------------------------------------------------
+* To retrieve information about only a specific physical chassis, use the *?expand=resources&filter[]=name=<chassis_name>* query attributes on all physical chassis resources, for example:
++
+------------------------------------------------------------------------------------------
+GET localhost:3000/api/physical_chassis?expand=resources&filter[]=name=SN%23Y034BG16E060
+------------------------------------------------------------------------------------------

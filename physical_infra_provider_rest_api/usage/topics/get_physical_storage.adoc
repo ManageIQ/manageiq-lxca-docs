@@ -1,0 +1,34 @@
+=== Retrieving Physical Storage Details
+
+To retrieve information for all physical storage systems, use the following request URL:
+-----------------------------------------------------
+GET <CloudForms_address>:<port>/api/physical_storages
+-----------------------------------------------------
+
+A JSON response with the following keys is returned.
+------------------------------------------------------
+actions (list of actions that can be used)
+count (count of the physical storage systems)
+name (URI name)
+pages (count of pages)
+resources (list of URLs of each physical storage system) 
+subcount (count of the physical storage systems returned) 
+------------------------------------------------------
+
+*Examples*
+
+* To retrieve all information about the physical storage systems, use the *?expand=resources* query parameter, for example:
++
+--------------------------------------------------------
+GET localhost:3000/api/physical_storages?expand=resources
+--------------------------------------------------------
+* To retrieve specific information about the physical storage systems (such as name and ID), use the *?expand=resources&attributes=<attribute_list>* query parameters, for example:
++
+---------------------------------------------------------------------------
+GET localhost:3000/api/physical_storages?expand=resources&attributes=id,name
+---------------------------------------------------------------------------
+* To retrieve information about only a specific physical storage system, use the *?expand=resources&filter[]=name=<storage_name>* query attributes on all physical storage resources, for example:
++
+------------------------------------------------------------------------------------------
+GET localhost:3000/api/physical_storages?expand=resources&filter[]=name=SeagateV1-S3200-DM
+------------------------------------------------------------------------------------------
