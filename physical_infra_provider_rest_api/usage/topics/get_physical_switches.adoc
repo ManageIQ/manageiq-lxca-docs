@@ -27,6 +27,11 @@ GET localhost:3000/api/physical_switches?expand=resources
 ---------------------------------------------------------------------------
 GET localhost:3000/api/physical_switches?expand=resources&attributes=id,name
 ---------------------------------------------------------------------------
+* To retrieve information such as ports on a specific physical switch, use the *?expand=resources&attributes=<attribute_list>* query parameters, for example:
++
+---------------------------------------------------------------------------
+GET localhost:3000/api/physical_switches?expand=resources&attributes=physical_network_ports
+---------------------------------------------------------------------------
 * To retrieve information about only a specific physical switch, use the *?expand=resources&filter[]=name=<switch_name>* query attributes on all physical switch resources, for example:
 +
 ------------------------------------------------------------------------------------------

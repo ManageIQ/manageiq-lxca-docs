@@ -29,8 +29,13 @@ actions
 
 *Examples*
 
-* To retrieve a specific information about a specific physical chassis (such as name and ID), use the *?expand=resources&attributes=<attribute_list>* query parameters, for example:
+* To retrieve specific information about a specific physical chassis (such as name and ID), use the *?expand=resources&attributes=<attribute_list>* query parameters, for example:
 +
 ---------------------------------------------------------------------------------------
 GET localhost:3000/api/physical_chassis/<chassis_ID>?expand=resources&attributes=id,name
+---------------------------------------------------------------------------------------
+* To retrieve information such as the the switches, storage systems, and servers in a specific physical chassis, use the *?expand=resources&attributes=<attribute_list>* query parameters, for example:
++
+---------------------------------------------------------------------------------------
+GET localhost:3000/api/physical_chassis/<chassis_ID>?expand=resources&attributes=physical_servers,physical_storages,hardware.connected_physical_switches
 ---------------------------------------------------------------------------------------

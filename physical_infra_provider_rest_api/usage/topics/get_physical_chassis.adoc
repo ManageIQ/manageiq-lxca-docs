@@ -27,6 +27,11 @@ GET localhost:3000/api/physical_chassis?expand=resources
 ---------------------------------------------------------------------------
 GET localhost:3000/api/physical_chassis?expand=resources&attributes=id,name
 ---------------------------------------------------------------------------
+* To retrieve information such as the switches, storage systems, and servers in a chassis, use the *?expand=resources&attributes=<attribute_list>* query parameters, for example:
++
+---------------------------------------------------------------------------
+GET localhost:3000/api/physical_chassis?expand=resources&attributes=physical_servers,physical_storages,hardware.connected_physical_switches
+---------------------------------------------------------------------------
 * To retrieve information about only a specific physical chassis, use the *?expand=resources&filter[]=name=<chassis_name>* query attributes on all physical chassis resources, for example:
 +
 ------------------------------------------------------------------------------------------

@@ -22,17 +22,21 @@ subcount (count of the physical servers returned)
 --------------------------------------------------------
 GET localhost:3000/api/physical_servers?expand=resources
 --------------------------------------------------------
-* To retrieve a specific information about the physical servers (such as name and ID), use the *?expand=resources&attributes=<attribute_list>* query parameters, for example:
+* To retrieve specific information about the physical servers (such as name and ID), use the *?expand=resources&attributes=<attribute_list>* query parameters, for example:
 +
 ---------------------------------------------------------------------------
 GET localhost:3000/api/physical_servers?expand=resources&attributes=id,name
 ---------------------------------------------------------------------------
-* To retrieve specific information about the physical servers (such as firmware, networks, guest devices, and asset details), use the *?expand=resources&attributes=<attribute_list>* query parameters, for example: 
+* To retrieve information such as firmware, networks, guest devices, and asset details associated with physical servers, use the *?expand=resources&attributes=<attribute_list>* query parameters, for example: 
 +
 -----------------------------------------------------------------------------------
-GET localhost:3000/api/physical_servers?expand=resources&attributes= hardware.firmwares,hardware.networks,hardware.guest_devices,hardware.assets_details
+GET localhost:3000/api/physical_servers?expand=resources&attributes=hardware.firmwares,hardware.networks,hardware.guest_devices,hardware.assets_details
 -----------------------------------------------------------------------------------
-
+* To retrieve information such as network adapters and storage adapters in a server, use the *?expand=resources&attributes=<attribute_list>* query parameters, for example: 
++
+-----------------------------------------------------------------------------------
+GET localhost:3000/api/physical_servers?expand=resources&attributes=guest_devices.with_ethernet_type,guest_devices.with_storage_type
+-----------------------------------------------------------------------------------
 * To retrieve information about only a specific physical server, use the *?expand=resources&filter[]=name=<server_name>* query attributes on all physical-server resources, for example:
 +
 ------------------------------------------------------------------------------------------
