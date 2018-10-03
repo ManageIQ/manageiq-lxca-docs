@@ -7,7 +7,7 @@ You can use the REST API to perform management tasks on a physical switch such a
 ===== Restarting a physical switch
 To restart a specific switch, send a POST request using the following request URL and JSON request body.
 ----------------------------------------------------------------
-POST <CloudForms_address>:<port>/api/physical_switches/<switch_ID>
+POST /api/physical_switches/<switch_ID>
 ----------------------------------------------------------------
 
 Request body:
@@ -20,7 +20,7 @@ Request body:
 ===== Performing an action on multiple physical switches
 To perform an action on more than one physical switch, send a POST request using the following request URL and JSON request body.
 -----------------------------------------------------
-POST <CloudForms_address>:<port>/api/physical_switches
+POST /api/physical_switches
 -----------------------------------------------------
 
 Request body:

@@ -2,7 +2,7 @@
 
 To retrieve information for a specific physical rack, use the following request URL:
 ----------------------------------------------------------------
-GET <CloudForms_address>:<port>/api/physical_racks/<rack_ID>
+GET /api/physical_racks/<rack_ID>
 ----------------------------------------------------------------
 
 A JSON response with the following keys is returned.
@@ -21,5 +21,5 @@ actions
 * To retrieve a specific information about a specific physical rack (such as name and ID), use the *?expand=resources&attributes=<attribute_list>* query parameters, for example:
 +
 ---------------------------------------------------------------------------------------
-GET localhost:3000/api/physical_racks/<rack_ID>?expand=resources&attributes=id,name
+GET /api/physical_racks/<rack_ID>?expand=resources&attributes=id,name
 ---------------------------------------------------------------------------------------

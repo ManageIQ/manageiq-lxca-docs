@@ -2,7 +2,7 @@
 
 To retrieve information for a specific physical switch, use the following request URL:
 ----------------------------------------------------------------
-GET <CloudForms_address>:<port>/api/physical_switches/<switch_ID>
+GET /api/physical_switches/<switch_ID>
 ----------------------------------------------------------------
 
 A JSON response with the following keys is returned.
@@ -30,10 +30,10 @@ actions
 * To retrieve specific information about a specific physical switch (such as name and ID), use the *?expand=resources&attributes=<attribute_list>* query parameters, for example:
 +
 ---------------------------------------------------------------------------------------
-GET localhost:3000/api/physical_switches/<switch_ID>?expand=resources&attributes=id,name
+GET /api/physical_switches/<switch_ID>?expand=resources&attributes=id,name
 ---------------------------------------------------------------------------------------
 * To retrieve information such as ports on a specific physical switch, use the *?expand=resources&attributes=<attribute_list>* query parameters, for example:
 +
 ---------------------------------------------------------------------------------------
-GET localhost:3000/api/physical_switches/<switch_ID>?expand=resources&attributes=physical_network_ports
+GET /api/physical_switches/<switch_ID>?expand=resources&attributes=physical_network_ports
 ---------------------------------------------------------------------------------------

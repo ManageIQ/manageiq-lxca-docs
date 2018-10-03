@@ -8,7 +8,7 @@ You can use the REST API to perform actions on a physical-infrastructure provide
 
 To create a Lenovo physical-infrastructure provider, send a POST request using the following request URL and JSON request body.
 ----------------------------------------------
-POST <CloudForms_address>:<port>/api/providers
+POST /api/providers
 ----------------------------------------------
 
 Request body:
@@ -30,7 +30,7 @@ Request body:
 
 To modify properties of a Lenovo physical-infrastructure provider, send a POST request using the following request URL and JSON request body.
 ----------------------------------------------
-POST <CloudForms_address>:<port>/api/providers
+POST /api/providers
 ----------------------------------------------
 
 Request body:
@@ -51,7 +51,7 @@ Request body:
 
 To refresh information about all providers, send a POST request using the following request URL and JSON request body.
 ----------------------------------------------
-POST <CloudForms_address>:<port>/api/providers
+POST /api/providers
 ----------------------------------------------
 
 Request body:
@@ -68,12 +68,12 @@ To delete a specific provider:
 * Send a DELETE request using the following request URL.
 +
 --------------------------------------------------------------
-DELETE <CloudForms_address>:<port>/api/providers/<provider_ID>
+DELETE /api/providers/<provider_ID>
 --------------------------------------------------------------
 * Send a POST request using the following request URL and JSON request body.
 +
 ------------------------------------------------------------
-POST <CloudForms_address>:<port>/api/providers/<provider_ID>
+POST /api/providers/<provider_ID>
 ------------------------------------------------------------
 +
 Request body:
@@ -88,7 +88,7 @@ Request body:
 
 To perform an action on more than one physical-infrastructure providers, send a POST request using the following request URL and JSON request body.
 ----------------------------------------------
-POST <CloudForms_address>:<port>/api/providers
+POST /api/providers
 ----------------------------------------------
 
 Request body:

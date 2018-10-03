@@ -2,7 +2,7 @@
 
 To retrieve information for all physical switches, use the following request URL:
 -----------------------------------------------------
-GET <CloudForms_address>:<port>/api/physical_switches
+GET /api/physical_switches
 -----------------------------------------------------
 
 A JSON response with the following keys is returned.
@@ -20,20 +20,20 @@ subcount (count of the physical switches returned)
 * To retrieve all information about the physical switches, use the *?expand=resources* query parameter, for example:
 +
 --------------------------------------------------------
-GET localhost:3000/api/physical_switches?expand=resources
+GET /api/physical_switches?expand=resources
 --------------------------------------------------------
 * To retrieve specific information about the physical switches (such as name and ID), use the *?expand=resources&attributes=<attribute_list>* query parameters, for example:
 +
 ---------------------------------------------------------------------------
-GET localhost:3000/api/physical_switches?expand=resources&attributes=id,name
+GET /api/physical_switches?expand=resources&attributes=id,name
 ---------------------------------------------------------------------------
 * To retrieve information such as ports on a specific physical switch, use the *?expand=resources&attributes=<attribute_list>* query parameters, for example:
 +
 ---------------------------------------------------------------------------
-GET localhost:3000/api/physical_switches?expand=resources&attributes=physical_network_ports
+GET /api/physical_switches?expand=resources&attributes=physical_network_ports
 ---------------------------------------------------------------------------
 * To retrieve information about only a specific physical switch, use the *?expand=resources&filter[]=name=<switch_name>* query attributes on all physical switch resources, for example:
 +
 ------------------------------------------------------------------------------------------
-GET localhost:3000/api/physical_switches?expand=resources&filter[]=name=IO Module 02
+GET /api/physical_switches?expand=resources&filter[]=name=IO Module 02
 ------------------------------------------------------------------------------------------

@@ -2,7 +2,7 @@
 
 To retrieve information for all physical racks, use the following request URL:
 -----------------------------------------------------
-GET <CloudForms_address>:<port>/api/physical_racks
+GET /api/physical_racks
 -----------------------------------------------------
 
 A JSON response with the following keys is returned.
@@ -20,15 +20,15 @@ subcount (count of the physical racks returned)
 * To retrieve all information about the physical racks, use the *?expand=resources* query parameter, for example:
 +
 --------------------------------------------------------
-GET localhost:3000/api/physical_racks?expand=resources
+GET /api/physical_racks?expand=resources
 --------------------------------------------------------
 * To retrieve specific information about the physical racks (such as name and ID), use the *?expand=resources&attributes=<attribute_list>* query parameters, for example:
 +
 ---------------------------------------------------------------------------
-GET localhost:3000/api/physical_racks?expand=resources&attributes=id,name
+GET /api/physical_racks?expand=resources&attributes=id,name
 ---------------------------------------------------------------------------
 * To retrieve information about only a specific physical rack, use the *?expand=resources&filter[]=name=<rack_name>* query attributes on all physical rack resources, for example:
 +
 ------------------------------------------------------------------------------------------
-GET localhost:3000/api/physical_racks?expand=resources&filter[]=name=rack-2
+GET /api/physical_racks?expand=resources&filter[]=name=rack-2
 ------------------------------------------------------------------------------------------

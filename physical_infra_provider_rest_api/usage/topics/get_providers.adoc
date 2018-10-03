@@ -2,7 +2,7 @@
 
 To retrieve information for all providers, use the following request URL:
 ---------------------------------------------
-GET <CloudForms_address>:<port>/api/providers
+GET /api/providers
 ---------------------------------------------
 
 A JSON response with the following keys is returned.
@@ -20,20 +20,20 @@ subcount (number of providers returned)
 * To retrieve all information about the providers, use the *?expand=resources* query parameter, for example:
 +
 -------------------------------------------------
-GET localhost:3000/api/providers?expand=resources
+GET /api/providers?expand=resources
 -------------------------------------------------
 * To retrieve a specific information about the providers (such as name and ID), use the *?expand=resources&attributes=<attribute_list>* query parameters, for example:
 +
 ---------------------------------------------------------------------
-GET localhost:3000/ api/providers?expand=resources&attributes=id,name
+GET /api/providers?expand=resources&attributes=id,name
 ---------------------------------------------------------------------
 * To retrieve additional information about the providers (such as port, hostname, and IP address), use the *?expand=resources&attributes=<attribute_list>* query parameters, for example:
 +
 ------------------------------------------------------------------------------------
-GET localhost:3000/api/providers?expand=resources&attributes=port,hostname,ipaddress
+GET /api/providers?expand=resources&attributes=port,hostname,ipaddress
 ------------------------------------------------------------------------------------
 * To retrieve information about only Lenovo physical-infrastructure providers, use the *?expand=resources&filter[]=type=<provider_type>* attribute against all provider resources, for example:
 +
 -----------------------------------------------------------------------------------------------------------------
-GET localhost:3000/api/providers?expand=resources&filter[]=type=ManageIQ::Providers::Lenovo::PhysicalInfraManager
+GET /api/providers?expand=resources&filter[]=type=ManageIQ::Providers::Lenovo::PhysicalInfraManager
 -----------------------------------------------------------------------------------------------------------------

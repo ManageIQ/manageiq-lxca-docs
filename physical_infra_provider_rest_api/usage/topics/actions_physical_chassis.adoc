@@ -7,7 +7,7 @@ You can use the REST API to perform management tasks on a physical chassis such 
 ===== Changing the location LED state on a physical chassis to blinking
 To change the location LED state to blinking on a specific chassis, send a POST request using the following request URL and JSON request body.
 ----------------------------------------------------------------
-POST <CloudForms_address>:<port>/api/physical_chassis/<chassis_ID>
+POST /api/physical_chassis/<chassis_ID>
 ----------------------------------------------------------------
 
 Request body:
@@ -20,7 +20,7 @@ Request body:
 ===== Performing an action on multiple physical chassis
 To perform an action on more than one physical chassis, send a POST request using the following request URL and JSON request body.
 -----------------------------------------------------
-POST <CloudForms_address>:<port>/api/physical_chassis
+POST /api/physical_chassis
 -----------------------------------------------------
 
 Request body:
