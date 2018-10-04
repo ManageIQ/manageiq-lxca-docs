@@ -14,5 +14,4 @@ Key features include:
 * Uses customizable filters to organize views of managed devices across the data center
 * Generates relationships between physical servers and the virtual hosts (such as ESXI, ovirt, KVM, and Red Hat OpenStack)
 * Manages current system settings (such as BMC, uEFI, and boot order settings) on the managed devices
-* Simplifies system management through custom policies and automation that respond to the health status of physical servers
-
+* Simplifies system management through custom policies and automation that respond to the health status of hardware devices

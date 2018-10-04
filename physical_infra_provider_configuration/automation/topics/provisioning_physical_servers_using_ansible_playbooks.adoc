@@ -4,5 +4,5 @@ In CloudForms, Lenovo XClarity Administrator configuration patterns can be used 
 
 _Note_: An Ansible Tower provider, pointing to a Ansible Tower instance, must be added to CloudForms. See the _Adding an Ansible Tower Provider_ section in the _CloudForms Managing Providers_ documentation.
 
-. Within Ansible Tower, create a job template for the _config.yml_ playbook, specifying _apply_configpatterns_ as the job tag and any extra variables that are required by the playbook. Also ensure that the option to prompt on launch is enabled. This playbook will allow you to apply a configuration pattern to a physical server. You can get this playbook from: https://github.com/lenovo/ansible.lenovo-lxca
+. Within Ansible Tower, create a job template for the _config.yml_ playbook, specifying _apply_configpatterns_ as the job tag and any extra variables that are required by the playbook. Also ensure that the option to prompt on launch is enabled. This playbook will allow you to apply a configuration pattern to a physical server. You can get this playbook from: https://galaxy.ansible.com/lenovo/lxca-config
 . Follow the steps described in the _Executing an Ansible Tower Job Template from a Service Catalog_ section in the _CloudForms Managing Providers_ documentation and use the job template created in the previous step (should be discovered by the Ansible Tower provider).

@@ -25,7 +25,7 @@ To enable this alert, you must create a physical server alert profile, assign se
 . Click on *Alert Profiles > Physical Server Alert Profiles > _ProfileName_ > Physical server has critical health state* where _ProfileName_ is the name of the physical server alert profile that was previously created.
 . Click on *Configuration > Edit this Alert* from the top menu.
 . Select the *Active* checkbox to enable the alert.
-. You can increase the notification frequency by selecting a new value from the *Notification Frequency* dropdown menu if desired. The deault frequency is one hour.
+. You can increase the notification frequency by selecting a new value from the *Notification Frequency* dropdown menu if desired. The default frequency is one hour.
 . Ensure that the *Send an E-mail* checkbox is selected.
 . Enter a value into the *From* field if you wish to use a different address than the default of _cfadmin@cfserver.com_.
 . Enter the email address you wish to retrieve the alert notification into the *Add* field and then click on the *+* button. The email address should appear in the *To* field.
