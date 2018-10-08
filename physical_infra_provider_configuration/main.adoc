@@ -3,7 +3,7 @@
 Configuring the Lenovo Physical Infrastructure Provider for Red Hat CloudForms
 ==============================================================================
 Lenovo Documentation <icfeedback@lenovo.com>
-v1.0, October 17, 2017
+v2.0, October 8, 2018
 
 include::overview/topics/index.adoc[]
 
