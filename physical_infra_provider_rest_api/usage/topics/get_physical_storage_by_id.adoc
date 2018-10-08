@@ -32,3 +32,8 @@ actions
 ---------------------------------------------------------------------------------------
 GET /api/physical_storages/<storage_ID>?expand=resources&attributes=id,name
 ---------------------------------------------------------------------------------------
+* To retrieve information such as canisters and physical disks associated with a specific physical storage system, use the *?expand=resources&attributes=<attribute_list>* query parameters, for example:
++
+---------------------------------------------------------------------------
+GET /api/physical_storages/<storage_ID>?expand=resources&attributes=canisters,physical_disks
+---------------------------------------------------------------------------
