@@ -43,6 +43,11 @@ GET /api/physical_servers/<server_ID>?expand=resources&attributes=id,name
 GET /api/physical_servers/<server_ID>?expand=resources
 &attributes=hardware.firmwares,hardware.networks,hardware.guest_devices,hardware.assets_details
 -----------------------------------------------------------------------------------------------
+* To retrieve information such as switches connected to a specific server, use the *?expand=resources&attributes=<attribute_list>* query parameters, for example: 
++
+-----------------------------------------------------------------------------------
+GET /api/physical_servers/<server_ID>?expand=resources&attributes=physical_switches
+-----------------------------------------------------------------------------------
 * To retrieve information such as network adapters and storage adapters in a specific physical server, use the *?expand=resources&attributes=<attribute_list>* query parameters, for example:
 +
 -----------------------------------------------------------------------------------------------

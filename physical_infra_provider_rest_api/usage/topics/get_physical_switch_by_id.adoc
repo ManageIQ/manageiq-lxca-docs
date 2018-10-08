@@ -32,6 +32,11 @@ actions
 ---------------------------------------------------------------------------------------
 GET /api/physical_switches/<switch_ID>?expand=resources&attributes=id,name
 ---------------------------------------------------------------------------------------
+* To retrieve information such as physical devices connected to a specific physical switch, use the *?expand=resources&attributes=<attribute_list>* query parameters, for example:
++
+---------------------------------------------------------------------------
+GET /api/physical_switches/<switch_ID>?expand=resources&attributes=connected_components
+---------------------------------------------------------------------------
 * To retrieve information such as ports on a specific physical switch, use the *?expand=resources&attributes=<attribute_list>* query parameters, for example:
 +
 ---------------------------------------------------------------------------------------
