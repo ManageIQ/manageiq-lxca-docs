@@ -81,8 +81,6 @@ include::usage/physical_switch/topics/viewing_physical_switches.adoc[]
 
 include::usage/physical_switch/topics/performing_power_operations.adoc[]
 
-include::troubleshooting/topics/index.adoc[]
-
 include::automation/topics/index.adoc[]
 
 include::automation/topics/creating_automated_tasks.adoc[]
