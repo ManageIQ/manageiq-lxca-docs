@@ -8,7 +8,7 @@ You can view a list of all physical servers that are managed by a specific physi
 
 . Click on the physical-infrastructure provider to be viewed.
 
-. Once the page loads, ensure that the summary view is being used.
+. After the page loads, ensure that the summary view is being used.
 
 . Click on *Physical Servers* in the *Relationships* table.
 
@@ -18,6 +18,6 @@ You can view a list of all physical servers that are managed by a specific physi
 
 . Click on the physical-infrastructure provider to be viewed.
 
-. Once the page loads, ensure that the dashboard view is being used.
+. After the page loads, ensure that the dashboard view is being used.
 
-. Click on the number of servers displayed in the *Servers* card.
+. Click on the number of servers that is displayed displayed in the *Servers* card.

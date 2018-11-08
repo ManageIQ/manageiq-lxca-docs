@@ -1,6 +1,6 @@
 === Restarting physical switches
 
-You can restart a physical switch that is being managed by the physical-infrastructure provider.
+You can restart a physical switch that is managed by the physical-infrastructure provider.
 
 . Navigate to *Compute > Physical Infrastructure > Switches*.
 

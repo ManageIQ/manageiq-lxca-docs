@@ -1,13 +1,13 @@
 == Creating a policy to power on servers that are powered off
 
-In CloudForms, there is a control policy for physical servers that powers a server back on when it is powered off.
+In CloudForms, there is a control policy for physical servers that automatically powers a server back on when it is powered off.
 
 To enable this policy, you must assign the physical infrastructure profile to a server.
 
 . Navigate to *Compute > Physical Infrastructure > Servers* to display the Physical Servers page.
 . Click a server (to display the Physical Server Summary page) or select multiple servers that you want to provision.
-. Click on *Policy > Manage Policies* from the top menu. The Physical Server Policy Assignment page is displayed.
+. Click *Policy > Manage Policies* from the top menu. The Physical Server Policy Assignment page is displayed.
 . Select the *Physical Infrastructure Profile* checkbox.
-. Click on the *Save* button.
+. Click *Save*.
 
 The policy is now assigned to the server.

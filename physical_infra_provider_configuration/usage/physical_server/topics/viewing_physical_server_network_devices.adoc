@@ -1,8 +1,8 @@
-=== Viewing network devices associated with a physical server
+=== Viewing network devices that are associated with a physical server
 
 From the Physical Server Summary page, you can access details about network devices such as network interface cards.
 
-. Access the Physical Servers page, as described in the <<Viewing a Physical Server>> section, and select a physical server. The Physical Server Summary page is displayed.
+. Access the Physical Servers page, as described in the <<Viewing a Physical Server>> section, and then select a physical server. The Physical Server Summary page is displayed.
 . Click on the *Network Devices* count in the *Properties* table. A list of network devices is displayed.
 . Select a network device from the list. The Network Device Summary page is displayed.
 

@@ -5,10 +5,10 @@ You can view a list of physical servers that are associated with hosts that are 
 
 . Click on the physical-infrastructure provider to be viewed.
 
-. Once the page loads, ensure that the summary view is being used.
+. After the page loads, ensure that the summary view is being used.
 
 . Click on *Physical Servers with Host* in the *Relationships* table.
 
-You should see a list of physical servers that are associated with hosts as shown below.
+A list of physical servers that are associated with hosts are displayed as shown below.
 
 image:usage/relationship/images/host_relationships.png[]
