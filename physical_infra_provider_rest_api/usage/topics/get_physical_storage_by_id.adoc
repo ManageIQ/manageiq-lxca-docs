@@ -7,32 +7,32 @@ GET /api/physical_storages/<storage_ID>
 
 A JSON response with the following keys is returned.
 ----------------------
+access_state
+actions
+canister_slots
+drive_bays
+ems_id
+ems_ref
+enclosures
+health_state
 href
 id
-ems_ref
-uid_ems
 name
-type
-access_state
-health_state
 overall_health_state
-ems_id
-physical_rack_id
-drive_bays
-enclosures
-canister_slots
 physical_chassis_id
-actions
+physical_rack_id
+type
+uid_ems
 ----------------------
 
 *Examples*
 
-* To retrieve a specific information about a specific physical storage system (such as name and ID), use the *?expand=resources&attributes=<attribute_list>* query parameters, for example:
+* To retrieve information about a specific physical storage system (such as name and ID), use the *?expand=resources&attributes=<attribute_list>* query parameters, for example:
 +
 ---------------------------------------------------------------------------------------
 GET /api/physical_storages/<storage_ID>?expand=resources&attributes=id,name
 ---------------------------------------------------------------------------------------
-* To retrieve information such as canisters and physical disks associated with a specific physical storage system, use the *?expand=resources&attributes=<attribute_list>* query parameters, for example:
+* To retrieve information, such as canisters and physical disks that are associated with a specific physical storage system, use the *?expand=resources&attributes=<attribute_list>* query parameters, for example:
 +
 ---------------------------------------------------------------------------
 GET /api/physical_storages/<storage_ID>?expand=resources&attributes=canisters,physical_disks

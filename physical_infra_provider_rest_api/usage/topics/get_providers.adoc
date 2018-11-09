@@ -10,9 +10,9 @@ A JSON response with the following keys is returned.
 actions (list of actions that can be used)
 count (total number of providers) 
 name (URI name)
-pages (count of pages)
+pages (number of pages)
 resource (list of URLs for each provider that is managed by CloudForms) 
-subcount (number of providers returned) 
+subcount (number of providers that were returned) 
 -------------------------------------------------
 
 *Examples*

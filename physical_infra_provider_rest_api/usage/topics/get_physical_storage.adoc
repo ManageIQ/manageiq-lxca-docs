@@ -8,11 +8,11 @@ GET /api/physical_storages
 A JSON response with the following keys is returned.
 ------------------------------------------------------
 actions (list of actions that can be used)
-count (count of the physical storage systems)
+count (number of physical storage systems)
 name (URI name)
-pages (count of pages)
+pages (number of pages)
 resources (list of URLs of each physical storage system) 
-subcount (count of the physical storage systems returned) 
+subcount (number of physical storage systems that were returned) 
 ------------------------------------------------------
 
 *Examples*

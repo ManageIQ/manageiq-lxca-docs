@@ -8,11 +8,11 @@ GET /api/physical_switches
 A JSON response with the following keys is returned.
 ------------------------------------------------------
 actions (list of actions that can be used)
-count (count of the physical switches)
+count (number of physical switches)
 name (URI name)
 pages (count of pages)
-resources (list of URLs of each physical switch) 
-subcount (count of the physical switches returned) 
+resources (list of URLs for each physical switch) 
+subcount (number of physical switches that were returned) 
 ------------------------------------------------------
 
 *Examples*

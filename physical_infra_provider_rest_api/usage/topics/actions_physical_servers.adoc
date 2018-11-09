@@ -83,7 +83,7 @@ Request body:
 --------------------------
 
 ===== Performing an action on multiple physical servers 
-To perform an action on more than one physical severs, send a POST request using the following request URL and JSON request body.
+To perform an action on more than one physical servers, send a POST request using the following request URL and JSON request body.
 -----------------------------------------------------
 POST /api/physical_servers
 -----------------------------------------------------

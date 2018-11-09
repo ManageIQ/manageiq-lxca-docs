@@ -32,7 +32,7 @@ vendor
 *Examples*
 
  
-* To retrieve specific information about a specific physical server (such as name and ID), use the *?expand=resources&attributes=<attribute_list>* query parameters, for example:
+* To retrieve information about a specific physical server (such as name and ID), use the *?expand=resources&attributes=<attribute_list>* query parameters, for example:
 +
 ---------------------------------------------------------------------------------------
 GET /api/physical_servers/<server_ID>?expand=resources&attributes=id,name
@@ -43,7 +43,7 @@ GET /api/physical_servers/<server_ID>?expand=resources&attributes=id,name
 GET /api/physical_servers/<server_ID>?expand=resources
 &attributes=hardware.firmwares,hardware.networks,hardware.guest_devices,hardware.assets_details
 -----------------------------------------------------------------------------------------------
-* To retrieve information such as switches connected to a specific server, use the *?expand=resources&attributes=<attribute_list>* query parameters, for example: 
+* To retrieve information such as switches that are connected to a specific server, use the *?expand=resources&attributes=<attribute_list>* query parameters, for example: 
 +
 -----------------------------------------------------------------------------------
 GET /api/physical_servers/<server_ID>?expand=resources&attributes=physical_switches

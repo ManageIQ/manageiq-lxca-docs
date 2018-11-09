@@ -1,6 +1,6 @@
 === Performing physical switch actions
 
-You can use the REST API to perform management tasks on a physical switch such as restarting it.
+You can use the REST API to perform management tasks on a physical switch, such as restarting the switch.
 
 *Note:* To perform actions on physical switch, you must create a basic authentication using your preferred tool or library, and enter your user name and password to access the CloudForms REST API.
 

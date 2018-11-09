@@ -7,18 +7,18 @@ GET /api/physical_racks/<rack_ID>
 
 A JSON response with the following keys is returned.
 ----------------------
+actions
+ems_id
+ems_ref
 href
 id
-ems_id
-uid_ems
 name
-ems_ref
-actions
+uid_ems
 ----------------------
 
 *Examples*
 
-* To retrieve a specific information about a specific physical rack (such as name and ID), use the *?expand=resources&attributes=<attribute_list>* query parameters, for example:
+* To retrieve information about a specific physical rack (such as name and ID), use the *?expand=resources&attributes=<attribute_list>* query parameters, for example:
 +
 ---------------------------------------------------------------------------------------
 GET /api/physical_racks/<rack_ID>?expand=resources&attributes=id,name

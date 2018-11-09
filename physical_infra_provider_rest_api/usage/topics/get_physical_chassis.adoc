@@ -8,11 +8,11 @@ GET /api/physical_chassis
 A JSON response with the following keys is returned.
 ------------------------------------------------------
 actions (list of actions that can be used)
-count (count of the physical chassis)
+count (number of physical chassis)
 name (URI name)
-pages (count of pages)
-resources (list of URLs of each physical chassis) 
-subcount (count of the physical chassis returned) 
+pages (number of pages)
+resources (list of URLs for each physical chassis) 
+subcount (number of the physical chassis that were returned) 
 ------------------------------------------------------
 
 *Examples*

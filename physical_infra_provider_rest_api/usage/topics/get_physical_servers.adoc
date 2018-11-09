@@ -8,11 +8,11 @@ GET /api/physical_servers
 A JSON response with the following keys is returned.
 ------------------------------------------------------
 actions (list of actions that can be used)
-count (count of the physical servers)
+count (number of physical servers)
 name (URI name)
-pages (count of pages)
-resource (list of URLs of the each physical servers) 
-subcount (count of the physical servers returned) 
+pages (number of pages)
+resource (list of URLs for each physical server) 
+subcount (number of physical servers that were returned) 
 ------------------------------------------------------
 
 *Examples*
