@@ -3,7 +3,7 @@
 You can add widgets that display information about physical servers to the default dashboard.
 
 . Navigate to *Cloud Intel > Dashboard*.
-. Click on the *+* button from the top menu and select one of the following widgets:
+. Click on the *+* button from the top menu, and select one of the following widgets:
 * *Physical Server Availability*
 * *Physical Server Health*
 * *Recently Discovered Physical Servers*

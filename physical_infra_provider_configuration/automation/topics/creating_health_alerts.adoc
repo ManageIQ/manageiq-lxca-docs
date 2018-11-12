@@ -15,10 +15,9 @@ To enable this alert, you must create a physical server alert profile, assign se
 . Click *Add*.
 
 ===== Step 2. Assign servers to the alert profile
-. Click *Alert Profiles > Physical Server Alert Profiles > _ProfileName_* where _ProfileName_ is the name of the physical server alert that was previously created.
+. Click *Alert Profiles > Physical Server Alert Profiles > _ProfileName_*, where _ProfileName_ is the name of the physical server alert that was previously created.
 . Click *Configuration > Edit assignments for this Alert Profile*.
 . Choose *Selected Servers* from the *Assign To* dropdown menu.
-. Select the checkboxes next to the servers that you want to assign to the profile from the *Selections* list.
 . Select the checkboxes next to the servers that you want to assign to the profile from the *Selections* list.
 . Click *Save*.
 
@@ -26,10 +25,10 @@ To enable this alert, you must create a physical server alert profile, assign se
 . Click *Alert Profiles > Physical Server Alert Profiles > _ProfileName_ > Physical server has critical health state*, where _ProfileName_ is the name of the physical server alert profile that was previously created.
 . Click *Configuration > Edit this Alert* from the top menu.
 . Select the *Active* checkbox to enable the alert.
-. Optionally, you can increase the notification frequency by selecting a new value from the *Notification Frequency* dropdown menu. The default frequency is one hour.
+. Optionally, increase the notification frequency by selecting a new value from the *Notification Frequency* dropdown menu. The default frequency is one hour.
 . Ensure that the *Send an E-mail* checkbox is selected.
 . Optionally, enter a value into the *From* field. By default, the _cfadmin@cfserver.com_ address is used.
 . Enter the email address that you want to retrieve the alert notification in the *Add* field, and then click the *+* button. The email address is displayed in the *To* field.
 . Click *Save*.
 
-The assigned servers is checked hourly, and a notification is sent through email if the any of the assigned servers have a critical health state.
+The assigned servers are checked hourly, and a notification is sent through email if the any of the assigned servers have a critical health state.

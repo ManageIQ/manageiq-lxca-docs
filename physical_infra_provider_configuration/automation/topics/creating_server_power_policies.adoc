@@ -5,7 +5,7 @@ In CloudForms, there is a control policy for physical servers that automatically
 To enable this policy, you must assign the physical infrastructure profile to a server.
 
 . Navigate to *Compute > Physical Infrastructure > Servers* to display the Physical Servers page.
-. Click a server (to display the Physical Server Summary page) or select multiple servers that you want to provision.
+. Click a server (to display the Physical Server Summary page), or select multiple servers that you want to provision.
 . Click *Policy > Manage Policies* from the top menu. The Physical Server Policy Assignment page is displayed.
 . Select the *Physical Infrastructure Profile* checkbox.
 . Click *Save*.
