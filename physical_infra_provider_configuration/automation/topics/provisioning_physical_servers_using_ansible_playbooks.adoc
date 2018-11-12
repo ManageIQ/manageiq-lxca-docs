@@ -1,6 +1,6 @@
 == Provisioning physical servers using Ansible playbooks
 
-In CloudForms, Lenovo XClarity Administrator configuration patterns can be used to provision physical servers through the use of an Ansible playbook. Configuration patterns act as templates for configuring logical storage, I/O adapters, boot order, and other baseboard management controller and Unified Extensible Firmware Interface (UEFI) settings.
+In CloudForms, XClarity Administrator configuration patterns can be used to provision physical servers through the use of an Ansible playbook. Configuration patterns act as templates for configuring logical storage, I/O adapters, boot order, and other baseboard management controller and Unified Extensible Firmware Interface (UEFI) settings.
 
 _Note_: An Ansible Tower provider, pointing to an Ansible Tower instance, must be added to CloudForms. See the _Adding an Ansible Tower Provider_ section in the _CloudForms Managing Providers_ documentation.
 

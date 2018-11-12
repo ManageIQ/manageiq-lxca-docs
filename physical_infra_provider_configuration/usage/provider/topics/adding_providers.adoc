@@ -1,12 +1,12 @@
 === Adding a physical-infrastructure provider
 
-Lenovo XClarity Administrator virtual appliances are connected to CloudForms by adding physical-infrastructure providers. Physical-infrastructure providers enable you to manage and interact with devices that are managed by Lenovo XClarity Administrator.
+XClarity Administrator virtual appliances are connected to CloudForms by adding physical-infrastructure providers. Physical-infrastructure providers enable you to manage and interact with devices that are managed by XClarity Administrator.
 
 *Note:* You must be logged in to CloudForms as a user with permission to add providers. The default user is admin, password smartvm.
 
-Complete the following steps for each Lenovo XClarity Administrator instance that you want to connect to CloudForms.
+Complete the following steps for each XClarity Administrator instance that you want to connect to CloudForms.
 
-To connect to a specific Lenovo XClarity Administrator instance:
+To connect to a specific XClarity Administrator instance:
 
 . Navigate to *Compute > Physical Infrastructure > Providers.*
 
@@ -20,19 +20,19 @@ To connect to a specific Lenovo XClarity Administrator instance:
 
 . In the credentials area, provide the following:
 
-.. Enter the hostname, IPv4 address, or IPv6 address of the Lenovo XClarity Administrator instance.
+.. Enter the hostname, IPv4 address, or IPv6 address of the XClarity Administrator instance.
 
 .. Enter “443” for the API port.
 
-.. Enter the username and password used to log in to the Lenovo XClarity Administrator instance.
+.. Enter the username and password used to log in to the XClarity Administrator instance.
 
-. Click *Validate* to confirm that you can connect to the Lenovo XClarity Administrator instance. 
+. Click *Validate* to confirm that you can connect to the XClarity Administrator instance. 
 
 . Click *Add*.
 
-To discover and then connect to a range of Lenovo XClarity Administrator instances:
+To discover and then connect to a range of XClarity Administrator instances:
 
-. Discover Lenovo XClarity Administrator instances:
+. Discover XClarity Administrator instances:
 
 .. Navigate to *Compute > Physical Infrastructure > Providers*.
 
@@ -46,7 +46,7 @@ To discover and then connect to a range of Lenovo XClarity Administrator instanc
 
 .. Click *Start* to begin the discovery process.
 
-. Update credentials for each discovered physical-infrastructure provider (Lenovo XClarity Administrator instance):
+. Update credentials for each discovered physical-infrastructure provider (XClarity Administrator instance):
 
 .. Navigate to *Compute > Physical Infrastructure > Providers*.
 
@@ -56,9 +56,9 @@ To discover and then connect to a range of Lenovo XClarity Administrator instanc
 
 .. Click *Edit selected infrastructure providers*.
 
-.. Enter the username and password used to log in to the Lenovo XClarity Administrator instance.
+.. Enter the username and password used to log in to the XClarity Administrator instance.
 
-.. Click *Validate* to confirm that you can connect to the Lenovo XClarity Administrator instance.
+.. Click *Validate* to confirm that you can connect to the XClarity Administrator instance.
 
 .. Click *Save*. A flash message is displayed, confirming your changes were performed successfully.
 
