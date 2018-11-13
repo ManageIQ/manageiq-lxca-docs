@@ -1,0 +1,34 @@
+=== Retrieving Physical Rack Details
+
+To retrieve information for all physical racks, use the following request URL:
+-----------------------------------------------------
+GET /api/physical_racks
+-----------------------------------------------------
+
+A JSON response with the following keys is returned.
+------------------------------------------------------
+actions (list of actions that can be used)
+count (number of physical racks)
+name (URI name)
+pages (number of pages)
+resources (list of URLs for each physical rack) 
+subcount (number of physical racks that were returned) 
+------------------------------------------------------
+
+*Examples*
+
+* To retrieve all information about the physical racks, use the *?expand=resources* query parameter, for example:
++
+--------------------------------------------------------
+GET /api/physical_racks?expand=resources
+--------------------------------------------------------
+* To retrieve specific information about the physical racks (such as name and ID), use the *?expand=resources&attributes=<attribute_list>* query parameters, for example:
++
+---------------------------------------------------------------------------
+GET /api/physical_racks?expand=resources&attributes=id,name
+---------------------------------------------------------------------------
+* To retrieve information about only a specific physical rack, use the *?expand=resources&filter[]=name=<rack_name>* query attributes on all physical rack resources, for example:
++
+------------------------------------------------------------------------------------------
+GET /api/physical_racks?expand=resources&filter[]=name=rack-2
+------------------------------------------------------------------------------------------

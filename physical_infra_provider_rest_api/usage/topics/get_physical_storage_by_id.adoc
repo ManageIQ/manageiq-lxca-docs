@@ -1,0 +1,39 @@
+=== Retrieving Physical Storage Details by ID
+
+To retrieve information for a specific physical storage system, use the following request URL:
+----------------------------------------------------------------
+GET /api/physical_storages/<storage_ID>
+----------------------------------------------------------------
+
+A JSON response with the following keys is returned.
+----------------------
+access_state
+actions
+canister_slots
+drive_bays
+ems_id
+ems_ref
+enclosures
+health_state
+href
+id
+name
+overall_health_state
+physical_chassis_id
+physical_rack_id
+type
+uid_ems
+----------------------
+
+*Examples*
+
+* To retrieve information about a specific physical storage system (such as name and ID), use the *?expand=resources&attributes=<attribute_list>* query parameters, for example:
++
+---------------------------------------------------------------------------------------
+GET /api/physical_storages/<storage_ID>?expand=resources&attributes=id,name
+---------------------------------------------------------------------------------------
+* To retrieve information, such as canisters and physical disks that are associated with a specific physical storage system, use the *?expand=resources&attributes=<attribute_list>* query parameters, for example:
++
+---------------------------------------------------------------------------
+GET /api/physical_storages/<storage_ID>?expand=resources&attributes=canisters,physical_disks
+---------------------------------------------------------------------------

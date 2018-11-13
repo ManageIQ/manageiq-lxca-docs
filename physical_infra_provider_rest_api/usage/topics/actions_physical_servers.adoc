@@ -7,7 +7,7 @@ You can use the REST API to perform management tasks on a physical server, such 
 ===== Powering on a physical server
 To power on a specific physical server, send a POST request using the following request URL and JSON request body.
 ----------------------------------------------------------------
-POST <CloudForms_address>:<port>/api/physical_servers/<server_ID>
+POST /api/physical_servers/<server_ID>
 ----------------------------------------------------------------
 
 Request body:
@@ -20,7 +20,7 @@ Request body:
 ===== Powering off a physical server
 To shut down the operating system and power off a specific physical server, send a POST request using the following request URL and JSON request body.
 ----------------------------------------------------------------
-POST <CloudForms_address>:<port>/api/physical_servers/<server_ID>
+POST /api/physical_servers/<server_ID>
 ----------------------------------------------------------------
 
 Request body:
@@ -33,7 +33,7 @@ Request body:
 ===== Immediately powering off a physical server
 To immediately power off a specific physical server, send a POST request using the following request URL and JSON request body.
 ----------------------------------------------------------------
-POST <CloudForms_address>:<port>/api/physical_servers/<server_ID>
+POST /api/physical_servers/<server_ID>
 ----------------------------------------------------------------
 
 Request body:
@@ -46,7 +46,7 @@ Request body:
 ===== Restarting a physical server 
 To shut down the operating system and restart a specific physical server, send a POST request using the following request URL and JSON request body.
 ----------------------------------------------------------------
-POST <CloudForms_address>:<port>/api/physical_servers/<server_ID>
+POST /api/physical_servers/<server_ID>
 ----------------------------------------------------------------
 
 Request body:
@@ -59,7 +59,7 @@ Request body:
 ===== Immediately restarting a physical server 
 To immediately restart a specific physical server, send a POST request using the following request URL and JSON request body.
 ----------------------------------------------------------------
-POST <CloudForms_address>:<port>/api/physical_servers/<server_ID>
+POST /api/physical_servers/<server_ID>
 ----------------------------------------------------------------
 
 Request body:
@@ -72,7 +72,7 @@ Request body:
 ===== Changing the location LED state on a physical server to blinking
 To change the location-LED state to blinking on a specific server, send a POST request using the following request URL and JSON request body.
 ----------------------------------------------------------------
-POST <CloudForms_address>:<port>/api/physical_servers/<server_ID>
+POST /api/physical_servers/<server_ID>
 ----------------------------------------------------------------
 
 Request body:
@@ -83,9 +83,9 @@ Request body:
 --------------------------
 
 ===== Performing an action on multiple physical servers 
-To perform an action on more than one physical severs, send a POST request using the following request URL and JSON request body.
+To perform an action on more than one physical server, send a POST request using the following request URL and JSON request body.
 -----------------------------------------------------
-POST <CloudForms_address>:<port>/api/physical_servers
+POST /api/physical_servers
 -----------------------------------------------------
 
 Request body:

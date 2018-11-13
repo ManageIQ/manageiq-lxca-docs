@@ -3,7 +3,7 @@
 Lenovo Physical Infrastructure Provider REST API
 ================================================
 Lenovo Documentation <icfeedback@lenovo.com>
-v1.0, October 17, 2017
+v2.0, October 8, 2018
 
 include::usage/topics/index.adoc[]
 
@@ -18,3 +18,23 @@ include::usage/topics/get_physical_servers.adoc[]
 include::usage/topics/get_physical_server_by_id.adoc[]
 
 include::usage/topics/actions_physical_servers.adoc[]
+
+include::usage/topics/get_physical_chassis.adoc[]
+
+include::usage/topics/get_physical_chassis_by_id.adoc[]
+
+include::usage/topics/actions_physical_chassis.adoc[]
+
+include::usage/topics/get_physical_racks.adoc[]
+
+include::usage/topics/get_physical_racks_by_id.adoc[]
+
+include::usage/topics/get_physical_storage.adoc[]
+
+include::usage/topics/get_physical_storage_by_id.adoc[]
+
+include::usage/topics/get_physical_switches.adoc[]
+
+include::usage/topics/get_physical_switch_by_id.adoc[]
+
+include::usage/topics/actions_physical_switches.adoc[]

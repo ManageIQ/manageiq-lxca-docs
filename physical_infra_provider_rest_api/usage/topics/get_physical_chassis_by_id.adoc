@@ -1,0 +1,41 @@
+=== Retrieving Physical Chassis Details by ID
+
+To retrieve information for a specific physical chassis, use the following request URL:
+----------------------------------------------------------------
+GET /api/physical_chassis/<chassis_ID>
+----------------------------------------------------------------
+
+A JSON response with the following keys is returned.
+----------------------
+href
+id
+ems_id
+uid_ems
+ems_ref
+physical_rack_id
+name
+vendor
+type
+location_led_state
+health_state
+overall_health_state
+management_module_slot_count
+switch_slot_count
+fan_slot_count
+blade_slot_count
+powersupply_slot_count
+actions
+----------------------
+
+*Examples*
+
+* To retrieve information about a specific physical chassis (such as name and ID), use the *?expand=resources&attributes=<attribute_list>* query parameters, for example:
++
+---------------------------------------------------------------------------------------
+GET /api/physical_chassis/<chassis_ID>?expand=resources&attributes=id,name
+---------------------------------------------------------------------------------------
+* To retrieve information, such as the switches, storage systems, and servers that are in a specific physical chassis, use the *?expand=resources&attributes=<attribute_list>* query parameters, for example:
++
+---------------------------------------------------------------------------------------
+GET /api/physical_chassis/<chassis_ID>?expand=resources&attributes=physical_servers,physical_storages,hardware.connected_physical_switches
+---------------------------------------------------------------------------------------

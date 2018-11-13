@@ -1,0 +1,44 @@
+=== Retrieving Physical Switch Details by ID
+
+To retrieve information for a specific physical switch, use the following request URL:
+----------------------------------------------------------------
+GET /api/physical_switches/<switch_ID>
+----------------------------------------------------------------
+
+A JSON response with the following keys is returned.
+----------------------
+actions
+allow_promiscuous
+ems_id
+forged_transmits
+health_state
+href
+id
+mac_changes
+mtu
+name
+ports
+power_state
+shared
+switch_uuid
+type
+uid_ems
+----------------------
+
+*Examples*
+
+* To retrieve information about a specific physical switch (such as name and ID), use the *?expand=resources&attributes=<attribute_list>* query parameters, for example:
++
+---------------------------------------------------------------------------------------
+GET /api/physical_switches/<switch_ID>?expand=resources&attributes=id,name
+---------------------------------------------------------------------------------------
+* To retrieve information such as physical devices that are connected to a specific physical switch, use the *?expand=resources&attributes=<attribute_list>* query parameters, for example:
++
+---------------------------------------------------------------------------
+GET /api/physical_switches/<switch_ID>?expand=resources&attributes=connected_components
+---------------------------------------------------------------------------
+* To retrieve information such as ports on a specific physical switch, use the *?expand=resources&attributes=<attribute_list>* query parameters, for example:
++
+---------------------------------------------------------------------------------------
+GET /api/physical_switches/<switch_ID>?expand=resources&attributes=physical_network_ports
+---------------------------------------------------------------------------------------

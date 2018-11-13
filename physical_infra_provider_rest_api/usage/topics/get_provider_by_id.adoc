@@ -2,7 +2,7 @@
 
 To retrieve information for a specific provider, use the following request URL where <provider_ID> is the unique identifier of the provider:
 ------------------------------------------------------------
-GET <CloudForms_address>:<port>/api/providers/<provider_ID>
+GET /api/providers/<provider_ID>
 ------------------------------------------------------------
 
 A JSON response with the following keys is returned.
@@ -24,14 +24,14 @@ actions
 
 *Examples*
 
-• To retrieve a specific information about the provider (such as name and ID), use the *?attributes=<attribute_list>* query parameters, for example:
+* To retrieve a specific information about the provider (such as name and ID), use the *?attributes=<attribute_list>* query parameters, for example:
 +
 ----------------------------------------------------------------------------------
-GET localhost:3000/api/providers/<provider_ID>?expand=resources&attributes=id,name
+GET /api/providers/<provider_ID>?expand=resources&attributes=id,name
 ----------------------------------------------------------------------------------
-• To retrieve additional information about the provider (such as port, hostname, and IP address), use the *?attributes=<attribute_list>* query parameters, for example:
+* To retrieve additional information about the provider (such as port, hostname, and IP address), use the *?attributes=<attribute_list>* query parameters, for example:
 +
 ----------------------------------------------------------------
- GET localhost:3000/api/providers/<provider_ID>?expand=resources
+GET /api/providers/<provider_ID>?expand=resources
 &attributes=port,hostname,ipaddress
 ----------------------------------------------------------------

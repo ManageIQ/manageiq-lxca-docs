@@ -1,0 +1,44 @@
+=== Retrieving Physical Switch Details
+
+To retrieve information for all physical switches, use the following request URL:
+-----------------------------------------------------
+GET /api/physical_switches
+-----------------------------------------------------
+
+A JSON response with the following keys is returned.
+------------------------------------------------------
+actions (list of actions that can be used)
+count (number of physical switches)
+name (URI name)
+pages (count of pages)
+resources (list of URLs for each physical switch) 
+subcount (number of physical switches that were returned) 
+------------------------------------------------------
+
+*Examples*
+
+* To retrieve all information about the physical switches, use the *?expand=resources* query parameter, for example:
++
+--------------------------------------------------------
+GET /api/physical_switches?expand=resources
+--------------------------------------------------------
+* To retrieve specific information about the physical switches (such as name and ID), use the *?expand=resources&attributes=<attribute_list>* query parameters, for example:
++
+---------------------------------------------------------------------------
+GET /api/physical_switches?expand=resources&attributes=id,name
+---------------------------------------------------------------------------
+* To retrieve information such as ports on physical switches, use the *?expand=resources&attributes=<attribute_list>* query parameters, for example:
++
+---------------------------------------------------------------------------
+GET /api/physical_switches?expand=resources&attributes=physical_network_ports
+---------------------------------------------------------------------------
+* To retrieve information such as physical devices connected to physical switches, use the *?expand=resources&attributes=<attribute_list>* query parameters, for example:
++
+---------------------------------------------------------------------------
+GET /api/physical_switches?expand=resources&attributes=connected_components
+---------------------------------------------------------------------------
+* To retrieve information about only a specific physical switch, use the *?expand=resources&filter[]=name=<switch_name>* query attributes on all physical switch resources, for example:
++
+------------------------------------------------------------------------------------------
+GET /api/physical_switches?expand=resources&filter[]=name=IO Module 02
+------------------------------------------------------------------------------------------

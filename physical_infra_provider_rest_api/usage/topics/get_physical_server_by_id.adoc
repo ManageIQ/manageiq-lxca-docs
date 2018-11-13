@@ -2,7 +2,7 @@
 
 To retrieve information for a specific physical server, use the following request URL:
 ----------------------------------------------------------------
-GET <CloudForms_address>:<port>/api/physical_servers/<server_ID>
+GET /api/physical_servers/<server_ID>
 ----------------------------------------------------------------
 
 A JSON response with the following keys is returned.
@@ -31,14 +31,25 @@ vendor
 
 *Examples*
 
-* To retrieve a specific information about a specific physical server (such as name and ID), use the *?expand=resources&attributes=<attribute_list>* query parameters, for example:
+ 
+* To retrieve information about a specific physical server (such as name and ID), use the *?expand=resources&attributes=<attribute_list>* query parameters, for example:
 +
 ---------------------------------------------------------------------------------------
-GET localhost:3000/api/physical_servers/<server_ID>?expand=resources&attributes=id,name
+GET /api/physical_servers/<server_ID>?expand=resources&attributes=id,name
 ---------------------------------------------------------------------------------------
-* To retrieve a specific information about a specific physical server (such as firmware, networks, guest devices, and asset details), use the *?expand=resources&attributes=<attribute_list>* query parameters, for example:
+* To retrieve information such as firmware, networks, guest devices, and asset details for a specific server, use the *?expand=resources&attributes=<attribute_list>* query parameters, for example:
 +
 -----------------------------------------------------------------------------------------------
- GET localhost:3000/api/physical_servers/<server_ID>?expand=resources
+GET /api/physical_servers/<server_ID>?expand=resources
 &attributes=hardware.firmwares,hardware.networks,hardware.guest_devices,hardware.assets_details
+-----------------------------------------------------------------------------------------------
+* To retrieve information such as switches that are connected to a specific server, use the *?expand=resources&attributes=<attribute_list>* query parameters, for example: 
++
+-----------------------------------------------------------------------------------
+GET /api/physical_servers/<server_ID>?expand=resources&attributes=physical_switches
+-----------------------------------------------------------------------------------
+* To retrieve information such as network adapters and storage adapters in a specific physical server, use the *?expand=resources&attributes=<attribute_list>* query parameters, for example:
++
+-----------------------------------------------------------------------------------------------
+GET /api/physical_servers/<server_ID>?expand=resources&attributes=guest_devices.with_ethernet_type,guest_devices.with_storage_type,hardware.physical_network_ports
 -----------------------------------------------------------------------------------------------
