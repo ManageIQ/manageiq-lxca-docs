@@ -12,7 +12,7 @@ count (number of physical chassis)
 name (URI name)
 pages (number of pages)
 resources (list of URLs for each physical chassis) 
-subcount (number of the physical chassis that were returned) 
+subcount (number of physical chassis that were returned) 
 ------------------------------------------------------
 
 *Examples*

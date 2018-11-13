@@ -11,7 +11,7 @@ actions (list of actions that can be used)
 count (number of physical storage systems)
 name (URI name)
 pages (number of pages)
-resources (list of URLs of each physical storage system) 
+resources (list of URLs for each physical storage system) 
 subcount (number of physical storage systems that were returned) 
 ------------------------------------------------------
 

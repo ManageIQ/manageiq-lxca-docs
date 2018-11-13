@@ -8,11 +8,11 @@ GET /api/physical_racks
 A JSON response with the following keys is returned.
 ------------------------------------------------------
 actions (list of actions that can be used)
-count (count of physical racks)
+count (number of physical racks)
 name (URI name)
 pages (number of pages)
 resources (list of URLs for each physical rack) 
-subcount (number of physical racks returned) 
+subcount (number of physical racks that were returned) 
 ------------------------------------------------------
 
 *Examples*
