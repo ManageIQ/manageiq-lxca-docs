@@ -3,7 +3,7 @@
 Configuring the Lenovo Physical Infrastructure Provider for Red Hat CloudForms
 ==============================================================================
 Lenovo Documentation <icfeedback@lenovo.com>
-v1.0, October 17, 2017
+v2.0, October 8, 2018
 
 include::overview/topics/index.adoc[]
 
@@ -23,6 +23,8 @@ include::usage/provider/topics/removing_providers.adoc[]
 
 include::usage/provider/topics/editing_providers.adoc[]
 
+include::usage/provider/topics/changing_lxca_password_from_provider.adoc[]
+
 include::usage/relationship/topics/index.adoc[]
 
 include::usage/relationship/topics/viewing_server_host_relationships.adoc[]
@@ -30,6 +32,14 @@ include::usage/relationship/topics/viewing_server_host_relationships.adoc[]
 include::usage/relationship/topics/viewing_server_relationships.adoc[]
 
 include::usage/relationship/topics/viewing_host_relationships.adoc[]
+
+include::usage/relationship/topics/viewing_storage_relationships.adoc[]
+
+include::usage/relationship/topics/viewing_switch_relationships.adoc[]
+
+include::usage/relationship/topics/viewing_chassis_relationships.adoc[]
+
+include::usage/relationship/topics/viewing_rack_relationships.adoc[]
 
 include::usage/physical_server/topics/index.adoc[]
 
@@ -43,10 +53,44 @@ include::usage/physical_server/topics/performing_identify_operations.adoc[]
 
 include::usage/physical_server/topics/provisioning_physical_servers.adoc[]
 
-include::troubleshooting/topics/index.adoc[]
+include::usage/physical_server/topics/viewing_physical_server_network_devices.adoc[]
+
+include::usage/physical_server/topics/viewing_physical_server_storage_devices.adoc[]
+
+include::usage/physical_server/topics/adding_physical_server_widgets_to_dashboard.adoc[]
+
+include::usage/physical_server/topics/creating_a_physical_infrastructure_user.adoc[]
+
+include::usage/physical_chassis/topics/index.adoc[]
+
+include::usage/physical_chassis/topics/viewing_physical_chassis.adoc[]
+
+include::usage/physical_chassis/topics/performing_identify_operations.adoc[]
+
+include::usage/physical_rack/topics/index.adoc[]
+
+include::usage/physical_rack/topics/viewing_physical_racks.adoc[]
+
+include::usage/physical_storage/topics/index.adoc[]
+
+include::usage/physical_storage/topics/viewing_physical_storage.adoc[]
+
+include::usage/physical_switch/topics/index.adoc[]
+
+include::usage/physical_switch/topics/viewing_physical_switches.adoc[]
+
+include::usage/physical_switch/topics/performing_power_operations.adoc[]
 
 include::automation/topics/index.adoc[]
 
 include::automation/topics/creating_automated_tasks.adoc[]
 
 include::automation/topics/invoking_automated_tasks.adoc[]
+
+include::automation/topics/creating_health_alerts.adoc[]
+
+include::automation/topics/creating_server_power_policies.adoc[]
+
+include::automation/topics/updating_firmware_using_ansible_playbooks.adoc[]
+
+include::automation/topics/provisioning_physical_servers_using_ansible_playbooks.adoc[]

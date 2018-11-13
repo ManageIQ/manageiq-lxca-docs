@@ -46,7 +46,7 @@ As an example, the following steps describe how to create an automated task for 
 .. Click *Configuration > Add a new Instance* from the top menu.
 .. Enter a name for the new class instance (for example, FQXHMTS0003G, which is the event that is generated when inventory data cannot be retrieved from a device).
 +
-*Important:* The class-instance name must be the same as the name of the event that triggers the task to be invoked. CloudForms matches the class instance with the event by this name. To find the event name, see http://sysmgt.lenovofiles.com/help/topic/com.lenovo.lxca.doc/messages.html?cp=1_22_16[Messages] in the Lenovo XClarity Administrator online documentation.
+*Important:* The class-instance name must be the same as the name of the event that triggers the task to be invoked. CloudForms matches the class instance with the event by this name. To find the event name, see http://sysmgt.lenovofiles.com/help/topic/com.lenovo.lxca.doc/messages.html?cp=1_22_16[Messages] in the XClarity Administrator online documentation.
 .. Add the path to the event handlers copied in the field’s *rel3*.
 
 +

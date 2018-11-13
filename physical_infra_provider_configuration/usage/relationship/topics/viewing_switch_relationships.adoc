@@ -1,6 +1,6 @@
-=== Viewing server relationships
+=== Viewing switch relationships
 
-You can view a list of all physical servers that are managed by a specific physical-infrastructure provider.
+You can view a list of all switches that are managed by a specific physical-infrastructure provider.
 
 ===== From the physical-infrastructure provider summary view
 
@@ -10,7 +10,7 @@ You can view a list of all physical servers that are managed by a specific physi
 
 . After the page loads, ensure that the summary view is being used.
 
-. Click on *Physical Servers* in the *Relationships* table.
+. Click on *Physical Switches* in the *Relationships* table.
 
 ===== From the physical-infrastructure provider dashboard view
 
@@ -20,4 +20,4 @@ You can view a list of all physical servers that are managed by a specific physi
 
 . After the page loads, ensure that the dashboard view is being used.
 
-. Click on the number of servers that is displayed displayed in the *Servers* card.
+. Click on the number of switches that is displayed in the *Switches* card.

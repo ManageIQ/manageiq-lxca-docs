@@ -1,0 +1,11 @@
+=== Restarting physical switches
+
+You can restart a physical switch that is managed by the physical-infrastructure provider.
+
+. Navigate to *Compute > Physical Infrastructure > Switches*.
+
+. Select a physical switch. The Physical Switches Summary page is displayed.
+
+. Click on *Power* in the top menu, and then click on *Restart*.
+
+image:usage/physical_switch/images/physical_switch_restart.png[]

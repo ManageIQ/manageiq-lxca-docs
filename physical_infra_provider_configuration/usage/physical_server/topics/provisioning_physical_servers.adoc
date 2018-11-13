@@ -1,8 +1,8 @@
 === Provisioning physical servers using configuration patterns
 
-You can use configuration patterns in Lenovo XClarity Administrator to quickly provision or preprovision multiple servers from a single set of defined configuration settings. Configuration patterns act as templates for configuring logical storage, I/O adapters, boot order, and other baseboard management controller and Unified Extensible Firmware Interface (UEFI) settings.
+You can use configuration patterns in XClarity Administrator to quickly provision or preprovision multiple servers from a single set of defined configuration settings. Configuration patterns act as templates for configuring logical storage, I/O adapters, boot order, and other baseboard management controller and Unified Extensible Firmware Interface (UEFI) settings.
 
-A physical-infrastructure provider can discover configuration patterns that are defined on the associated Lenovo XClarity Administrator instance. A configuration pattern can then be applied to a single or multiple physical servers.
+A physical-infrastructure provider can discover configuration patterns that are defined on the associated XClarity Administrator instance. A configuration pattern can then be applied to a single or multiple physical servers.
 
 *Note*: Configuration patterns can be assigned only to physical servers that do not have a pattern assigned to them.
 

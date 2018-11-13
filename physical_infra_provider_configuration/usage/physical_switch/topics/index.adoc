@@ -1,0 +1,3 @@
+== Managing physical switches
+
+After the Lenovo physical-infrastructure provider is added, the physical switches that are managed by XClarity Administrator are registered in CloudForms. You can then view and manage the switches.

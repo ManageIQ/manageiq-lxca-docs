@@ -1,5 +1,5 @@
 == Automating tasks based on events
 
-You can use CloudForms to automatically perform specific tasks when certain events occur on servers that are managed by Lenovo XClarity Administrator through a Lenovo physical-infrastructure provider. To create an automation task, you must create and configure a custom domain. To automatically invoke the task when a certain event occurs, you must create, configure and assign a custom policy.
+You can use CloudForms to automatically perform specific tasks when certain events occur on servers that are managed by XClarity Administrator through a Lenovo physical-infrastructure provider. To create an automation task, you must create and configure a custom domain. To automatically invoke the task when a certain event occurs, you must create, configure and assign a custom policy.
 
 For more information about the CloudForms automation function, see https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.0/html/scripting_actions_in_cloudforms/[Scripting Actions in CloudForms] website.

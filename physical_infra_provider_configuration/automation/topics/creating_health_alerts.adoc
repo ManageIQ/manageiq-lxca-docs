@@ -1,0 +1,34 @@
+== Creating an alert to monitor physical server health
+
+_Note_: For this alert to work correctly, you must first configure the SMTP settings in CloudForms by following instructions in the _Outgoing SMTP Email Settings_ section in the _CloudForms Configuration_ documentation.
+
+In CloudForms, there is a configurable alert for physical servers that sends an alert email when a server that is assigned to the alert is in an unhealthy state. This alert can be used to notify IT administrators that a server is in an unhealthy state, so that they can investigate and resolve potential issues before the issues lead to downtime.
+
+To enable this alert, you must create a physical server alert profile, assign servers to the profile, and then configure the alert that is associated with the profile.
+
+===== Step 1. Create a physical server alert profile
+. Navigate to *Control > Explorer*.
+. Click *Alert Profiles > Physical Server Alert Profiles*.
+. Click *Configuration > Add a New Physical Server Alert Profile* from the top menu.
+. Enter a description into the *Description* field.
+. Select *Physical server has critical health state* from the *Available Physical Server Alerts* list, and click on the *>* button to add it to the *Profile Alerts* list on the right.
+. Click *Add*.
+
+===== Step 2. Assign servers to the alert profile
+. Click *Alert Profiles > Physical Server Alert Profiles > _ProfileName_*, where _ProfileName_ is the name of the physical server alert that was previously created.
+. Click *Configuration > Edit assignments for this Alert Profile*.
+. Choose *Selected Servers* from the *Assign To* dropdown menu.
+. Select the checkboxes next to the servers that you want to assign to the profile from the *Selections* list.
+. Click *Save*.
+
+===== Step 3. Configure the alert associated with the alert profile
+. Click *Alert Profiles > Physical Server Alert Profiles > _ProfileName_ > Physical server has critical health state*, where _ProfileName_ is the name of the physical server alert profile that was previously created.
+. Click *Configuration > Edit this Alert* from the top menu.
+. Select the *Active* checkbox to enable the alert.
+. Optionally, increase the notification frequency by selecting a new value from the *Notification Frequency* dropdown menu. The default frequency is one hour.
+. Ensure that the *Send an E-mail* checkbox is selected.
+. Optionally, enter a value into the *From* field. By default, the _cfadmin@cfserver.com_ address is used.
+. Enter the email address that you want to retrieve the alert notification in the *Add* field, and then click the *+* button. The email address is displayed in the *To* field.
+. Click *Save*.
+
+The assigned servers are checked hourly, and a notification is sent through email if the any of the assigned servers have a critical health state.

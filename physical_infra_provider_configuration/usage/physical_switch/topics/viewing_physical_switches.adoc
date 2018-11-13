@@ -1,0 +1,7 @@
+=== Viewing physical switches
+
+To view a list of all physical switches that are managed by all physical-infrastructure providers, navigate to *Compute > Physical Infrastructure > Switches*. The Physical Switches page is displayed (see the following figure).
+
+*Tip:* You can sort the table columns to make it easier to find a specific switch.
+
+image:usage/physical_switch/images/physical_switches.png[]

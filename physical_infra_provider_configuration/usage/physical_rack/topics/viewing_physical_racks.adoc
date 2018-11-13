@@ -1,0 +1,7 @@
+=== Viewing physical racks
+
+To view a list of all physical racks that are managed by all physical-infrastructure providers, navigate to *Compute > Physical Infrastructure > Racks*. The Physical Racks page is displayed (see the following figure).
+
+*Tip:* You can sort the table columns to make it easier to find a specific rack.
+
+image:usage/physical_rack/images/physical_racks.png[]
