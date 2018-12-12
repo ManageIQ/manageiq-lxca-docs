@@ -7,11 +7,11 @@
 ]>
 <?asciidoc-toc?><?asciidoc-numbered?><book xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">
 <info>
-<title>Configuring the Lenovo Physical Infrastructure Provider</title><subtitle>Adding and configuring the Lenovo physical infrastructure provider in Red Hat CloudForms</subtitle>
+<title>Configuring the Lenovo Physical Infrastructure Provider for Red Hat CloudForms</title><subtitle>Adding and configuring the Lenovo physical infrastructure provider in Red Hat CloudForms</subtitle>
 
-<date>2018-03-05</date>
+<date>2018-11-22</date>
 <productname>Red Hat CloudForms</productname>
-<productnumber>4.6</productnumber>
+<productnumber>4.7</productnumber>
 <abstract>
 	<para>Adding and configuring the Lenovo physical infrastructure provider in Red Hat CloudForms.</para>
 	<para>If you have a suggestion for improving this guide or have found an error, please submit a Bugzilla report at <link xlink:href="https://bugzilla.redhat.com/enter_bug.cgi?product=Red%20Hat%20CloudForms%20Management%20Engine">http://bugzilla.redhat.com</link> against <emphasis role="strong">Red Hat CloudForms Management Engine</emphasis> for the <emphasis role="strong">Documentation</emphasis> component. Please provide specific details, such as the section number, guide name, and CloudForms version so we can easily locate the content.</para>
@@ -24,13 +24,21 @@
 <simpara>Key features include:</simpara>
 <itemizedlist>
 <listitem>
-<simpara>Seamlessly integrates with one or more Lenovo XClarity Administrator virtual appliances, providing a summary view of the Lenovo infrastructure, relationship views of physical servers and virtual hosts, and configuration of servers using Configuration Patterns</simpara>
+<simpara>Seamlessly integrates with one or more XClarity Administrator virtual appliances, providing a summary view of the Lenovo infrastructure, relationship views of physical servers and virtual hosts, and configuration of servers using Configuration Patterns. In addition, there is a dashboard view that displays the following:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>The number of servers, switches, racks, and storage systems being mangaged</simpara>
 </listitem>
 <listitem>
-<simpara>Provides a single interface to monitor Lenovo hardware that is managed by multiple instances of Lenovo XClarity Administrator</simpara>
+<simpara>Widgets that display information about server health, availability, and recently discovered servers</simpara>
+</listitem>
+</itemizedlist>
 </listitem>
 <listitem>
-<simpara>Automatically discovers hardware that is managed by Lenovo XClarity Administrator</simpara>
+<simpara>Provides a single interface to monitor Lenovo hardware that is managed by multiple instances of XClarity Administrator</simpara>
+</listitem>
+<listitem>
+<simpara>Automatically discovers hardware that is managed by XClarity Administrator</simpara>
 </listitem>
 <listitem>
 <simpara>Manage devices for use in on-premise cloud deployments</simpara>
@@ -48,28 +56,28 @@
 <simpara>Manages current system settings (such as BMC, uEFI, and boot order settings) on the managed devices</simpara>
 </listitem>
 <listitem>
-<simpara>Simplifies system management through custom policies and automation that respond to the health status of physical servers</simpara>
+<simpara>Simplifies system management through custom policies and automation that respond to the health status of hardware devices</simpara>
 </listitem>
 </itemizedlist>
 </chapter>
-<chapter xml:id="configuring_lenovo_xclarity_administrator" remap="_configuring_lenovo_xclarity_administrator">
-<title>Configuring Lenovo XClarity Administrator</title>
-<simpara>Lenovo XClarity Administrator virtual appliances are connected to CloudForms by adding physical-infrastructure providers. Physical-infrastructure providers enable you to manage and interact with devices that are managed by Lenovo XClarity Administrator. After the physical-infrastructure provider is added, the servers that are managed by the Lenovo XClarity Administrator are registered in CloudForms. Managed devices can be monitored, configured, and updated using Lenovo XClarity Administrator. The physical-infrastructure provider surfaces information about these managed devices and the Lenovo XClarity Administrator instance.</simpara>
-<section xml:id="setting_up_lenovo_xclarity_administrator" remap="_setting_up_lenovo_xclarity_administrator">
-<title>Setting up Lenovo XClarity Administrator</title>
-<simpara>For information about downloading and setting up Lenovo XClarity Administrator, see <link xlink:href="http://sysmgt.lenovofiles.com/help/topic/com.lenovo.lxca.doc/setup.html?cp=1_6">Installing and setting up Lenovo XClarity Administrator</link> in the Lenovo XClarity Administrator online documentation.</simpara>
-<simpara><emphasis role="strong">Note:</emphasis> You can use all available features in Lenovo XClarity Administrator for free for up to 90 days. After 90 days, you can continue to use Lenovo XClarity Administrator to manage and monitor your hardware for free; however, you must purchase a full-function-enablement license to continue using Lenovo XClarity Administrator to configure your hardware using Configuration Patterns and to deploy operating systems. Lenovo XClarity Pro provides entitlement to service and support and the full-function-enablement license for Lenovo XClarity Administrator. For more information about purchasing Lenovo XClarity Pro, contact your Lenovo representative or authorized business partner.</simpara>
+<chapter xml:id="configuring_xclarity_administrator" remap="_configuring_xclarity_administrator">
+<title>Configuring XClarity Administrator</title>
+<simpara>XClarity Administrator virtual appliances are connected to CloudForms by adding physical-infrastructure providers. Physical-infrastructure providers enable you to manage and interact with devices that are managed by XClarity Administrator. After the physical-infrastructure provider is added, the devices that are managed by the XClarity Administrator are registered in CloudForms. Managed devices can be monitored, configured, and updated using XClarity Administrator. The physical-infrastructure provider surfaces information about these managed devices and the XClarity Administrator instance.</simpara>
+<section xml:id="setting_up_xclarity_administrator" remap="_setting_up_xclarity_administrator">
+<title>Setting up XClarity Administrator</title>
+<simpara>For information about downloading and setting up XClarity Administrator, see <link xlink:href="http://sysmgt.lenovofiles.com/help/topic/com.lenovo.lxca.doc/setup.html?cp=1_6">Installing and setting up Lenovo XClarity Administrator</link> in the XClarity Administrator online documentation.</simpara>
+<simpara><emphasis role="strong">Note:</emphasis> You can use all available features in XClarity Administrator for free for up to 90 days. After 90 days, you can continue to use XClarity Administrator to manage and monitor your hardware for free; however, you must purchase a full-function-enablement license to continue using XClarity Administrator to configure your hardware using Configuration Patterns and to deploy operating systems. Lenovo XClarity Pro provides entitlement to service and support and the full-function-enablement license for XClarity Administrator. For more information about purchasing Lenovo XClarity Pro, contact your Lenovo representative or authorized business partner.</simpara>
 </section>
-<section xml:id="discovering_and_managing_hardware_using_lenovo_xclarity_administrator" remap="_discovering_and_managing_hardware_using_lenovo_xclarity_administrator">
-<title>Discovering and managing hardware using Lenovo XClarity Administrator</title>
-<simpara>Lenovo XClarity Administrator can discover manageable devices in your environment by performing an SLP discovery for devices that are on the same IP subnet as Lenovo XClarity Administrator. A specified IP address or range of IP addresses also can be used, or information can be imported from a spreadsheet, a process that is known as a <emphasis>bulk import</emphasis>. Discovery options can be accessed by clicking <emphasis role="strong">Hardware &gt; Discover and Manage New Devices</emphasis> from the menu bar. Discovered devices can then be managed by Lenovo XClarity Administrator. During the management process, you are asked for login credentials for the management controller of the target servers and given the option to create a recovery account for the servers. For more information about discovering and managing devices, see the <link xlink:href="http://sysmgt.lenovofiles.com/help/index.jsp?topic=%2Fcom.lenovo.lxca.doc%2Faug_product_page.html">Lenovo XClarity Administrator online documentation</link>.</simpara>
+<section xml:id="discovering_and_managing_hardware_using_xclarity_administrator" remap="_discovering_and_managing_hardware_using_xclarity_administrator">
+<title>Discovering and managing hardware using XClarity Administrator</title>
+<simpara>XClarity Administrator can discover manageable devices in your environment by performing an SLP discovery for devices that are on the same IP subnet as XClarity Administrator. A specified IP address or range of IP addresses also can be used, or information can be imported from a spreadsheet, a process that is known as a <emphasis>bulk import</emphasis>. Discovery options can be accessed by clicking <emphasis role="strong">Hardware &gt; Discover and Manage New Devices</emphasis> from the menu bar. Discovered devices can then be managed by XClarity Administrator. During the management process, you are asked for login credentials for the management controller of the target servers and given the option to create a recovery account for the servers. For more information about discovering and managing devices, see the <link xlink:href="http://sysmgt.lenovofiles.com/help/index.jsp?topic=%2Fcom.lenovo.lxca.doc%2Faug_product_page.html">XClarity Administrator online documentation</link>.</simpara>
 <simpara><emphasis role="strong">Note:</emphasis></simpara>
 <itemizedlist>
 <listitem>
-<simpara>Ensure that the devices that you intend to manage are supported by Lenovo XClarity Administrator. For information about supported devices, see <link xlink:href="http://sysmgt.lenovofiles.com/help/topic/com.lenovo.lxca.doc/plan_supportedhw.html?cp=1_3_1_1">Supported devices</link> in the Lenovo XClarity Administrator online documentation.</simpara>
+<simpara>Ensure that the devices that you intend to manage are supported by XClarity Administrator. For information about supported devices, see <link xlink:href="http://sysmgt.lenovofiles.com/help/topic/com.lenovo.lxca.doc/plan_supportedhw.html?cp=1_3_1_1">Supported devices</link> in the XClarity Administrator online documentation.</simpara>
 </listitem>
 <listitem>
-<simpara>Ensure that firmware for all devices that you intend to manage using Lenovo XClarity Administrator are at the required levels. For more information about supported firmware levels, see <link xlink:href="http://sysmgt.lenovofiles.com/help/topic/com.lenovo.lxca.doc/plan_supportedfw.html?cp=1_3_1_2">Supported firmware</link> in the Lenovo XClarity Administrator online documentation.</simpara>
+<simpara>Ensure that firmware for all devices that you intend to manage using XClarity Administrator are at the required levels. For more information about supported firmware levels, see <link xlink:href="http://sysmgt.lenovofiles.com/help/topic/com.lenovo.lxca.doc/plan_supportedfw.html?cp=1_3_1_2">Supported firmware</link> in the XClarity Administrator online documentation.</simpara>
 </listitem>
 </itemizedlist>
 </section>
@@ -78,10 +86,10 @@
 <title>Managing physical-infrastructure providers</title>
 <section xml:id="adding_a_physical_infrastructure_provider" remap="_adding_a_physical_infrastructure_provider">
 <title>Adding a physical-infrastructure provider</title>
-<simpara>Lenovo XClarity Administrator virtual appliances are connected to CloudForms by adding physical-infrastructure providers. Physical-infrastructure providers enable you to manage and interact with devices that are managed by Lenovo XClarity Administrator.</simpara>
+<simpara>XClarity Administrator virtual appliances are connected to CloudForms by adding physical-infrastructure providers. Physical-infrastructure providers enable you to manage and interact with devices that are managed by XClarity Administrator.</simpara>
 <simpara><emphasis role="strong">Note:</emphasis> You must be logged in to CloudForms as a user with permission to add providers. The default user is admin, password smartvm.</simpara>
-<simpara>Complete the following steps for each Lenovo XClarity Administrator instance that you want to connect to CloudForms.</simpara>
-<simpara>To connect to a specific Lenovo XClarity Administrator instance:</simpara>
+<simpara>Complete the following steps for each XClarity Administrator instance that you want to connect to CloudForms.</simpara>
+<simpara>To connect to a specific XClarity Administrator instance:</simpara>
 <orderedlist numeration="arabic">
 <listitem>
 <simpara>Navigate to <emphasis role="strong">Compute &gt; Physical Infrastructure &gt; Providers.</emphasis></simpara>
@@ -102,27 +110,27 @@
 <simpara>In the credentials area, provide the following:</simpara>
 <orderedlist numeration="loweralpha">
 <listitem>
-<simpara>Enter the hostname, IPv4 address, or IPv6 address of the Lenovo XClarity Administrator instance.</simpara>
+<simpara>Enter the hostname, IPv4 address, or IPv6 address of the XClarity Administrator instance.</simpara>
 </listitem>
 <listitem>
 <simpara>Enter “443” for the API port.</simpara>
 </listitem>
 <listitem>
-<simpara>Enter the username and password used to log in to the Lenovo XClarity Administrator instance.</simpara>
+<simpara>Enter the username and password used to log in to the XClarity Administrator instance.</simpara>
 </listitem>
 </orderedlist>
 </listitem>
 <listitem>
-<simpara>Click <emphasis role="strong">Validate</emphasis> to confirm that you can connect to the Lenovo XClarity Administrator instance.</simpara>
+<simpara>Click <emphasis role="strong">Validate</emphasis> to confirm that you can connect to the XClarity Administrator instance.</simpara>
 </listitem>
 <listitem>
 <simpara>Click <emphasis role="strong">Add</emphasis>.</simpara>
 </listitem>
 </orderedlist>
-<simpara>To discover and then connect to a range of Lenovo XClarity Administrator instances:</simpara>
+<simpara>To discover and then connect to a range of XClarity Administrator instances:</simpara>
 <orderedlist numeration="arabic">
 <listitem>
-<simpara>Discover Lenovo XClarity Administrator instances:</simpara>
+<simpara>Discover XClarity Administrator instances:</simpara>
 <orderedlist numeration="loweralpha">
 <listitem>
 <simpara>Navigate to <emphasis role="strong">Compute &gt; Physical Infrastructure &gt; Providers</emphasis>.</simpara>
@@ -145,7 +153,7 @@
 </orderedlist>
 </listitem>
 <listitem>
-<simpara>Update credentials for each discovered physical-infrastructure provider (Lenovo XClarity Administrator instance):</simpara>
+<simpara>Update credentials for each discovered physical-infrastructure provider (XClarity Administrator instance):</simpara>
 <orderedlist numeration="loweralpha">
 <listitem>
 <simpara>Navigate to <emphasis role="strong">Compute &gt; Physical Infrastructure &gt; Providers</emphasis>.</simpara>
@@ -160,10 +168,10 @@
 <simpara>Click <emphasis role="strong">Edit selected infrastructure providers</emphasis>.</simpara>
 </listitem>
 <listitem>
-<simpara>Enter the username and password used to log in to the Lenovo XClarity Administrator instance.</simpara>
+<simpara>Enter the username and password used to log in to the XClarity Administrator instance.</simpara>
 </listitem>
 <listitem>
-<simpara>Click <emphasis role="strong">Validate</emphasis> to confirm that you can connect to the Lenovo XClarity Administrator instance.</simpara>
+<simpara>Click <emphasis role="strong">Validate</emphasis> to confirm that you can connect to the XClarity Administrator instance.</simpara>
 </listitem>
 <listitem>
 <simpara>Click <emphasis role="strong">Save</emphasis>. A flash message is displayed, confirming your changes were performed successfully.</simpara>
@@ -239,6 +247,30 @@
 </listitem>
 </orderedlist>
 </section>
+<section xml:id="changing_the_password_of_the_xclarity_administrator_instance_through_its_physical_infrastructure_provider" remap="_changing_the_password_of_the_xclarity_administrator_instance_through_its_physical_infrastructure_provider">
+<title>Changing the password of the XClarity Administrator instance through its physical-infrastructure provider</title>
+<simpara>Within CloudForms, you can change the password of an XClarity Administrator instance through the physical-infrastructure provider with which it is associated. Changing the password this way also changes the password in CloudForms so that they match.</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Navigate to <emphasis role="strong">Compute &gt; Physical Infrastructure &gt; Providers</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Click on the physical-infrastructure provider to be modified.</simpara>
+</listitem>
+<listitem>
+<simpara>Click on the <emphasis role="strong">Authentication</emphasis> button in the top menu and select <emphasis role="strong">Change password</emphasis>. The Change Password for Physical Infrastructure Provider page is displayed.</simpara>
+</listitem>
+<listitem>
+<simpara>Enter the current password for the XClarity Administrator instance in the <emphasis role="strong">Current Password</emphasis> field.</simpara>
+</listitem>
+<listitem>
+<simpara>Enter the new password in the <emphasis role="strong">New Password</emphasis> and <emphasis role="strong">Confirm New Password</emphasis> fields.</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Save</emphasis>.</simpara>
+</listitem>
+</orderedlist>
+</section>
 </chapter>
 <chapter xml:id="viewing_relationships" remap="_viewing_relationships">
 <title>Viewing relationships</title>
@@ -257,10 +289,13 @@
 <simpara>Navigate to <emphasis role="strong">Compute &gt; Physical Infrastructure &gt; Providers</emphasis>.</simpara>
 </listitem>
 <listitem>
-<simpara>Select the physical-infrastructure provider to be viewed.</simpara>
+<simpara>Click on the physical-infrastructure provider to be viewed.</simpara>
 </listitem>
 <listitem>
-<simpara>From the overview section, select <emphasis role="strong">Topology</emphasis> to display the Topology page. From this page, you can perform the following actions:</simpara>
+<simpara>Once the page loads, ensure that the summary view is being used.</simpara>
+</listitem>
+<listitem>
+<simpara>Click on <emphasis role="strong">Topology</emphasis> in the <emphasis role="strong">Overview</emphasis> table to display the Topology page. From this page, you can perform the following actions:</simpara>
 <itemizedlist>
 <listitem>
 <simpara>Hide or show all physical server by clicking <emphasis role="strong">Physical Servers</emphasis>.</simpara>
@@ -272,6 +307,9 @@
 <simpara>Hide or show all VMs by clicking <emphasis role="strong">VMs</emphasis>.</simpara>
 </listitem>
 <listitem>
+<simpara>Hide or show nodes in the graph that have a particular health state by clicking on one of the following states: <emphasis role="strong">Valid</emphasis>, <emphasis role="strong">Warning</emphasis>, <emphasis role="strong">Critical</emphasis>, or <emphasis role="strong">Unknown</emphasis>.</simpara>
+</listitem>
+<listitem>
 <simpara>Double-click or right-click a node in the graph to navigate to the summary pages for that node.</simpara>
 </listitem>
 </itemizedlist>
@@ -281,17 +319,40 @@
 <section xml:id="viewing_server_relationships" remap="_viewing_server_relationships">
 <title>Viewing server relationships</title>
 <simpara>You can view a list of all physical servers that are managed by a specific physical-infrastructure provider.</simpara>
+<section xml:id="from_the_physical_infrastructure_provider_summary_view" remap="_from_the_physical_infrastructure_provider_summary_view">
+<title>From the physical-infrastructure provider summary view</title>
 <orderedlist numeration="arabic">
 <listitem>
 <simpara>Navigate to <emphasis role="strong">Compute &gt; Physical Infrastructure &gt; Providers</emphasis>.</simpara>
 </listitem>
 <listitem>
-<simpara>Select the physical-infrastructure provider to be viewed.</simpara>
+<simpara>Click on the physical-infrastructure provider to be viewed.</simpara>
 </listitem>
 <listitem>
-<simpara>Click <emphasis role="strong">Physical Servers</emphasis> in the <emphasis role="strong">Relationships</emphasis> section.</simpara>
+<simpara>After the page loads, ensure that the summary view is being used.</simpara>
+</listitem>
+<listitem>
+<simpara>Click on <emphasis role="strong">Physical Servers</emphasis> in the <emphasis role="strong">Relationships</emphasis> table.</simpara>
 </listitem>
 </orderedlist>
+</section>
+<section xml:id="from_the_physical_infrastructure_provider_dashboard_view" remap="_from_the_physical_infrastructure_provider_dashboard_view">
+<title>From the physical-infrastructure provider dashboard view</title>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Navigate to <emphasis role="strong">Compute &gt; Physical Infrastructure &gt; Providers</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Click on the physical-infrastructure provider to be viewed.</simpara>
+</listitem>
+<listitem>
+<simpara>After the page loads, ensure that the dashboard view is being used.</simpara>
+</listitem>
+<listitem>
+<simpara>Click on the number of servers that is displayed displayed in the <emphasis role="strong">Servers</emphasis> card.</simpara>
+</listitem>
+</orderedlist>
+</section>
 </section>
 <section xml:id="viewing_virtual_host_relationships" remap="_viewing_virtual_host_relationships">
 <title>Viewing virtual-host relationships</title>
@@ -301,13 +362,16 @@
 <simpara>Navigate to <emphasis role="strong">Compute &gt; Physical Infrastructure &gt; Providers</emphasis>.</simpara>
 </listitem>
 <listitem>
-<simpara>Select the physical-infrastructure provider to be viewed.</simpara>
+<simpara>Click on the physical-infrastructure provider to be viewed.</simpara>
 </listitem>
 <listitem>
-<simpara>Click <emphasis role="strong">Physical Servers with Host</emphasis> button in the <emphasis role="strong">Relationships</emphasis> section.</simpara>
+<simpara>After the page loads, ensure that the summary view is being used.</simpara>
+</listitem>
+<listitem>
+<simpara>Click on <emphasis role="strong">Physical Servers with Host</emphasis> in the <emphasis role="strong">Relationships</emphasis> table.</simpara>
 </listitem>
 </orderedlist>
-<simpara>You should see a list of physical servers that are associated with hosts as shown below.</simpara>
+<simpara>A list of physical servers that are associated with hosts are displayed as shown below.</simpara>
 <simpara><inlinemediaobject>
 <imageobject>
 <imagedata fileref="images/usage/relationship/images/host_relationships.png"/>
@@ -315,10 +379,163 @@
 <textobject><phrase>host relationships</phrase></textobject>
 </inlinemediaobject></simpara>
 </section>
+<section xml:id="viewing_storage_relationships" remap="_viewing_storage_relationships">
+<title>Viewing storage relationships</title>
+<simpara>You can view a list of all storage systems that are managed by a specific physical-infrastructure provider.</simpara>
+<section xml:id="from_the_physical_infrastructure_provider_summary_view_2" remap="_from_the_physical_infrastructure_provider_summary_view_2">
+<title>From the physical-infrastructure provider summary view</title>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Navigate to <emphasis role="strong">Compute &gt; Physical Infrastructure &gt; Providers</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Click on the physical-infrastructure provider to be viewed.</simpara>
+</listitem>
+<listitem>
+<simpara>After the page loads, ensure that the summary view is being used.</simpara>
+</listitem>
+<listitem>
+<simpara>Click on <emphasis role="strong">Physical Storages</emphasis> in the <emphasis role="strong">Relationships</emphasis> table.</simpara>
+</listitem>
+</orderedlist>
+</section>
+<section xml:id="from_the_physical_infrastructure_provider_dashboard_view_2" remap="_from_the_physical_infrastructure_provider_dashboard_view_2">
+<title>From the physical-infrastructure provider dashboard view</title>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Navigate to <emphasis role="strong">Compute &gt; Physical Infrastructure &gt; Providers</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Click on the physical-infrastructure provider to be viewed.</simpara>
+</listitem>
+<listitem>
+<simpara>After the page loads, ensure that the dashboard view is being used.</simpara>
+</listitem>
+<listitem>
+<simpara>Click on the number of storage systems that is displayed in the <emphasis role="strong">Storages</emphasis> card.</simpara>
+</listitem>
+</orderedlist>
+</section>
+</section>
+<section xml:id="viewing_switch_relationships" remap="_viewing_switch_relationships">
+<title>Viewing switch relationships</title>
+<simpara>You can view a list of all switches that are managed by a specific physical-infrastructure provider.</simpara>
+<section xml:id="from_the_physical_infrastructure_provider_summary_view_3" remap="_from_the_physical_infrastructure_provider_summary_view_3">
+<title>From the physical-infrastructure provider summary view</title>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Navigate to <emphasis role="strong">Compute &gt; Physical Infrastructure &gt; Providers</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Click on the physical-infrastructure provider to be viewed.</simpara>
+</listitem>
+<listitem>
+<simpara>After the page loads, ensure that the summary view is being used.</simpara>
+</listitem>
+<listitem>
+<simpara>Click on <emphasis role="strong">Physical Switches</emphasis> in the <emphasis role="strong">Relationships</emphasis> table.</simpara>
+</listitem>
+</orderedlist>
+</section>
+<section xml:id="from_the_physical_infrastructure_provider_dashboard_view_3" remap="_from_the_physical_infrastructure_provider_dashboard_view_3">
+<title>From the physical-infrastructure provider dashboard view</title>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Navigate to <emphasis role="strong">Compute &gt; Physical Infrastructure &gt; Providers</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Click on the physical-infrastructure provider to be viewed.</simpara>
+</listitem>
+<listitem>
+<simpara>After the page loads, ensure that the dashboard view is being used.</simpara>
+</listitem>
+<listitem>
+<simpara>Click on the number of switches that is displayed in the <emphasis role="strong">Switches</emphasis> card.</simpara>
+</listitem>
+</orderedlist>
+</section>
+</section>
+<section xml:id="viewing_chassis_relationships" remap="_viewing_chassis_relationships">
+<title>Viewing chassis relationships</title>
+<simpara>You can view a list of chassis that are managed by a specific physical-infrastructure provider.</simpara>
+<section xml:id="from_the_physical_infrastructure_provider_summary_view_4" remap="_from_the_physical_infrastructure_provider_summary_view_4">
+<title>From the physical-infrastructure provider summary view</title>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Navigate to <emphasis role="strong">Compute &gt; Physical Infrastructure &gt; Providers</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Click on the physical-infrastructure provider to be viewed.</simpara>
+</listitem>
+<listitem>
+<simpara>After the page loads, ensure that the summary view is being used.</simpara>
+</listitem>
+<listitem>
+<simpara>Click on <emphasis role="strong">Physical Chassis</emphasis> in the <emphasis role="strong">Relationships</emphasis> table.</simpara>
+</listitem>
+</orderedlist>
+</section>
+<section xml:id="from_the_physical_infrastructure_provider_dashboard_view_4" remap="_from_the_physical_infrastructure_provider_dashboard_view_4">
+<title>From the physical-infrastructure provider dashboard view</title>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Navigate to <emphasis role="strong">Compute &gt; Physical Infrastructure &gt; Providers</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Click on the physical-infrastructure provider to be viewed.</simpara>
+</listitem>
+<listitem>
+<simpara>After the page loads, ensure that the dashboard view is being used.</simpara>
+</listitem>
+<listitem>
+<simpara>Click on the number of chassis that is displayed in the <emphasis role="strong">Chassis</emphasis> card.</simpara>
+</listitem>
+</orderedlist>
+</section>
+</section>
+<section xml:id="viewing_rack_relationships" remap="_viewing_rack_relationships">
+<title>Viewing rack relationships</title>
+<simpara>You can view a list of all racks that are managed by a specific physical-infrastructure provider.</simpara>
+<section xml:id="from_the_physical_infrastructure_provider_summary_view_5" remap="_from_the_physical_infrastructure_provider_summary_view_5">
+<title>From the physical-infrastructure provider summary view</title>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Navigate to <emphasis role="strong">Compute &gt; Physical Infrastructure &gt; Providers</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Click on the physical-infrastructure provider to be viewed.</simpara>
+</listitem>
+<listitem>
+<simpara>After the page loads, ensure that the summary view is being used.</simpara>
+</listitem>
+<listitem>
+<simpara>Click on <emphasis role="strong">Physical Racks</emphasis> in the <emphasis role="strong">Relationships</emphasis> table.</simpara>
+</listitem>
+</orderedlist>
+</section>
+<section xml:id="from_the_physical_infrastructure_provider_dashboard_view_5" remap="_from_the_physical_infrastructure_provider_dashboard_view_5">
+<title>From the physical-infrastructure provider dashboard view</title>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Navigate to <emphasis role="strong">Compute &gt; Physical Infrastructure &gt; Providers</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Click on the physical-infrastructure provider to be viewed.</simpara>
+</listitem>
+<listitem>
+<simpara>After the page loads, ensure that the dashboard view is being used.</simpara>
+</listitem>
+<listitem>
+<simpara>Click on the number of racks that is displayed in the <emphasis role="strong">Racks</emphasis> card.</simpara>
+</listitem>
+</orderedlist>
+</section>
+</section>
 </chapter>
 <chapter xml:id="managing_physical_servers" remap="_managing_physical_servers">
 <title>Managing physical servers</title>
-<simpara>After the Lenovo physical-infrastructure provider is added, the servers that are managed by Lenovo XClarity Administrator are registered in CloudForms. You can then view and manage those servers.</simpara>
+<simpara>After the Lenovo physical-infrastructure provider is added, the servers that are managed by XClarity Administrator are registered in CloudForms. You can then view and manage those servers.</simpara>
+<simpara><emphasis>Note</emphasis>: It may take a few seconds or so for the servers to appear after adding a physical-infrasturcture provider.</simpara>
 <section xml:id="viewing_a_physical_server" remap="_viewing_a_physical_server">
 <title>Viewing a Physical Server</title>
 <simpara>To view a list of all physical servers that are managed by all physical-infrastructure providers, navigate to <emphasis role="strong">Compute &gt; Physical Infrastructure &gt; Servers</emphasis>. The Physical Servers page is displayed (see the following figure).</simpara>
@@ -420,8 +637,8 @@
 </section>
 <section xml:id="provisioning_physical_servers_using_configuration_patterns" remap="_provisioning_physical_servers_using_configuration_patterns">
 <title>Provisioning physical servers using configuration patterns</title>
-<simpara>You can use configuration patterns in Lenovo XClarity Administrator to quickly provision or preprovision multiple servers from a single set of defined configuration settings. Configuration patterns act as templates for configuring logical storage, I/O adapters, boot order, and other baseboard management controller and Unified Extensible Firmware Interface (UEFI) settings.</simpara>
-<simpara>A physical-infrastructure provider can discover configuration patterns that are defined on the associated Lenovo XClarity Administrator instance. A configuration pattern can then be applied to a single or multiple physical servers.</simpara>
+<simpara>You can use configuration patterns in XClarity Administrator to quickly provision or preprovision multiple servers from a single set of defined configuration settings. Configuration patterns act as templates for configuring logical storage, I/O adapters, boot order, and other baseboard management controller and Unified Extensible Firmware Interface (UEFI) settings.</simpara>
+<simpara>A physical-infrastructure provider can discover configuration patterns that are defined on the associated XClarity Administrator instance. A configuration pattern can then be applied to a single or multiple physical servers.</simpara>
 <simpara><emphasis role="strong">Note</emphasis>: Configuration patterns can be assigned only to physical servers that do not have a pattern assigned to them.</simpara>
 <simpara><inlinemediaobject>
 <imageobject>
@@ -460,14 +677,189 @@
 </listitem>
 </orderedlist>
 </section>
+<section xml:id="viewing_network_devices_that_are_associated_with_a_physical_server" remap="_viewing_network_devices_that_are_associated_with_a_physical_server">
+<title>Viewing network devices that are associated with a physical server</title>
+<simpara>From the Physical Server Summary page, you can access details about network devices such as network interface cards.</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Access the Physical Servers page, as described in the <xref linkend="viewing_a_physical_server"/> section, and then select a physical server. The Physical Server Summary page is displayed.</simpara>
+</listitem>
+<listitem>
+<simpara>Click on the <emphasis role="strong">Network Devices</emphasis> count in the <emphasis role="strong">Properties</emphasis> table. A list of network devices is displayed.</simpara>
+</listitem>
+<listitem>
+<simpara>Select a network device from the list. The Network Device Summary page is displayed.</simpara>
+</listitem>
+</orderedlist>
+<simpara><inlinemediaobject>
+<imageobject>
+<imagedata fileref="images/usage/physical_server/images/network_device_summary.png"/>
+</imageobject>
+<textobject><phrase>network device summary</phrase></textobject>
+</inlinemediaobject></simpara>
+</section>
+<section xml:id="viewing_storage_devices_that_are_associated_with_a_physical_server" remap="_viewing_storage_devices_that_are_associated_with_a_physical_server">
+<title>Viewing storage devices that are associated with a physical server</title>
+<simpara>From the Physical Server Summary page, you can access details about storage devices, such as RAID cards.</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Access the Physical Servers page, as described in the <xref linkend="viewing_a_physical_server"/> section, and then select a physical server. The Physical Server Summary page is displayed.</simpara>
+</listitem>
+<listitem>
+<simpara>Click on the <emphasis role="strong">Storage Devices</emphasis> count in the <emphasis role="strong">Properties</emphasis> table. A list of storage devices is displayed.</simpara>
+</listitem>
+<listitem>
+<simpara>Select a storage device from the list. The Storage Device Summary page is displayed.</simpara>
+</listitem>
+</orderedlist>
+<simpara><inlinemediaobject>
+<imageobject>
+<imagedata fileref="images/usage/physical_server/images/storage_device_summary.png"/>
+</imageobject>
+<textobject><phrase>storage device summary</phrase></textobject>
+</inlinemediaobject></simpara>
+</section>
+<section xml:id="adding_physical_server_widgets_to_the_dashboard" remap="_adding_physical_server_widgets_to_the_dashboard">
+<title>Adding physical server widgets to the dashboard</title>
+<simpara>You can add widgets that display information about physical servers to the default dashboard.</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Navigate to <emphasis role="strong">Cloud Intel &gt; Dashboard</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Click on the <emphasis role="strong">+</emphasis> button from the top menu, and select one of the following widgets:</simpara>
+<itemizedlist>
+<listitem>
+<simpara><emphasis role="strong">Physical Server Availability</emphasis></simpara>
+</listitem>
+<listitem>
+<simpara><emphasis role="strong">Physical Server Health</emphasis></simpara>
+</listitem>
+<listitem>
+<simpara><emphasis role="strong">Recently Discovered Physical Servers</emphasis></simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+</orderedlist>
+<simpara>The widget is now displayed on the default dashboard.</simpara>
+</section>
+<section xml:id="creating_a_user_that_belongs_to_the_physical_infrastructure_usergroup" remap="_creating_a_user_that_belongs_to_the_physical_infrastructure_usergroup">
+<title>Creating a user that belongs to the physical infrastructure usergroup</title>
+<simpara>You can use the physical infrastructure usergroup to manage physical infrastructures. Users that belong to this group have a default dashboard that contains physical server widgets. The physical server widgets show useful information, such as server health, availability, and recently discovered servers.</simpara>
+<simpara>To gain the benefits of this usergroup, you must create a new user that belongs to the physical infrastructure group.</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Follow the steps described in the <emphasis>Creating a User</emphasis> section in the <emphasis>CloudForms General Configuration</emphasis> documentation. For the group, choose <emphasis>EvmGroup-physical_infrastructure</emphasis>.</simpara>
+</listitem>
+</orderedlist>
+<simpara>After the user is created, log in as the new user, and the default dashboard containing physical server widgets is displayed.</simpara>
+</section>
 </chapter>
-<chapter xml:id="troubleshooting_physical_infrastructure_provider_problems" remap="_troubleshooting_physical_infrastructure_provider_problems">
-<title>Troubleshooting Physical Infrastructure Provider Problems</title>
-
+<chapter xml:id="managing_physical_chassis" remap="_managing_physical_chassis">
+<title>Managing physical chassis</title>
+<simpara>After the Lenovo physical-infrastructure provider is added, the physical chassis that are managed by XClarity Administrator are registered in CloudForms. You can then view and manage the chassis.</simpara>
+<section xml:id="viewing_physical_chassis" remap="_viewing_physical_chassis">
+<title>Viewing physical chassis</title>
+<simpara>To view a list of all physical chassis that are managed by all physical-infrastructure providers, navigate to <emphasis role="strong">Compute &gt; Physical Infrastructure &gt; Chassis</emphasis>. The Physical Chassis page is displayed (see the following figure).</simpara>
+<simpara><emphasis role="strong">Tip:</emphasis> You can sort the table columns to make it easier to find a specific chassis.</simpara>
+<simpara><inlinemediaobject>
+<imageobject>
+<imagedata fileref="images/usage/physical_chassis/images/physical_chassis.png"/>
+</imageobject>
+<textobject><phrase>physical chassis</phrase></textobject>
+</inlinemediaobject></simpara>
+</section>
+<section xml:id="locating_a_physical_chassis" remap="_locating_a_physical_chassis">
+<title>Locating a physical chassis</title>
+<simpara>You can change the Location LED state on a physical chassis to locate a chassis in the data center.</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Navigate to <emphasis role="strong">Compute &gt; Physical Infrastructure &gt; Chassis</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Select the physical chassis. The Physical Chassis Summary page is displayed.</simpara>
+</listitem>
+<listitem>
+<simpara>Click on <emphasis role="strong">Identify</emphasis> in the top menu, and then click on the appropriate action: <emphasis role="strong">Blink LED</emphasis>, <emphasis role="strong">Turn On LED</emphasis>, or <emphasis role="strong">Turn Off LED</emphasis>.</simpara>
+</listitem>
+</orderedlist>
+<simpara><inlinemediaobject>
+<imageobject>
+<imagedata fileref="images/usage/physical_chassis/images/physical_chassis_identify_led.png"/>
+</imageobject>
+<textobject><phrase>physical chassis identify led</phrase></textobject>
+</inlinemediaobject></simpara>
+</section>
+</chapter>
+<chapter xml:id="managing_physical_racks" remap="_managing_physical_racks">
+<title>Managing physical racks</title>
+<simpara>After the Lenovo physical-infrastructure provider is added, the physical racks that are managed by XClarity Administrator are registered in CloudForms. You can then view and manage the racks.</simpara>
+<section xml:id="viewing_physical_racks" remap="_viewing_physical_racks">
+<title>Viewing physical racks</title>
+<simpara>To view a list of all physical racks that are managed by all physical-infrastructure providers, navigate to <emphasis role="strong">Compute &gt; Physical Infrastructure &gt; Racks</emphasis>. The Physical Racks page is displayed (see the following figure).</simpara>
+<simpara><emphasis role="strong">Tip:</emphasis> You can sort the table columns to make it easier to find a specific rack.</simpara>
+<simpara><inlinemediaobject>
+<imageobject>
+<imagedata fileref="images/usage/physical_rack/images/physical_racks.png"/>
+</imageobject>
+<textobject><phrase>physical racks</phrase></textobject>
+</inlinemediaobject></simpara>
+</section>
+</chapter>
+<chapter xml:id="managing_physical_storage_systems" remap="_managing_physical_storage_systems">
+<title>Managing physical storage systems</title>
+<simpara>After the Lenovo physical-infrastructure provider is added, the physical storage systems that are managed by XClarity Administrator are registered in CloudForms. You can then view and manage the storage systems.</simpara>
+<section xml:id="viewing_physical_storage_systems" remap="_viewing_physical_storage_systems">
+<title>Viewing physical storage systems</title>
+<simpara>To view a list of all physical storage systems that are managed by all physical-infrastructure providers, navigate to <emphasis role="strong">Compute &gt; Physical Infrastructure &gt; Storages</emphasis>. The Physical Storages page is displayed (see the following figure).</simpara>
+<simpara><emphasis role="strong">Tip:</emphasis> You can sort the table columns to make it easier to find a specific storage system.</simpara>
+<simpara><inlinemediaobject>
+<imageobject>
+<imagedata fileref="images/usage/physical_storage/images/physical_storage.png"/>
+</imageobject>
+<textobject><phrase>physical storage</phrase></textobject>
+</inlinemediaobject></simpara>
+</section>
+</chapter>
+<chapter xml:id="managing_physical_switches" remap="_managing_physical_switches">
+<title>Managing physical switches</title>
+<simpara>After the Lenovo physical-infrastructure provider is added, the physical switches that are managed by XClarity Administrator are registered in CloudForms. You can then view and manage the switches.</simpara>
+<section xml:id="viewing_physical_switches" remap="_viewing_physical_switches">
+<title>Viewing physical switches</title>
+<simpara>To view a list of all physical switches that are managed by all physical-infrastructure providers, navigate to <emphasis role="strong">Compute &gt; Physical Infrastructure &gt; Switches</emphasis>. The Physical Switches page is displayed (see the following figure).</simpara>
+<simpara><emphasis role="strong">Tip:</emphasis> You can sort the table columns to make it easier to find a specific switch.</simpara>
+<simpara><inlinemediaobject>
+<imageobject>
+<imagedata fileref="images/usage/physical_switch/images/physical_switches.png"/>
+</imageobject>
+<textobject><phrase>physical switches</phrase></textobject>
+</inlinemediaobject></simpara>
+</section>
+<section xml:id="restarting_physical_switches" remap="_restarting_physical_switches">
+<title>Restarting physical switches</title>
+<simpara>You can restart a physical switch that is managed by the physical-infrastructure provider.</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Navigate to <emphasis role="strong">Compute &gt; Physical Infrastructure &gt; Switches</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Select a physical switch. The Physical Switches Summary page is displayed.</simpara>
+</listitem>
+<listitem>
+<simpara>Click on <emphasis role="strong">Power</emphasis> in the top menu, and then click on <emphasis role="strong">Restart</emphasis>.</simpara>
+</listitem>
+</orderedlist>
+<simpara><inlinemediaobject>
+<imageobject>
+<imagedata fileref="images/usage/physical_switch/images/physical_switch_restart.png"/>
+</imageobject>
+<textobject><phrase>physical switch restart</phrase></textobject>
+</inlinemediaobject></simpara>
+</section>
 </chapter>
 <chapter xml:id="automating_tasks_based_on_events" remap="_automating_tasks_based_on_events">
 <title>Automating tasks based on events</title>
-<simpara>You can use CloudForms to automatically perform specific tasks when certain events occur on servers that are managed by Lenovo XClarity Administrator through a Lenovo physical-infrastructure provider. To create an automation task, you must create and configure a custom domain. To automatically invoke the task when a certain event occurs, you must create, configure and assign a custom policy.</simpara>
+<simpara>You can use CloudForms to automatically perform specific tasks when certain events occur on servers that are managed by XClarity Administrator through a Lenovo physical-infrastructure provider. To create an automation task, you must create and configure a custom domain. To automatically invoke the task when a certain event occurs, you must create, configure and assign a custom policy.</simpara>
 <simpara>For more information about the CloudForms automation function, see <link xlink:href="https://access.redhat.com/documentation/en-us/red_hat_cloudforms/4.0/html/scripting_actions_in_cloudforms/">Scripting Actions in CloudForms</link> website.</simpara>
 <section xml:id="creating_an_automated_task" remap="_creating_an_automated_task">
 <title>Creating an automated task</title>
@@ -567,7 +959,7 @@
 </listitem>
 <listitem>
 <simpara>Enter a name for the new class instance (for example, FQXHMTS0003G, which is the event that is generated when inventory data cannot be retrieved from a device).</simpara>
-<simpara><emphasis role="strong">Important:</emphasis> The class-instance name must be the same as the name of the event that triggers the task to be invoked. CloudForms matches the class instance with the event by this name. To find the event name, see <link xlink:href="http://sysmgt.lenovofiles.com/help/topic/com.lenovo.lxca.doc/messages.html?cp=1_22_16">Messages</link> in the Lenovo XClarity Administrator online documentation.</simpara>
+<simpara><emphasis role="strong">Important:</emphasis> The class-instance name must be the same as the name of the event that triggers the task to be invoked. CloudForms matches the class instance with the event by this name. To find the event name, see <link xlink:href="http://sysmgt.lenovofiles.com/help/topic/com.lenovo.lxca.doc/messages.html?cp=1_22_16">Messages</link> in the XClarity Administrator online documentation.</simpara>
 </listitem>
 <listitem>
 <simpara>Add the path to the event handlers copied in the field’s <emphasis role="strong">rel3</emphasis>.</simpara>
@@ -593,10 +985,10 @@
 <simpara>physical_server_shutdown</simpara>
 <simpara>The policy actions and the policy events must match.
 For example, use the following path to the policy operation <emphasis role="strong">Physical Server Shutdown</emphasis>:</simpara>
+<screen>/System/event_handlers/event_action_policy?target=physical_server&amp;policy_event=physical_server_shutdown&amp;param=</screen>
 </listitem>
 </itemizedlist>
-<screen>/System/event_handlers/event_action_policy? target=physical_server&amp;policy_event=physical_server_shutdown&amp;param=
-The policy_event value is matched with the policy operation applied.</screen>
+<simpara>The policy_event value is matched with the policy operation applied.</simpara>
 </listitem>
 <listitem>
 <simpara>Click <emphasis role="strong">Add</emphasis>.</simpara>
@@ -662,8 +1054,10 @@ The policy_event value is matched with the policy operation applied.</screen>
 </listitem>
 <listitem>
 <simpara>Enter the following script in the <emphasis role="strong">Data</emphasis> field:</simpara>
-<screen>server = $evm.vmdb('PhysicalServer').first $evm.log(:info, "Powering Server #{server.name} OFF")
-server.power_off exit MIQ_OK</screen>
+<screen>server = $evm.vmdb('PhysicalServer').first
+$evm.log(:info, "Powering Server #{server.name} OFF")
+server.power_off
+exit MIQ_OK</screen>
 </listitem>
 <listitem>
 <simpara>Click <emphasis role="strong">Validate</emphasis> to verify the syntax.</simpara>
@@ -692,7 +1086,7 @@ server.power_off exit MIQ_OK</screen>
 <simpara>Enter <emphasis role="strong">“execute”</emphasis> for the name.</simpara>
 </listitem>
 <listitem>
-<simpara>Select <emphasis role="strong">“Method”</emphasis> for the type</simpara>
+<simpara>Select <emphasis role="strong">“Method”</emphasis> for the type.</simpara>
 </listitem>
 <listitem>
 <simpara>Select <emphasis role="strong">“String”</emphasis> for the data type.</simpara>
@@ -876,5 +1270,133 @@ server.power_off exit MIQ_OK</screen>
 </inlinemediaobject></simpara>
 </section>
 </section>
+</chapter>
+<chapter xml:id="creating_an_alert_to_monitor_physical_server_health" remap="_creating_an_alert_to_monitor_physical_server_health">
+<title>Creating an alert to monitor physical server health</title>
+<simpara><emphasis>Note</emphasis>: For this alert to work correctly, you must first configure the SMTP settings in CloudForms by following instructions in the <emphasis>Outgoing SMTP Email Settings</emphasis> section in the <emphasis>CloudForms Configuration</emphasis> documentation.</simpara>
+<simpara>In CloudForms, there is a configurable alert for physical servers that sends an alert email when a server that is assigned to the alert is in an unhealthy state. This alert can be used to notify IT administrators that a server is in an unhealthy state, so that they can investigate and resolve potential issues before the issues lead to downtime.</simpara>
+<simpara>To enable this alert, you must create a physical server alert profile, assign servers to the profile, and then configure the alert that is associated with the profile.</simpara>
+<section xml:id="step_1_create_a_physical_server_alert_profile" remap="_step_1_create_a_physical_server_alert_profile">
+<title>Step 1. Create a physical server alert profile</title>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Navigate to <emphasis role="strong">Control &gt; Explorer</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Alert Profiles &gt; Physical Server Alert Profiles</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Configuration &gt; Add a New Physical Server Alert Profile</emphasis> from the top menu.</simpara>
+</listitem>
+<listitem>
+<simpara>Enter a description into the <emphasis role="strong">Description</emphasis> field.</simpara>
+</listitem>
+<listitem>
+<simpara>Select <emphasis role="strong">Physical server has critical health state</emphasis> from the <emphasis role="strong">Available Physical Server Alerts</emphasis> list, and click on the <emphasis role="strong">&gt;</emphasis> button to add it to the <emphasis role="strong">Profile Alerts</emphasis> list on the right.</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Add</emphasis>.</simpara>
+</listitem>
+</orderedlist>
+</section>
+<section xml:id="step_2_assign_servers_to_the_alert_profile" remap="_step_2_assign_servers_to_the_alert_profile">
+<title>Step 2. Assign servers to the alert profile</title>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Click <emphasis role="strong">Alert Profiles &gt; Physical Server Alert Profiles &gt; <emphasis>ProfileName</emphasis></emphasis>, where <emphasis>ProfileName</emphasis> is the name of the physical server alert that was previously created.</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Configuration &gt; Edit assignments for this Alert Profile</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Choose <emphasis role="strong">Selected Servers</emphasis> from the <emphasis role="strong">Assign To</emphasis> dropdown menu.</simpara>
+</listitem>
+<listitem>
+<simpara>Select the checkboxes next to the servers that you want to assign to the profile from the <emphasis role="strong">Selections</emphasis> list.</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Save</emphasis>.</simpara>
+</listitem>
+</orderedlist>
+</section>
+<section xml:id="step_3_configure_the_alert_associated_with_the_alert_profile" remap="_step_3_configure_the_alert_associated_with_the_alert_profile">
+<title>Step 3. Configure the alert associated with the alert profile</title>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Click <emphasis role="strong">Alert Profiles &gt; Physical Server Alert Profiles &gt; <emphasis>ProfileName</emphasis> &gt; Physical server has critical health state</emphasis>, where <emphasis>ProfileName</emphasis> is the name of the physical server alert profile that was previously created.</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Configuration &gt; Edit this Alert</emphasis> from the top menu.</simpara>
+</listitem>
+<listitem>
+<simpara>Select the <emphasis role="strong">Active</emphasis> checkbox to enable the alert.</simpara>
+</listitem>
+<listitem>
+<simpara>Optionally, increase the notification frequency by selecting a new value from the <emphasis role="strong">Notification Frequency</emphasis> dropdown menu. The default frequency is one hour.</simpara>
+</listitem>
+<listitem>
+<simpara>Ensure that the <emphasis role="strong">Send an E-mail</emphasis> checkbox is selected.</simpara>
+</listitem>
+<listitem>
+<simpara>Optionally, enter a value into the <emphasis role="strong">From</emphasis> field. By default, the <emphasis>cfadmin@cfserver.com</emphasis> address is used.</simpara>
+</listitem>
+<listitem>
+<simpara>Enter the email address that you want to retrieve the alert notification in the <emphasis role="strong">Add</emphasis> field, and then click the <emphasis role="strong">+</emphasis> button. The email address is displayed in the <emphasis role="strong">To</emphasis> field.</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Save</emphasis>.</simpara>
+</listitem>
+</orderedlist>
+<simpara>The assigned servers are checked hourly, and a notification is sent through email if the any of the assigned servers have a critical health state.</simpara>
+</section>
+</chapter>
+<chapter xml:id="creating_a_policy_to_power_on_servers_that_are_powered_off" remap="_creating_a_policy_to_power_on_servers_that_are_powered_off">
+<title>Creating a policy to power on servers that are powered off</title>
+<simpara>In CloudForms, there is a control policy for physical servers that automatically powers a server back on when it is powered off.</simpara>
+<simpara>To enable this policy, you must assign the physical infrastructure profile to a server.</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Navigate to <emphasis role="strong">Compute &gt; Physical Infrastructure &gt; Servers</emphasis> to display the Physical Servers page.</simpara>
+</listitem>
+<listitem>
+<simpara>Click a server (to display the Physical Server Summary page), or select multiple servers that you want to provision.</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Policy &gt; Manage Policies</emphasis> from the top menu. The Physical Server Policy Assignment page is displayed.</simpara>
+</listitem>
+<listitem>
+<simpara>Select the <emphasis role="strong">Physical Infrastructure Profile</emphasis> checkbox.</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis role="strong">Save</emphasis>.</simpara>
+</listitem>
+</orderedlist>
+<simpara>The policy is now assigned to the server.</simpara>
+</chapter>
+<chapter xml:id="updating_physical_server_firmware_using_ansible_playbooks" remap="_updating_physical_server_firmware_using_ansible_playbooks">
+<title>Updating physical server firmware using Ansible playbooks</title>
+<simpara>In CloudForms, physical server firmware can be updated using an Ansible playbook.</simpara>
+<simpara><emphasis>Note</emphasis>: An Ansible Tower provider that points to an Ansible Tower instance must be added to CloudForms. See the <emphasis>Adding an Ansible Tower Provider</emphasis> section in the <emphasis>CloudForms Managing Providers</emphasis> documentation.</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Within Ansible Tower, create a job template for the <emphasis>config.yml</emphasis> playbook. Specify <emphasis>update_firmware</emphasis> as the job tag and any extra variables that are required by the playbook. Ensure that the option to prompt on launch is enabled. You can use this playbook to upgrade firmware on a physical server. You can get this playbook from the web at <link xlink:href="https://galaxy.ansible.com/lenovo/lxca-config">https://galaxy.ansible.com/lenovo/lxca-config</link>.</simpara>
+</listitem>
+<listitem>
+<simpara>Follow the steps that are described in the <emphasis>Executing an Ansible Tower Job Template from a Service Catalog</emphasis> section in the <emphasis>CloudForms Managing Providers</emphasis> documentation. Use the job template that you created in the previous step.</simpara>
+</listitem>
+</orderedlist>
+</chapter>
+<chapter xml:id="provisioning_physical_servers_using_ansible_playbooks" remap="_provisioning_physical_servers_using_ansible_playbooks">
+<title>Provisioning physical servers using Ansible playbooks</title>
+<simpara>In CloudForms, XClarity Administrator configuration patterns can be used to provision physical servers through the use of an Ansible playbook. Configuration patterns act as templates for configuring logical storage, I/O adapters, boot order, and other baseboard management controller and Unified Extensible Firmware Interface (UEFI) settings.</simpara>
+<simpara><emphasis>Note</emphasis>: An Ansible Tower provider that points to an Ansible Tower instance must be added to CloudForms. See the <emphasis>Adding an Ansible Tower Provider</emphasis> section in the <emphasis>CloudForms Managing Providers</emphasis> documentation.</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Within Ansible Tower, create a job template for the <emphasis>config.yml</emphasis> playbook. Specify <emphasis>apply_configpatterns</emphasis> as the job tag and any extra variables that are required by the playbook. Ensure that the option to prompt on launch is enabled. You can use this playbook to apply a configuration pattern to a physical server. You can get this playbook from the web at <link xlink:href="https://galaxy.ansible.com/lenovo/lxca-config">https://galaxy.ansible.com/lenovo/lxca-config</link>.</simpara>
+</listitem>
+<listitem>
+<simpara>Follow the steps that are described in the <emphasis>Executing an Ansible Tower Job Template from a Service Catalog</emphasis> section in the <emphasis>CloudForms Managing Providers</emphasis> documentation. Use the job template that you created in the previous step.</simpara>
+</listitem>
+</orderedlist>
 </chapter>
 </book>

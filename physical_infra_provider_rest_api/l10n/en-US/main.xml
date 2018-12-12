@@ -9,9 +9,9 @@
 <info>
 <title>Lenovo Physical Infrastructure Provider REST API</title><subtitle>A reference to the Lenovo physical infrastructure provider REST API</subtitle>
 
-<date>2018-03-05</date>
+<date>2018-11-22</date>
 <productname>Red Hat CloudForms</productname>
-<productnumber>4.6</productnumber>
+<productnumber>4.7</productnumber>
 <abstract>
 	<para>A reference to the Lenovo physical infrastructure provider REST API.</para>
 	<para>If you have a suggestion for improving this guide or have found an error, please submit a Bugzilla report at <link xlink:href="https://bugzilla.redhat.com/enter_bug.cgi?product=Red%20Hat%20CloudForms%20Management%20Engine">http://bugzilla.redhat.com</link> against <emphasis role="strong">Red Hat CloudForms Management Engine</emphasis> for the <emphasis role="strong">Documentation</emphasis> component. Please provide specific details, such as the section number, guide name, and CloudForms version so we can easily locate the content.</para>
@@ -23,45 +23,41 @@
 <simpara>You can use the REST API to retrieve information about providers, physical-infrastructure providers, and physical servers. You can use the CloudForms REST API if you need information about the servers in your physical infrastructure.</simpara>
 <simpara><emphasis role="strong">Before you begin</emphasis></simpara>
 <simpara>To use the REST API, you must log in to CloudForms Management Engine API as a user who has permission to access the API. The default user is admin, password is smartvm.</simpara>
-<simpara>Use the following URL to access the CloudForms REST API:</simpara>
-<screen>&lt;CloudForms_address&gt;:&lt;port&gt;/api</screen>
-<simpara>For example:</simpara>
-<screen>localhost:3000/api</screen>
 <section xml:id="retrieving_provider_details" remap="_retrieving_provider_details">
 <title>Retrieving Provider Details</title>
 <simpara>To retrieve information for all providers, use the following request URL:</simpara>
-<screen>GET &lt;CloudForms_address&gt;:&lt;port&gt;/api/providers</screen>
+<screen>GET /api/providers</screen>
 <simpara>A JSON response with the following keys is returned.</simpara>
 <screen>actions (list of actions that can be used)
 count (total number of providers)
 name (URI name)
-pages (count of pages)
+pages (number of pages)
 resource (list of URLs for each provider that is managed by CloudForms)
-subcount (number of providers returned)</screen>
+subcount (number of providers that were returned)</screen>
 <simpara><emphasis role="strong">Examples</emphasis></simpara>
 <itemizedlist>
 <listitem>
 <simpara>To retrieve all information about the providers, use the <emphasis role="strong">?expand=resources</emphasis> query parameter, for example:</simpara>
-<screen>GET localhost:3000/api/providers?expand=resources</screen>
+<screen>GET /api/providers?expand=resources</screen>
 </listitem>
 <listitem>
 <simpara>To retrieve a specific information about the providers (such as name and ID), use the <emphasis role="strong">?expand=resources&amp;attributes=&lt;attribute_list&gt;</emphasis> query parameters, for example:</simpara>
-<screen>GET localhost:3000/ api/providers?expand=resources&amp;attributes=id,name</screen>
+<screen>GET /api/providers?expand=resources&amp;attributes=id,name</screen>
 </listitem>
 <listitem>
 <simpara>To retrieve additional information about the providers (such as port, hostname, and IP address), use the <emphasis role="strong">?expand=resources&amp;attributes=&lt;attribute_list&gt;</emphasis> query parameters, for example:</simpara>
-<screen>GET localhost:3000/api/providers?expand=resources&amp;attributes=port,hostname,ipaddress</screen>
+<screen>GET /api/providers?expand=resources&amp;attributes=port,hostname,ipaddress</screen>
 </listitem>
 <listitem>
 <simpara>To retrieve information about only Lenovo physical-infrastructure providers, use the <emphasis role="strong">?expand=resources&amp;filter[]=type=&lt;provider_type&gt;</emphasis> attribute against all provider resources, for example:</simpara>
-<screen>GET localhost:3000/api/providers?expand=resources&amp;filter[]=type=ManageIQ::Providers::Lenovo::PhysicalInfraManager</screen>
+<screen>GET /api/providers?expand=resources&amp;filter[]=type=ManageIQ::Providers::Lenovo::PhysicalInfraManager</screen>
 </listitem>
 </itemizedlist>
 </section>
 <section xml:id="retrieving_provider_details_by_id" remap="_retrieving_provider_details_by_id">
 <title>Retrieving Provider Details by ID</title>
 <simpara>To retrieve information for a specific provider, use the following request URL where &lt;provider_ID&gt; is the unique identifier of the provider:</simpara>
-<screen>GET &lt;CloudForms_address&gt;:&lt;port&gt;/api/providers/&lt;provider_ID&gt;</screen>
+<screen>GET /api/providers/&lt;provider_ID&gt;</screen>
 <simpara>A JSON response with the following keys is returned.</simpara>
 <screen>href
 id
@@ -80,11 +76,11 @@ actions</screen>
 <itemizedlist>
 <listitem>
 <simpara>To retrieve a specific information about the provider (such as name and ID), use the <emphasis role="strong">?attributes=&lt;attribute_list&gt;</emphasis> query parameters, for example:</simpara>
-<screen>GET localhost:3000/api/providers/&lt;provider_ID&gt;?expand=resources&amp;attributes=id,name</screen>
+<screen>GET /api/providers/&lt;provider_ID&gt;?expand=resources&amp;attributes=id,name</screen>
 </listitem>
 <listitem>
 <simpara>To retrieve additional information about the provider (such as port, hostname, and IP address), use the <emphasis role="strong">?attributes=&lt;attribute_list&gt;</emphasis> query parameters, for example:</simpara>
-<screen> GET localhost:3000/api/providers/&lt;provider_ID&gt;?expand=resources
+<screen>GET /api/providers/&lt;provider_ID&gt;?expand=resources
 &amp;attributes=port,hostname,ipaddress</screen>
 </listitem>
 </itemizedlist>
@@ -96,7 +92,7 @@ actions</screen>
 <section xml:id="creating_a_lenovo_physical_infrastructure_provider" remap="_creating_a_lenovo_physical_infrastructure_provider">
 <title>Creating a Lenovo physical-infrastructure provider</title>
 <simpara>To create a Lenovo physical-infrastructure provider, send a POST request using the following request URL and JSON request body.</simpara>
-<screen>POST &lt;CloudForms_address&gt;:&lt;port&gt;/api/providers</screen>
+<screen>POST /api/providers</screen>
 <simpara>Request body:</simpara>
 <screen>{
    "action": "create",
@@ -113,7 +109,7 @@ actions</screen>
 <section xml:id="modifying_properties_for_a_lenovo_physical_infrastructure_provider" remap="_modifying_properties_for_a_lenovo_physical_infrastructure_provider">
 <title>Modifying properties for a Lenovo physical-infrastructure provider</title>
 <simpara>To modify properties of a Lenovo physical-infrastructure provider, send a POST request using the following request URL and JSON request body.</simpara>
-<screen>POST &lt;CloudForms_address&gt;:&lt;port&gt;/api/providers</screen>
+<screen>POST /api/providers</screen>
 <simpara>Request body:</simpara>
 <screen>{
    "action":"edit",
@@ -129,7 +125,7 @@ actions</screen>
 <section xml:id="refreshing_information_about_all_providers" remap="_refreshing_information_about_all_providers">
 <title>Refreshing information about all providers</title>
 <simpara>To refresh information about all providers, send a POST request using the following request URL and JSON request body.</simpara>
-<screen>POST &lt;CloudForms_address&gt;:&lt;port&gt;/api/providers</screen>
+<screen>POST /api/providers</screen>
 <simpara>Request body:</simpara>
 <screen>{
    "action":"refresh"
@@ -141,11 +137,11 @@ actions</screen>
 <itemizedlist>
 <listitem>
 <simpara>Send a DELETE request using the following request URL.</simpara>
-<screen>DELETE &lt;CloudForms_address&gt;:&lt;port&gt;/api/providers/&lt;provider_ID&gt;</screen>
+<screen>DELETE /api/providers/&lt;provider_ID&gt;</screen>
 </listitem>
 <listitem>
 <simpara>Send a POST request using the following request URL and JSON request body.</simpara>
-<screen>POST &lt;CloudForms_address&gt;:&lt;port&gt;/api/providers/&lt;provider_ID&gt;</screen>
+<screen>POST /api/providers/&lt;provider_ID&gt;</screen>
 <simpara>Request body:</simpara>
 <screen>{
    "action":"delete"
@@ -156,7 +152,7 @@ actions</screen>
 <section xml:id="performing_an_action_on_multiple_physical_infrastructure_providers" remap="_performing_an_action_on_multiple_physical_infrastructure_providers">
 <title>Performing an action on multiple physical-infrastructure providers</title>
 <simpara>To perform an action on more than one physical-infrastructure providers, send a POST request using the following request URL and JSON request body.</simpara>
-<screen>POST &lt;CloudForms_address&gt;:&lt;port&gt;/api/providers</screen>
+<screen>POST /api/providers</screen>
 <simpara>Request body:</simpara>
 <screen>{
    "action":"&lt;action&gt;",
@@ -172,38 +168,46 @@ actions</screen>
 <section xml:id="retrieving_physical_server_details" remap="_retrieving_physical_server_details">
 <title>Retrieving Physical Server Details</title>
 <simpara>To retrieve information for all physical servers, use the following request URL:</simpara>
-<screen>GET &lt;CloudForms_address&gt;:&lt;port&gt;/api/physical_servers</screen>
+<screen>GET /api/physical_servers</screen>
 <simpara>A JSON response with the following keys is returned.</simpara>
 <screen>actions (list of actions that can be used)
-count (count of the physical servers)
+count (number of physical servers)
 name (URI name)
-pages (count of pages)
-resource (list of URLs of the each physical servers)
-subcount (count of the physical servers returned)</screen>
+pages (number of pages)
+resource (list of URLs for each physical server)
+subcount (number of physical servers that were returned)</screen>
 <simpara><emphasis role="strong">Examples</emphasis></simpara>
 <itemizedlist>
 <listitem>
 <simpara>To retrieve all information about the physical servers, use the <emphasis role="strong">?expand=resources</emphasis> query parameter, for example:</simpara>
-<screen>GET localhost:3000/api/physical_servers?expand=resources</screen>
+<screen>GET /api/physical_servers?expand=resources</screen>
 </listitem>
 <listitem>
-<simpara>To retrieve a specific information about the physical servers (such as name and ID), use the <emphasis role="strong">?expand=resources&amp;attributes=&lt;attribute_list&gt;</emphasis> query parameters, for example:</simpara>
-<screen>GET localhost:3000/api/physical_servers?expand=resources&amp;attributes=id,name</screen>
+<simpara>To retrieve specific information about the physical servers (such as name and ID), use the <emphasis role="strong">?expand=resources&amp;attributes=&lt;attribute_list&gt;</emphasis> query parameters, for example:</simpara>
+<screen>GET /api/physical_servers?expand=resources&amp;attributes=id,name</screen>
 </listitem>
 <listitem>
-<simpara>To retrieve specific information about the physical servers (such as firmware, networks, guest devices, and asset details), use the <emphasis role="strong">?expand=resources&amp;attributes=&lt;attribute_list&gt;</emphasis> query parameters, for example:</simpara>
-<screen>GET localhost:3000/api/physical_servers?expand=resources&amp;attributes= hardware.firmwares,hardware.networks,hardware.guest_devices,hardware.assets_details</screen>
+<simpara>To retrieve information such as firmware, networks, guest devices, and asset details associated with physical servers, use the <emphasis role="strong">?expand=resources&amp;attributes=&lt;attribute_list&gt;</emphasis> query parameters, for example:</simpara>
+<screen>GET /api/physical_servers?expand=resources&amp;attributes=hardware.firmwares,hardware.networks,hardware.guest_devices,hardware.assets_details</screen>
+</listitem>
+<listitem>
+<simpara>To retrieve information such as network adapters and storage adapters in physical servers, use the <emphasis role="strong">?expand=resources&amp;attributes=&lt;attribute_list&gt;</emphasis> query parameters, for example:</simpara>
+<screen>GET /api/physical_servers?expand=resources&amp;attributes=guest_devices.with_ethernet_type,guest_devices.with_storage_type</screen>
+</listitem>
+<listitem>
+<simpara>To retrieve information such as switches connected to physical servers, use the <emphasis role="strong">?expand=resources&amp;attributes=&lt;attribute_list&gt;</emphasis> query parameters, for example:</simpara>
+<screen>GET /api/physical_servers?expand=resources&amp;attributes=physical_switches</screen>
 </listitem>
 <listitem>
 <simpara>To retrieve information about only a specific physical server, use the <emphasis role="strong">?expand=resources&amp;filter[]=name=&lt;server_name&gt;</emphasis> query attributes on all physical-server resources, for example:</simpara>
-<screen>GET localhost:3000/api/physical_servers?expand=resources&amp;filter[]=name=Server1-20127X5462</screen>
+<screen>GET /api/physical_servers?expand=resources&amp;filter[]=name=Server1-20127X5462</screen>
 </listitem>
 </itemizedlist>
 </section>
 <section xml:id="retrieving_physical_server_details_by_id" remap="_retrieving_physical_server_details_by_id">
 <title>Retrieving Physical Server Details by ID</title>
 <simpara>To retrieve information for a specific physical server, use the following request URL:</simpara>
-<screen>GET &lt;CloudForms_address&gt;:&lt;port&gt;/api/physical_servers/&lt;server_ID&gt;</screen>
+<screen>GET /api/physical_servers/&lt;server_ID&gt;</screen>
 <simpara>A JSON response with the following keys is returned.</simpara>
 <screen>actions
 created_at
@@ -228,13 +232,21 @@ vendor</screen>
 <simpara><emphasis role="strong">Examples</emphasis></simpara>
 <itemizedlist>
 <listitem>
-<simpara>To retrieve a specific information about a specific physical server (such as name and ID), use the <emphasis role="strong">?expand=resources&amp;attributes=&lt;attribute_list&gt;</emphasis> query parameters, for example:</simpara>
-<screen>GET localhost:3000/api/physical_servers/&lt;server_ID&gt;?expand=resources&amp;attributes=id,name</screen>
+<simpara>To retrieve information about a specific physical server (such as name and ID), use the <emphasis role="strong">?expand=resources&amp;attributes=&lt;attribute_list&gt;</emphasis> query parameters, for example:</simpara>
+<screen>GET /api/physical_servers/&lt;server_ID&gt;?expand=resources&amp;attributes=id,name</screen>
 </listitem>
 <listitem>
-<simpara>To retrieve a specific information about a specific physical server (such as firmware, networks, guest devices, and asset details), use the <emphasis role="strong">?expand=resources&amp;attributes=&lt;attribute_list&gt;</emphasis> query parameters, for example:</simpara>
-<screen> GET localhost:3000/api/physical_servers/&lt;server_ID&gt;?expand=resources
+<simpara>To retrieve information such as firmware, networks, guest devices, and asset details for a specific server, use the <emphasis role="strong">?expand=resources&amp;attributes=&lt;attribute_list&gt;</emphasis> query parameters, for example:</simpara>
+<screen>GET /api/physical_servers/&lt;server_ID&gt;?expand=resources
 &amp;attributes=hardware.firmwares,hardware.networks,hardware.guest_devices,hardware.assets_details</screen>
+</listitem>
+<listitem>
+<simpara>To retrieve information such as switches that are connected to a specific server, use the <emphasis role="strong">?expand=resources&amp;attributes=&lt;attribute_list&gt;</emphasis> query parameters, for example:</simpara>
+<screen>GET /api/physical_servers/&lt;server_ID&gt;?expand=resources&amp;attributes=physical_switches</screen>
+</listitem>
+<listitem>
+<simpara>To retrieve information such as network adapters and storage adapters in a specific physical server, use the <emphasis role="strong">?expand=resources&amp;attributes=&lt;attribute_list&gt;</emphasis> query parameters, for example:</simpara>
+<screen>GET /api/physical_servers/&lt;server_ID&gt;?expand=resources&amp;attributes=guest_devices.with_ethernet_type,guest_devices.with_storage_type,hardware.physical_network_ports</screen>
 </listitem>
 </itemizedlist>
 </section>
@@ -245,7 +257,7 @@ vendor</screen>
 <section xml:id="powering_on_a_physical_server" remap="_powering_on_a_physical_server">
 <title>Powering on a physical server</title>
 <simpara>To power on a specific physical server, send a POST request using the following request URL and JSON request body.</simpara>
-<screen>POST &lt;CloudForms_address&gt;:&lt;port&gt;/api/physical_servers/&lt;server_ID&gt;</screen>
+<screen>POST /api/physical_servers/&lt;server_ID&gt;</screen>
 <simpara>Request body:</simpara>
 <screen>{
    "action":"power_on"
@@ -254,7 +266,7 @@ vendor</screen>
 <section xml:id="powering_off_a_physical_server" remap="_powering_off_a_physical_server">
 <title>Powering off a physical server</title>
 <simpara>To shut down the operating system and power off a specific physical server, send a POST request using the following request URL and JSON request body.</simpara>
-<screen>POST &lt;CloudForms_address&gt;:&lt;port&gt;/api/physical_servers/&lt;server_ID&gt;</screen>
+<screen>POST /api/physical_servers/&lt;server_ID&gt;</screen>
 <simpara>Request body:</simpara>
 <screen>{
    "action":"power_off"
@@ -263,7 +275,7 @@ vendor</screen>
 <section xml:id="immediately_powering_off_a_physical_server" remap="_immediately_powering_off_a_physical_server">
 <title>Immediately powering off a physical server</title>
 <simpara>To immediately power off a specific physical server, send a POST request using the following request URL and JSON request body.</simpara>
-<screen>POST &lt;CloudForms_address&gt;:&lt;port&gt;/api/physical_servers/&lt;server_ID&gt;</screen>
+<screen>POST /api/physical_servers/&lt;server_ID&gt;</screen>
 <simpara>Request body:</simpara>
 <screen>{
    "action":"power_off_now"
@@ -272,7 +284,7 @@ vendor</screen>
 <section xml:id="restarting_a_physical_server" remap="_restarting_a_physical_server">
 <title>Restarting a physical server</title>
 <simpara>To shut down the operating system and restart a specific physical server, send a POST request using the following request URL and JSON request body.</simpara>
-<screen>POST &lt;CloudForms_address&gt;:&lt;port&gt;/api/physical_servers/&lt;server_ID&gt;</screen>
+<screen>POST /api/physical_servers/&lt;server_ID&gt;</screen>
 <simpara>Request body:</simpara>
 <screen>{
    "action":"restart"
@@ -281,7 +293,7 @@ vendor</screen>
 <section xml:id="immediately_restarting_a_physical_server" remap="_immediately_restarting_a_physical_server">
 <title>Immediately restarting a physical server</title>
 <simpara>To immediately restart a specific physical server, send a POST request using the following request URL and JSON request body.</simpara>
-<screen>POST &lt;CloudForms_address&gt;:&lt;port&gt;/api/physical_servers/&lt;server_ID&gt;</screen>
+<screen>POST /api/physical_servers/&lt;server_ID&gt;</screen>
 <simpara>Request body:</simpara>
 <screen>{
    "action":"restart_now"
@@ -290,7 +302,7 @@ vendor</screen>
 <section xml:id="changing_the_location_led_state_on_a_physical_server_to_blinking" remap="_changing_the_location_led_state_on_a_physical_server_to_blinking">
 <title>Changing the location LED state on a physical server to blinking</title>
 <simpara>To change the location-LED state to blinking on a specific server, send a POST request using the following request URL and JSON request body.</simpara>
-<screen>POST &lt;CloudForms_address&gt;:&lt;port&gt;/api/physical_servers/&lt;server_ID&gt;</screen>
+<screen>POST /api/physical_servers/&lt;server_ID&gt;</screen>
 <simpara>Request body:</simpara>
 <screen>{
    "action":"blink_loc_led"
@@ -298,8 +310,8 @@ vendor</screen>
 </section>
 <section xml:id="performing_an_action_on_multiple_physical_servers" remap="_performing_an_action_on_multiple_physical_servers">
 <title>Performing an action on multiple physical servers</title>
-<simpara>To perform an action on more than one physical severs, send a POST request using the following request URL and JSON request body.</simpara>
-<screen>POST &lt;CloudForms_address&gt;:&lt;port&gt;/api/physical_servers</screen>
+<simpara>To perform an action on more than one physical server, send a POST request using the following request URL and JSON request body.</simpara>
+<screen>POST /api/physical_servers</screen>
 <simpara>Request body:</simpara>
 <screen>{
    "action":"&lt;action&gt;",
@@ -308,6 +320,313 @@ vendor</screen>
    },
    {
       "href":"&lt;server_ID&gt;"
+   }]
+}</screen>
+</section>
+</section>
+<section xml:id="retrieving_physical_chassis_details" remap="_retrieving_physical_chassis_details">
+<title>Retrieving Physical Chassis Details</title>
+<simpara>To retrieve information for all physical chassis, use the following request URL:</simpara>
+<screen>GET /api/physical_chassis</screen>
+<simpara>A JSON response with the following keys is returned.</simpara>
+<screen>actions (list of actions that can be used)
+count (number of physical chassis)
+name (URI name)
+pages (number of pages)
+resources (list of URLs for each physical chassis)
+subcount (number of physical chassis that were returned)</screen>
+<simpara><emphasis role="strong">Examples</emphasis></simpara>
+<itemizedlist>
+<listitem>
+<simpara>To retrieve all information about the physical chassis, use the <emphasis role="strong">?expand=resources</emphasis> query parameter, for example:</simpara>
+<screen>GET /api/physical_chassis?expand=resources</screen>
+</listitem>
+<listitem>
+<simpara>To retrieve specific information about the physical chassis (such as name and ID), use the <emphasis role="strong">?expand=resources&amp;attributes=&lt;attribute_list&gt;</emphasis> query parameters, for example:</simpara>
+<screen>GET /api/physical_chassis?expand=resources&amp;attributes=id,name</screen>
+</listitem>
+<listitem>
+<simpara>To retrieve information such as the switches, storage systems, and servers in a chassis, use the <emphasis role="strong">?expand=resources&amp;attributes=&lt;attribute_list&gt;</emphasis> query parameters, for example:</simpara>
+<screen>GET /api/physical_chassis?expand=resources&amp;attributes=physical_servers,physical_storages,hardware.connected_physical_switches</screen>
+</listitem>
+<listitem>
+<simpara>To retrieve information about only a specific physical chassis, use the <emphasis role="strong">?expand=resources&amp;filter[]=name=&lt;chassis_name&gt;</emphasis> query attributes on all physical chassis resources, for example:</simpara>
+<screen>GET /api/physical_chassis?expand=resources&amp;filter[]=name=SN%23Y034BG16E060</screen>
+</listitem>
+</itemizedlist>
+</section>
+<section xml:id="retrieving_physical_chassis_details_by_id" remap="_retrieving_physical_chassis_details_by_id">
+<title>Retrieving Physical Chassis Details by ID</title>
+<simpara>To retrieve information for a specific physical chassis, use the following request URL:</simpara>
+<screen>GET /api/physical_chassis/&lt;chassis_ID&gt;</screen>
+<simpara>A JSON response with the following keys is returned.</simpara>
+<screen>href
+id
+ems_id
+uid_ems
+ems_ref
+physical_rack_id
+name
+vendor
+type
+location_led_state
+health_state
+overall_health_state
+management_module_slot_count
+switch_slot_count
+fan_slot_count
+blade_slot_count
+powersupply_slot_count
+actions</screen>
+<simpara><emphasis role="strong">Examples</emphasis></simpara>
+<itemizedlist>
+<listitem>
+<simpara>To retrieve information about a specific physical chassis (such as name and ID), use the <emphasis role="strong">?expand=resources&amp;attributes=&lt;attribute_list&gt;</emphasis> query parameters, for example:</simpara>
+<screen>GET /api/physical_chassis/&lt;chassis_ID&gt;?expand=resources&amp;attributes=id,name</screen>
+</listitem>
+<listitem>
+<simpara>To retrieve information, such as the switches, storage systems, and servers that are in a specific physical chassis, use the <emphasis role="strong">?expand=resources&amp;attributes=&lt;attribute_list&gt;</emphasis> query parameters, for example:</simpara>
+<screen>GET /api/physical_chassis/&lt;chassis_ID&gt;?expand=resources&amp;attributes=physical_servers,physical_storages,hardware.connected_physical_switches</screen>
+</listitem>
+</itemizedlist>
+</section>
+<section xml:id="performing_physical_chassis_actions" remap="_performing_physical_chassis_actions">
+<title>Performing physical chassis actions</title>
+<simpara>You can use the REST API to perform management tasks on a physical chassis, such as changing the location LED state.</simpara>
+<simpara><emphasis role="strong">Note:</emphasis> To perform actions on physical chassis, you must create a basic authentication using your preferred tool or library, and enter your user name and password to access the CloudForms REST API.</simpara>
+<section xml:id="changing_the_location_led_state_on_a_physical_chassis_to_blinking" remap="_changing_the_location_led_state_on_a_physical_chassis_to_blinking">
+<title>Changing the location LED state on a physical chassis to blinking</title>
+<simpara>To change the location LED state to blinking on a specific chassis, send a POST request using the following request URL and JSON request body.</simpara>
+<screen>POST /api/physical_chassis/&lt;chassis_ID&gt;</screen>
+<simpara>Request body:</simpara>
+<screen>{
+   "action":"blink_loc_led"
+}</screen>
+</section>
+<section xml:id="performing_an_action_on_multiple_physical_chassis" remap="_performing_an_action_on_multiple_physical_chassis">
+<title>Performing an action on multiple physical chassis</title>
+<simpara>To perform an action on more than one physical chassis, send a POST request using the following request URL and JSON request body.</simpara>
+<screen>POST /api/physical_chassis</screen>
+<simpara>Request body:</simpara>
+<screen>{
+   "action":"&lt;action&gt;",
+   "resources": [{
+      "href":"&lt;chassis_ID&gt;"
+   },
+   {
+      "href":"&lt;chassis_ID&gt;"
+   }]
+}</screen>
+</section>
+</section>
+<section xml:id="retrieving_physical_rack_details" remap="_retrieving_physical_rack_details">
+<title>Retrieving Physical Rack Details</title>
+<simpara>To retrieve information for all physical racks, use the following request URL:</simpara>
+<screen>GET /api/physical_racks</screen>
+<simpara>A JSON response with the following keys is returned.</simpara>
+<screen>actions (list of actions that can be used)
+count (number of physical racks)
+name (URI name)
+pages (number of pages)
+resources (list of URLs for each physical rack)
+subcount (number of physical racks that were returned)</screen>
+<simpara><emphasis role="strong">Examples</emphasis></simpara>
+<itemizedlist>
+<listitem>
+<simpara>To retrieve all information about the physical racks, use the <emphasis role="strong">?expand=resources</emphasis> query parameter, for example:</simpara>
+<screen>GET /api/physical_racks?expand=resources</screen>
+</listitem>
+<listitem>
+<simpara>To retrieve specific information about the physical racks (such as name and ID), use the <emphasis role="strong">?expand=resources&amp;attributes=&lt;attribute_list&gt;</emphasis> query parameters, for example:</simpara>
+<screen>GET /api/physical_racks?expand=resources&amp;attributes=id,name</screen>
+</listitem>
+<listitem>
+<simpara>To retrieve information about only a specific physical rack, use the <emphasis role="strong">?expand=resources&amp;filter[]=name=&lt;rack_name&gt;</emphasis> query attributes on all physical rack resources, for example:</simpara>
+<screen>GET /api/physical_racks?expand=resources&amp;filter[]=name=rack-2</screen>
+</listitem>
+</itemizedlist>
+</section>
+<section xml:id="retrieving_physical_rack_details_by_id" remap="_retrieving_physical_rack_details_by_id">
+<title>Retrieving Physical Rack Details by ID</title>
+<simpara>To retrieve information for a specific physical rack, use the following request URL:</simpara>
+<screen>GET /api/physical_racks/&lt;rack_ID&gt;</screen>
+<simpara>A JSON response with the following keys is returned.</simpara>
+<screen>actions
+ems_id
+ems_ref
+href
+id
+name
+uid_ems</screen>
+<simpara><emphasis role="strong">Examples</emphasis></simpara>
+<itemizedlist>
+<listitem>
+<simpara>To retrieve information about a specific physical rack (such as name and ID), use the <emphasis role="strong">?expand=resources&amp;attributes=&lt;attribute_list&gt;</emphasis> query parameters, for example:</simpara>
+<screen>GET /api/physical_racks/&lt;rack_ID&gt;?expand=resources&amp;attributes=id,name</screen>
+</listitem>
+</itemizedlist>
+</section>
+<section xml:id="retrieving_physical_storage_details" remap="_retrieving_physical_storage_details">
+<title>Retrieving Physical Storage Details</title>
+<simpara>To retrieve information for all physical storage systems, use the following request URL:</simpara>
+<screen>GET /api/physical_storages</screen>
+<simpara>A JSON response with the following keys is returned.</simpara>
+<screen>actions (list of actions that can be used)
+count (number of physical storage systems)
+name (URI name)
+pages (number of pages)
+resources (list of URLs for each physical storage system)
+subcount (number of physical storage systems that were returned)</screen>
+<simpara><emphasis role="strong">Examples</emphasis></simpara>
+<itemizedlist>
+<listitem>
+<simpara>To retrieve all information about the physical storage systems, use the <emphasis role="strong">?expand=resources</emphasis> query parameter, for example:</simpara>
+<screen>GET /api/physical_storages?expand=resources</screen>
+</listitem>
+<listitem>
+<simpara>To retrieve specific information about the physical storage systems (such as name and ID), use the <emphasis role="strong">?expand=resources&amp;attributes=&lt;attribute_list&gt;</emphasis> query parameters, for example:</simpara>
+<screen>GET /api/physical_storages?expand=resources&amp;attributes=id,name</screen>
+</listitem>
+<listitem>
+<simpara>To retrieve information such as canisters and physical disks associated with physical storage systems, use the <emphasis role="strong">?expand=resources&amp;attributes=&lt;attribute_list&gt;</emphasis> query parameters, for example:</simpara>
+<screen>GET /api/physical_storages?expand=resources&amp;attributes=canisters,physical_disks</screen>
+</listitem>
+<listitem>
+<simpara>To retrieve information about only a specific physical storage system, use the <emphasis role="strong">?expand=resources&amp;filter[]=name=&lt;storage_name&gt;</emphasis> query attributes on all physical storage resources, for example:</simpara>
+<screen>GET /api/physical_storages?expand=resources&amp;filter[]=name=SeagateV1-S3200-DM</screen>
+</listitem>
+</itemizedlist>
+</section>
+<section xml:id="retrieving_physical_storage_details_by_id" remap="_retrieving_physical_storage_details_by_id">
+<title>Retrieving Physical Storage Details by ID</title>
+<simpara>To retrieve information for a specific physical storage system, use the following request URL:</simpara>
+<screen>GET /api/physical_storages/&lt;storage_ID&gt;</screen>
+<simpara>A JSON response with the following keys is returned.</simpara>
+<screen>access_state
+actions
+canister_slots
+drive_bays
+ems_id
+ems_ref
+enclosures
+health_state
+href
+id
+name
+overall_health_state
+physical_chassis_id
+physical_rack_id
+type
+uid_ems</screen>
+<simpara><emphasis role="strong">Examples</emphasis></simpara>
+<itemizedlist>
+<listitem>
+<simpara>To retrieve information about a specific physical storage system (such as name and ID), use the <emphasis role="strong">?expand=resources&amp;attributes=&lt;attribute_list&gt;</emphasis> query parameters, for example:</simpara>
+<screen>GET /api/physical_storages/&lt;storage_ID&gt;?expand=resources&amp;attributes=id,name</screen>
+</listitem>
+<listitem>
+<simpara>To retrieve information, such as canisters and physical disks that are associated with a specific physical storage system, use the <emphasis role="strong">?expand=resources&amp;attributes=&lt;attribute_list&gt;</emphasis> query parameters, for example:</simpara>
+<screen>GET /api/physical_storages/&lt;storage_ID&gt;?expand=resources&amp;attributes=canisters,physical_disks</screen>
+</listitem>
+</itemizedlist>
+</section>
+<section xml:id="retrieving_physical_switch_details" remap="_retrieving_physical_switch_details">
+<title>Retrieving Physical Switch Details</title>
+<simpara>To retrieve information for all physical switches, use the following request URL:</simpara>
+<screen>GET /api/physical_switches</screen>
+<simpara>A JSON response with the following keys is returned.</simpara>
+<screen>actions (list of actions that can be used)
+count (number of physical switches)
+name (URI name)
+pages (count of pages)
+resources (list of URLs for each physical switch)
+subcount (number of physical switches that were returned)</screen>
+<simpara><emphasis role="strong">Examples</emphasis></simpara>
+<itemizedlist>
+<listitem>
+<simpara>To retrieve all information about the physical switches, use the <emphasis role="strong">?expand=resources</emphasis> query parameter, for example:</simpara>
+<screen>GET /api/physical_switches?expand=resources</screen>
+</listitem>
+<listitem>
+<simpara>To retrieve specific information about the physical switches (such as name and ID), use the <emphasis role="strong">?expand=resources&amp;attributes=&lt;attribute_list&gt;</emphasis> query parameters, for example:</simpara>
+<screen>GET /api/physical_switches?expand=resources&amp;attributes=id,name</screen>
+</listitem>
+<listitem>
+<simpara>To retrieve information such as ports on physical switches, use the <emphasis role="strong">?expand=resources&amp;attributes=&lt;attribute_list&gt;</emphasis> query parameters, for example:</simpara>
+<screen>GET /api/physical_switches?expand=resources&amp;attributes=physical_network_ports</screen>
+</listitem>
+<listitem>
+<simpara>To retrieve information such as physical devices connected to physical switches, use the <emphasis role="strong">?expand=resources&amp;attributes=&lt;attribute_list&gt;</emphasis> query parameters, for example:</simpara>
+<screen>GET /api/physical_switches?expand=resources&amp;attributes=connected_components</screen>
+</listitem>
+<listitem>
+<simpara>To retrieve information about only a specific physical switch, use the <emphasis role="strong">?expand=resources&amp;filter[]=name=&lt;switch_name&gt;</emphasis> query attributes on all physical switch resources, for example:</simpara>
+<screen>GET /api/physical_switches?expand=resources&amp;filter[]=name=IO Module 02</screen>
+</listitem>
+</itemizedlist>
+</section>
+<section xml:id="retrieving_physical_switch_details_by_id" remap="_retrieving_physical_switch_details_by_id">
+<title>Retrieving Physical Switch Details by ID</title>
+<simpara>To retrieve information for a specific physical switch, use the following request URL:</simpara>
+<screen>GET /api/physical_switches/&lt;switch_ID&gt;</screen>
+<simpara>A JSON response with the following keys is returned.</simpara>
+<screen>actions
+allow_promiscuous
+ems_id
+forged_transmits
+health_state
+href
+id
+mac_changes
+mtu
+name
+ports
+power_state
+shared
+switch_uuid
+type
+uid_ems</screen>
+<simpara><emphasis role="strong">Examples</emphasis></simpara>
+<itemizedlist>
+<listitem>
+<simpara>To retrieve information about a specific physical switch (such as name and ID), use the <emphasis role="strong">?expand=resources&amp;attributes=&lt;attribute_list&gt;</emphasis> query parameters, for example:</simpara>
+<screen>GET /api/physical_switches/&lt;switch_ID&gt;?expand=resources&amp;attributes=id,name</screen>
+</listitem>
+<listitem>
+<simpara>To retrieve information such as physical devices that are connected to a specific physical switch, use the <emphasis role="strong">?expand=resources&amp;attributes=&lt;attribute_list&gt;</emphasis> query parameters, for example:</simpara>
+<screen>GET /api/physical_switches/&lt;switch_ID&gt;?expand=resources&amp;attributes=connected_components</screen>
+</listitem>
+<listitem>
+<simpara>To retrieve information such as ports on a specific physical switch, use the <emphasis role="strong">?expand=resources&amp;attributes=&lt;attribute_list&gt;</emphasis> query parameters, for example:</simpara>
+<screen>GET /api/physical_switches/&lt;switch_ID&gt;?expand=resources&amp;attributes=physical_network_ports</screen>
+</listitem>
+</itemizedlist>
+</section>
+<section xml:id="performing_physical_switch_actions" remap="_performing_physical_switch_actions">
+<title>Performing physical switch actions</title>
+<simpara>You can use the REST API to perform management tasks on a physical switch, such as restarting the switch.</simpara>
+<simpara><emphasis role="strong">Note:</emphasis> To perform actions on physical switch, you must create a basic authentication using your preferred tool or library, and enter your user name and password to access the CloudForms REST API.</simpara>
+<section xml:id="restarting_a_physical_switch" remap="_restarting_a_physical_switch">
+<title>Restarting a physical switch</title>
+<simpara>To restart a specific switch, send a POST request using the following request URL and JSON request body.</simpara>
+<screen>POST /api/physical_switches/&lt;switch_ID&gt;</screen>
+<simpara>Request body:</simpara>
+<screen>{
+   "action":"restart"
+}</screen>
+</section>
+<section xml:id="performing_an_action_on_multiple_physical_switches" remap="_performing_an_action_on_multiple_physical_switches">
+<title>Performing an action on multiple physical switches</title>
+<simpara>To perform an action on more than one physical switch, send a POST request using the following request URL and JSON request body.</simpara>
+<screen>POST /api/physical_switches</screen>
+<simpara>Request body:</simpara>
+<screen>{
+   "action":"&lt;action&gt;",
+   "resources": [{
+      "href":"&lt;switch_ID&gt;"
+   },
+   {
+      "href":"&lt;switch_ID&gt;"
    }]
 }</screen>
 </section>
