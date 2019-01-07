@@ -12,7 +12,7 @@
 	<revhistory>
 		<revision>
 			<revnumber>1.0-0</revnumber>
-			<date>Wed Dec 12 2018</date>
+			<date>Mon Jan 7 2019</date>
 			<authorinitials>Red Hat CCS</authorinitials><revdescription>
 				<simplelist>
 					<member>Initial document creation</member>
@@ -21,3 +21,4 @@
 		</revision>
 	</revhistory>
 </appendix>
+
